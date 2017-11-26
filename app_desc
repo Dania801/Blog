@@ -1,0 +1,33 @@
+-> Purpose 
+1- journal 
+2- photo album 
+3- calendar and events
+4- social media panel 
+
+-> Workflow 
+- main page describes the featues of the website
+- signup / login 
+- display the personal profile 
+	- display posts 
+	- events and dates
+	- photo album
+	- social media
+- posts : - photo 
+	  - date 
+	  - tag 
+	  - title 
+	  - journal 
+	  
+- photo album : - add photo 
+		- add title 
+		- add tag 
+		- date
+
+- events and dates : - disply events 
+		     - add events through a calendar
+		     
+		  
+- social media pannel : redirect to social media pages
+
+
+
