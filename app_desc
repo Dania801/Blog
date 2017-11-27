@@ -5,13 +5,16 @@
 4- social media panel 
 
 -> Workflow 
-- main page describes the featues of the website
-- signup / login 
+- main page describes the featues of the website [DONE]
+- signup / login [DONE]
+
 - display the personal profile 
 	- display posts 
 	- events and dates
 	- photo album
 	- social media
+	- personal image
+	
 - posts : - photo 
 	  - date 
 	  - tag 
