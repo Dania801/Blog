@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -24,6 +25,7 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style5.css">
     <link rel='stylesheet' href='welcome_style.css' />
+    <script src='welcome_code.js'></script>
     <style>
       .cover{
         background-image: url("pictures/pic1.jpg");
@@ -61,17 +63,23 @@
         font-family: "Arapey", serif;
         font-size: 25px;
         font-weight: bold;}
-.carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #f4511e;
-}
-.carousel-indicators li {
-    border-color: #f4511e;
-}
-.carousel-indicators li.active {
-    background-color: #f4511e;
-}
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
     </style>
+    <script>
+      function showPic(pic){
+        document.getElementById('pic_container').setAttribute('style', "width: 800px; height: 500px; background-image: url('"+pic+"');margin-left: 100px; margin-top: 100px");
+        document.getElementById('picture').style.display='block';
+      }
+    </script>
   </head>
   <body >
     <!-- Sidebar/menu -->
@@ -81,15 +89,15 @@
         <a class="navbar-brand logo w3-padding-32" href="#myPage"><span class="logo-B">B</span>LOGATE</a>
       </div>
       <div class="w3-bar-block">
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-        <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Journal</a>
-        <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Events</a>
-        <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Album</a>
-        <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Social Media</a>
+        <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+        <a href="#journal" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Journal</a>
+        <a href="#events" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Events</a>
+        <a href="#album" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Album</a>
+        <a href="#socialmedia" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Social Media</a>
       </div>
     </nav>
 
-    <div>
+    <div id='home'>
 
       <div style='margin-left:300px;'>
         <div style='position: absolute;width: 100%'>
@@ -141,7 +149,7 @@
                 </p>
               </div>
             </div>
-            <div class='container w3-card w3-white w3-padding-32 w3-animate-right' style='width: 490px; height: 200px;margin-top: 50px;margin-left: 100px;'>
+            <div id='socialmedia' class='container w3-card w3-white w3-padding-32 w3-animate-right' style='width: 490px; height: 200px;margin-top: 50px;margin-left: 100px;'>
               <div class= 'container w3-padding-16' style='width: 400px;height:60px;background-color: #212121'>
                 <p style="font-family: 'Spectral SC';letter-spacing: 2px;color: white;text-align: center">
                   Social Media
@@ -159,7 +167,7 @@
         </div>
       </div>
 
-      <div class= 'container w3-padding-16 w3-card-4' style='background-color: #212121 ;margin-top: 20px;margin-left: 285px;height: 900px; position: absolute; margin-top: 1300px; width: 1650px;'>
+      <div id='album' class= 'container w3-padding-16 w3-card-4' style='background-color: #212121 ;margin-top: 20px;margin-left: 285px;height: 1000px; position: absolute; margin-top: 1300px; width: 1650px;'>
 
         <h1 style="margin-left: 650px;font-family: 'Dancing Script'; letter-spacing: 5px; color: white;margin-top: 50px;font-size: 60px;">Photo Album</h1>
         <!-- Container (Portfolio Section) -->
@@ -167,57 +175,57 @@
 
             <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
               <!-- Indicators -->
-              <ol class="carousel-indicators" style='margin-top: 400px;'>
+              <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
               </ol>
 
               <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox" style='height: 700px; '>
+              <div class="carousel-inner slideanim" role="listbox" style='height: 700px; '>
 
                 <div class='container row item active' style='margin-left: 180px;'>
                   <div class='container col-xs-6' style="height: 700px; ">
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;background-image: url('pictures/advent11.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent11.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;background-image: url('pictures/advent11.jpg');background-size: 120%">
                     </div>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent10.jpg'); background-size: 120%">
+                    <div onclick="showPic('pictures/advent10.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent10.jpg'); background-size: 120%">
                     </div>
                   </div>
                   <div class='container w3-xs-4' style='height: 700px;'>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;background-image: url('pictures/advent9.jpg'); background-size: 120%">
+                    <div onclick="showPic('pictures/advent9.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;background-image: url('pictures/advent9.jpg'); background-size: 120%">
                     </div>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent7.jpg'); background-size: 120%">
+                    <div onclick="showPic('pictures/advent7.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent7.jpg'); background-size: 120%">
                     </div>
                   </div>
                 </div>
 
                 <div class='container row item' style='margin-left: 180px;'>
                   <div class='container col-xs-6' style='height: 700px;'>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;background-image: url('pictures/advent1.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent1.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;background-image: url('pictures/advent1.jpg');background-size: 120%">
                     </div>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent6.jpg');background-size: 120% ">
+                    <div onclick="showPic('pictures/advent6.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent6.jpg');background-size: 120% ">
                     </div>
                   </div>
                   <div class='container w3-xs-4' style='height: 700px;'>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;background-image: url('pictures/advent2.jpg'); background-size: 120%">
+                    <div onclick="showPic('pictures/advent2.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;background-image: url('pictures/advent2.jpg'); background-size: 120%">
                     </div>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent8.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent8.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242;margin-top: 20px;background-image: url('pictures/advent8.jpg');background-size: 120%">
                     </div>
                   </div>
                 </div>
 
                 <div class='container row item active' style='margin-left: 180px;'>
                   <div class='container col-xs-6' style='height: 700px;'>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242; background-image: url('pictures/advent5.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent5.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242; background-image: url('pictures/advent5.jpg');background-size: 120%">
                     </div>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px; background-image: url('pictures/advent6.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent6.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px;height: 300px;background-color: #424242;margin-top: 20px; background-image: url('pictures/advent6.jpg');background-size: 120%">
                     </div>
                   </div>
                   <div class='container w3-xs-4' style='height: 700px;'>
-                    <div class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242; background-image: url('pictures/advent4.jpg');background-size: 120%">
+                    <div onclick="showPic('pictures/advent4.jpg')" class='w3-card-4 w3-sepia-min w3-hover-opacity' style="width: 540px; margin-left: 565px; height: 300px;background-color: #424242; background-image: url('pictures/advent4.jpg');background-size: 120%">
                     </div>
                     <div style="width: 540px; margin-left: 565px; height: 300px;margin-top: 20px;">
-                      <button type="submit" class="w3-button w3-border btn-style w3-card-4" style="margin-top: 130px;margin-left: 20px">More Images</button>
+                      <button type="submit" class="w3-button w3-border btn-style w3-card-4 w3-animate-zoom" style="margin-top: 130px;margin-left: 20px" onclick="document.getElementById('album').style.display='block'">More Images</button>
                     </div>
                   </div>
                 </div>
@@ -236,10 +244,181 @@
             </div>
           </div>
 
+          <!--Login modal -->
+          <div id="album" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top" style='width: 1500px; height: 700px; background-color: #a6a6a1'>
+              <div class="w3-container w3-display-container">
+                <span onclick="document.getElementById('album').style.display='none';" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
+                <h1 class='text-center main-title'>Login</h1>
+              </div>
+            </div>
+          </div>
+
+          <!--Picture modal -->
+          <div id="picture" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top" style='width: 1000px; height: 700px; background-color: black'>
+              <div class="w3-container w3-display-container">
+                <span onclick="document.getElementById('picture').style.display='none';" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
+              </div>
+              <div id='pic_container'>
+              </div>
+            </div>
+          </div>
+
       </div>
 
-    </div>
+      <div class='w3-container' style=' background-color: #B9B9B9 ;width: 1620px; ; height: 2000px;margin-left: 285px ;margin-top: 2300px;position: absolute'>
+        <div class='row'>
 
+
+          <div class='col-xs-4 w3-card-4 w3-white' style='margin-left: 80px; margin-top: 50px; width: 450px;height: 1500px;margin-top: 100px;'>
+            <h3 style="font-family: 'Spectral SC';letter-spacing: 2px; text-align: center; color: black;margin-top: 50px;">PERSONAL</h3>
+            <div style="margin-left: 153px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 110px;"/>
+            </div>
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-image: url('pictures/album9.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-position: center;background-image: url('pictures/album8.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+          </div>
+
+
+          <div class='col-xs-4 w3-card-4 w3-white' style='margin-left: 80px; margin-top: 50px; width: 450px;height: 1500px;margin-top: 100px;'>
+            <h3 style="font-family: 'Spectral SC';letter-spacing: 2px; text-align: center; color: black;margin-top: 50px;">POLITICAL</h3>
+            <div style="margin-left: 153px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 110px;"/>
+            </div>
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-position: center top;background-image: url('pictures/album10.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-position: center;background-image: url('pictures/album11.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+          </div>
+
+
+          <div class='col-xs-4 w3-card-4 w3-white' style='margin-left: 80px; margin-top: 50px; width: 450px;height: 1500px;margin-top: 100px;'>
+            <h3 style="font-family: 'Spectral SC';letter-spacing: 2px; text-align: center; color: black;margin-top: 50px;">TECHNOLOGY</h3>
+            <div style="margin-left: 153px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 110px;"/>
+            </div>
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-position: center;background-image: url('pictures/album12.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 style="font-family: 'Acme', sans-serif; font-size: 27px; color: black">Exploring Norway's Coast</h5>
+              <div class= 'container'style="width: 400px;height:200px;background-position: center;background-image: url('pictures/album13.jpg');margin-left: 0px;"></div>
+              <div style='margin-bottom: 25px;margin-top: 25px;'>
+                <p style="font-family: 'Raleway', sans-serif;letter-spacing: 1px;">
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div style='width: 250px;margin-top: 20px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div style="margin-left: 40px;margin-top: 50px;">
+              <hr style="height: 10px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;width: 340px;"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
   </body>
