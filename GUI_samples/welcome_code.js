@@ -1,6 +1,6 @@
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -36,4 +36,9 @@ function showLogin(){
 
 function closeLogin(){
   document.getElementById('login').style.display='none';
+}
+
+function showPic(pic){
+  document.getElementById('pic_container').src = pic;
+  document.getElementById('picture').style.display='block';
 }
