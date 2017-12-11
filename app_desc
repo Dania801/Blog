@@ -7,6 +7,10 @@
 -> Workflow 
 - main page describes the featues of the website [DONE]
 - signup / login [DONE]
+- home page (recent post, recent articles in 3 tags, recent pictures, events for the current month) [DONE][Still require calendar]
+- posts page 
+- images page
+- events page
 
 - display the personal profile 
 	- display posts 

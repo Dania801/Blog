@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Journal</title>
+    <!--Bootstrap and JQuery libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--W3C library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <!--Fontawesome library -->
+    <script src="https://use.fontawesome.com/67c4517658.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Javascript and CSS-->
+    <link rel="stylesheet" href="style5.css">
+    <link rel='stylesheet' href='welcome_style.css' />
+    <link rel='stylesheet' href='homePage_style.css' />
+    <script src='welcome_code.js'></script>
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+      .w3-quarter img{margin-bottom: -6px; cursor: pointer}
+      .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+      #search{
+      background-image: url('search.png');
+      background-position: 8px 5px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      color: white;
+      width: 50%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+     }
+    </style>
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function search_open(){
+
+      }
+
+      function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+      }
+
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+
+      </script>
+
+  </head>
+  <body class="w3-light-grey">
+    <!-- Sidebar/menu -->
+    <nav class="w3-card-4 w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+      <div id='sidebar-x' class='container' style='width: 90px;margin-left: 180px;'><a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32"><i class="fa fa-times-circle fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a></div>
+      <div class='' style='margin-top: 250px;font-family: "Spectral SC", serif;letter-spacing: 2px;'>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Photo Album</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Events</a>
+      </div>
+    </nav>
+    <!-- Top menu on small screens -->
+    <header class="w3-card-4 w3-container w3-top w3-white w3-xlarge w3-padding-8" style='padding-top: 13px;'>
+      <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
+      <a id='search-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="search_open()"><i class="fa fa-search w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a>
+      <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()" style=''>☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content" style="max-width: 100%;margin-top: 82px;">
+      <!--Search panel -->
+      <div class='w3-card-4' id='search-panel' style='width: 100%; height: 80px;background-color: #141415;padding-top: 28px;padding-left: 40px;'>
+        <input id='search' class='form-control' onkeyup="myFunction()" placeholder="Search for post..">
+      </div>
+      <!--Recent article outer container -->
+      <div class='container w3-padding-64 w3-card-4' style='width: 2000px;margin-left: 0px;background-color: #323536;'>
+        <div class='text-center' >
+          <h5><b>____________________</b></h5>
+          <h4 style='color: white;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 40px; color: black;'>|&nbsp;</span><span style='font-size: 35px;'>R</span>ecent <span style='font-size: 30px;'>A</span>rticle <span style='font-size: 40px; color: black;'>&nbsp;|</span></h4>
+          <h5><b>____________________</b></h5>
+        </div>
+        <!-- Article-->
+        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+          <div class="w3-card w3-white">
+            <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Summer House</div>
+            <header class='w3-container event-image1'>
+            </header>
+            <div class='w3-margin' style='padding-bottom: 20px;'>
+              <div style='margin-top: 30px;'>
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <!-- Title containr-->
+              <div class='article-title-layout'>
+                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+              </div>
+              <div class='article-content' style='padding-right: 20px;'>
+                <p class='article-content-font'>
+                  Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Article-->
+        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+          <div class="w3-card w3-white">
+            <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Summer House</div>
+            <header class='w3-container event-image1'>
+            </header>
+            <div class='w3-margin' style='padding-bottom: 20px;'>
+              <div style='margin-top: 30px;'>
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <!-- Title containr-->
+              <div class='article-title-layout'>
+                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+              </div>
+              <div class='article-content' style='padding-right: 20px;'>
+                <p class='article-content-font'>
+                  Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Article-->
+        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+          <div class="w3-card w3-white">
+            <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Summer House</div>
+            <header class='w3-container event-image1'>
+            </header>
+            <div class='w3-margin' style='padding-bottom: 20px;'>
+              <div style='margin-top: 30px;'>
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <!-- Title containr-->
+              <div class='article-title-layout'>
+                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+              </div>
+              <div class='article-content' style='padding-right: 20px;'>
+                <p class='article-content-font'>
+                  Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Journal container -->
+      <div class='w3-card w3-content w3-white' style='max-width:1564px;height: 1000px;'>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $("#search-panel").hide();
+
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
@@ -16,6 +18,10 @@ $(document).ready(function(){
         window.location.hash = hash;
       });
     }
+  });
+
+  $("#search-btn").on("click",function(){
+    $("#search-panel").toggle(1000);
   });
 
   $(window).scroll(function() {
