@@ -19,7 +19,7 @@
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<!--
+
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
 
@@ -30,7 +30,7 @@
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
 
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
--->
+
     <!-- Javascript and CSS-->
     <link rel="stylesheet" href="style5.css">
     <link rel='stylesheet' href='welcome_style.css' />
@@ -54,7 +54,7 @@
      }
      .new-post {
        background-color: #D5D8DC;
-       background-image: url("pictures/pic5.jpg");
+       background-image: url("pictures/pic2.jpg");
        background-position: center;
        width: 100%;
        height: 900px;
@@ -63,7 +63,7 @@
        position: absolute; }
     </style>
     <script>
-    //$(function() { $('textarea').froalaEditor() });
+    $(function() { $('textarea').froalaEditor() });
       // Modal Image Gallery
       function onClick(element) {
         document.getElementById("img01").src = element.src;
@@ -86,33 +86,36 @@
       </div>
     </nav>
     <!-- Top menu on small screens -->
-    <header class="w3-card-4 w3-container w3-top w3-white w3-xlarge w3-padding-8" style='padding-top: 13px;'>
-      <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
-      <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" style=''>☰</a>
-      <a id='search-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="search_open()"><i class="fa fa-search w3-hover-opacity" aria-hidden="true"></i></a>
-      <a id='add-btn' href="#new" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
+    <header class="w3-card-4 w3-top w3-white w3-xlarge" style='padding-top: 13px;'>
+      <div style='margin-bottom: 80px;'>
+        <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
+        <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" style=''>☰</a>
+        <a id='search-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="search_open()"><i class="fa fa-search w3-hover-opacity" aria-hidden="true"></i></a>
+        <a id='add-btn' href="#new" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
+      </div>
+
+      <!--Search panel -->
+      <div class='w3-container' id='search-panel' style='width: 100%; height: 80px;background-color: #141415;padding-top: 23px;padding-left: 40px;'>
+        <input id='search' class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Search for post.." />
+      </div>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-content" style="max-width: 100%;margin-top: 82px;">
-      <!--Search panel -->
-      <div class='w3-card-4' id='search-panel' style='width: 100%; height: 80px;background-color: #141415;padding-top: 28px;padding-left: 40px;'>
-        <input id='search' class='form-control' onkeyup="myFunction()" placeholder="Search for post..">
-      </div>
+    <div id='top' class="w3-main w3-content" style="max-width: 100%;margin-top: 82px;">
       <!--Recent article outer container -->
       <div class='container w3-padding-64 w3-card-4' style='width: 2000px;margin-left: 0px;background-color: #323536;'>
         <div class='text-center' >
-          <h4 style='color: white;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 35px;'>R</span>ecent <span style='font-size: 30px;'>A</span>rticle</h4>
+          <h4 style='color: white;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 35px;'>R</span>ecent <span style='font-size: 30px;'>A</span>rticles</h4>
           <h5 style='color: white'><b>_________</b></h5>
         </div>
         <!-- Article-->
         <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Journal</div>
-            <header class='w3-container event-image1'>
+            <header style='width: 570px;height: 200px;background-image: url("pictures/art1.jpg"); background-position: center'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -122,7 +125,7 @@
               </div>
               <!-- Title containr-->
               <div class='article-title-layout'>
-                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                <h2 class='article-title-style'>Some Title</h2>
               </div>
               <div class='article-content' style='padding-right: 20px;'>
                 <p class='article-content-font'>
@@ -139,7 +142,7 @@
         <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Political</div>
-            <header class='w3-container event-image1'>
+            <header style='width: 570px;height: 200px;background-image: url("pictures/art2.jpg"); background-position: center'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -149,7 +152,7 @@
               </div>
               <!-- Title containr-->
               <div class='article-title-layout'>
-                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                <h2 class='article-title-style'>Some Title</h2>
               </div>
               <div class='article-content' style='padding-right: 20px;'>
                 <p class='article-content-font'>
@@ -166,7 +169,7 @@
         <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-            <header class='w3-container event-image1'>
+            <header style='width: 570px;height: 200px;background-image: url("pictures/art3.jpg"); background-position: center'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -176,7 +179,7 @@
               </div>
               <!-- Title containr-->
               <div class='article-title-layout'>
-                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                <h2 class='article-title-style'>Some Title</h2>
               </div>
               <div class='article-content' style='padding-right: 20px;'>
                 <p class='article-content-font'>
@@ -192,12 +195,16 @@
       </div>
       <!--Rest of page container -->
       <div class='w3-card w3-content w3-white w3-container' style='max-width:1564px;padding-bottom: 100px;'>
+        <div class='text-center' style='margin-top: 100px;'>
+          <h4 style='color: black;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 35px;'>A</span>ll <span style='font-size: 30px;'>A</span>rticles</h4>
+          <h5 style='color: black'><b>_________</b></h5>
+        </div>
         <div class='' style='margin-left: 55px;'>
           <!-- Article-->
           <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white">
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-              <header class='w3-container event-image1'>
+              <header style='width: 420px;height: 200px;background-image: url("pictures/art4.jpg"); background-position: center'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -207,7 +214,7 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                  <h2 class='article-title-style'>Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -224,8 +231,8 @@
           <!-- Article-->
           <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white" style=''>
-              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-              <header class='w3-container event-image1'>
+              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
+              <header style='width: 420px;height: 200px;background-image: url("pictures/album7.jpg"); background-position: center'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -235,7 +242,7 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                  <h2 class='article-title-style'>Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -252,7 +259,7 @@
           <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-              <header class='w3-container event-image1'>
+              <header style='width: 420px;height: 200px;background-image: url("pictures/album12.jpg"); background-position: center'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -262,7 +269,34 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+                  <h2 class='article-title-style'>Some Title</h2>
+                </div>
+                <div class='article-content' style='padding-right: 20px;'>
+                  <p class='article-content-font'>
+                    Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                  </p>
+                </div>
+              </div>
+              <div class='article-btn' style='margin-left: 35px;padding-bottom: 25px;'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Continue ..</button>
+              </div>
+            </div>
+          </div>
+          <!-- Article-->
+          <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+            <div class="w3-card w3-white" style=''>
+              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Music</div>
+              <header style='width: 420px;height: 200px;background-image: url("pictures/advent8.jpg"); background-position: center'>
+              </header>
+              <div class='w3-margin' style=''>
+                <div style='margin-top: 30px;'>
+                  <p>
+                    21 October 2016, 07:00 pm
+                  </p>
+                </div>
+                <!-- Title containr-->
+                <div class='article-title-layout'>
+                  <h2 class='article-title-style'>Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -281,15 +315,46 @@
 
       <!-- Events -->
       <div class="new-post w3-card w3-opacity-max"></div>
-      <div id='new' class='task-container'>
+      <div id='new' class='task-container' style='postion: absolute'>
         <div class='container large-margin-top'>
           <h1 class='event-title' style="font-family: 'Great Vibes', cursive;font-size: 70px; letter-spacing: 4 px;">N<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold; '>ew</span> P<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold;'>ost</span></h1>
           <h5 style='color: black'><b>_________</b></h5>
           <br /><br /><br /><br />
-
-
+          <div style='position: absolute;width: 700px;'>
+            <input class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Title" >
+          </div>
+          <div style='position: absolute;width: 250px;margin-left:730px;'>
+            <input list="tag" class='form-control' style='color: black;' placeholder="Tag">
+            <datalist id="tag">
+              <option value="Personal">
+              <option value="Political">
+              <option value="Technology">
+              <option value="Science">
+              <option value="Music">
+            </datalist>
+          </div>
+          <br /><br /><br />
+          <div style='position: absolute;width: 700px;'>
+            <div class="form-group">
+              <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+                  <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span></div>
+            </div>
+          </div>
+          <br /><br /><br />
+          <div>
+            <textarea></textarea>
+          </div>
         </div>
       </div>
+
+      <!-- Footer -->
+      <footer class="container-fluid text-center ">
+        <a id='footer' href="#top" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p class='btn-style'>GO TOP</p>
+      </footer>
+
     </div>
   </body>
 </html>

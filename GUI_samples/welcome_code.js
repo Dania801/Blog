@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#search-panel").hide();
 
   // Add smooth scrolling
-  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn").on('click', function(event) {
+  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
