@@ -1,5 +1,11 @@
 $(document).ready(function(){
   $("#search-panel").hide();
+  $("#first-article").hide();
+  $("#first-article").show(1000);
+  $("#second-article").hide();
+  $("#second-article").show(1000);
+  $("#third-article").hide();
+  $("#third-article").show(1000);
 
   // Add smooth scrolling
   $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer").on('click', function(event) {

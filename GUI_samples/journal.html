@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -61,6 +62,23 @@
        background-size: cover;
        background-attachment: fixed;
        position: absolute; }
+       #guitar-cover-mini
+       {
+          background-image: url('pictures/pic1.jpg');
+          background-position: top;
+          width: 100%;
+          height: 300px;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        #cover-outer{
+          margin-top: 90px;
+          color: white;
+          width: 28%;
+          height: 60px;
+          background: black;
+        }
+
     </style>
     <script>
     $(function() { $('textarea').froalaEditor() });
@@ -87,13 +105,12 @@
     </nav>
     <!-- Top menu on small screens -->
     <header class="w3-card-4 w3-top w3-white w3-xlarge" style='padding-top: 13px;'>
-      <div style='margin-bottom: 80px;'>
-        <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
-        <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" style=''>☰</a>
+      <div style='margin-bottom: 80px;padding-left: 40px;padding-right: 20px;'>
+        <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;padding-left: 40px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
+        <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white"><i class="fa fa-bars w3-hover-opacity" aria-hidden="true"></i></a>
         <a id='search-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="search_open()"><i class="fa fa-search w3-hover-opacity" aria-hidden="true"></i></a>
         <a id='add-btn' href="#new" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
       </div>
-
       <!--Search panel -->
       <div class='w3-container' id='search-panel' style='width: 100%; height: 80px;background-color: #141415;padding-top: 23px;padding-left: 40px;'>
         <input id='search' class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Search for post.." />
@@ -104,7 +121,13 @@
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
     <!-- !PAGE CONTENT! -->
-    <div id='top' class="w3-main w3-content" style="max-width: 100%;margin-top: 82px;">
+    <div id='top' class="" style="max-width: 100%;margin-top: 82px;">
+      <div class="container container" id="guitar-cover-mini">
+         <br /><br /><br /><br />
+         <div id="cover-outer">
+           <h1 style='font-family: "Philosopher", sans-serif;; color: white;letter-spacing: 3px;'><span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">O</span>rganize <span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">Y</span>our <span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">J</span>ournal</h1>
+         </div>
+       </div>
       <!--Recent article outer container -->
       <div class='container w3-padding-64 w3-card-4' style='width: 2000px;margin-left: 0px;background-color: #323536;'>
         <div class='text-center' >
@@ -112,7 +135,7 @@
           <h5 style='color: white'><b>_________</b></h5>
         </div>
         <!-- Article-->
-        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='first-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Journal</div>
             <header style='width: 570px;height: 200px;background-image: url("pictures/art1.jpg"); background-position: center'>
@@ -139,7 +162,7 @@
           </div>
         </div>
         <!-- Article-->
-        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='second-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Political</div>
             <header style='width: 570px;height: 200px;background-image: url("pictures/art2.jpg"); background-position: center'>
@@ -166,7 +189,7 @@
           </div>
         </div>
         <!-- Article-->
-        <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='third-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
             <header style='width: 570px;height: 200px;background-image: url("pictures/art3.jpg"); background-position: center'>
@@ -201,7 +224,7 @@
         </div>
         <div class='' style='margin-left: 55px;'>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white">
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
               <header style='width: 420px;height: 200px;background-image: url("pictures/art4.jpg"); background-position: center'>
@@ -229,7 +252,7 @@
           </div>
 
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
               <header style='width: 420px;height: 200px;background-image: url("pictures/album7.jpg"); background-position: center'>
@@ -256,7 +279,7 @@
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
               <header style='width: 420px;height: 200px;background-image: url("pictures/album12.jpg"); background-position: center'>
@@ -283,7 +306,7 @@
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Music</div>
               <header style='width: 420px;height: 200px;background-image: url("pictures/advent8.jpg"); background-position: center'>
@@ -320,30 +343,36 @@
           <h1 class='event-title' style="font-family: 'Great Vibes', cursive;font-size: 70px; letter-spacing: 4 px;">N<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold; '>ew</span> P<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold;'>ost</span></h1>
           <h5 style='color: black'><b>_________</b></h5>
           <br /><br /><br /><br />
-          <div style='position: absolute;width: 700px;'>
-            <input class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Title" >
-          </div>
-          <div style='position: absolute;width: 250px;margin-left:730px;'>
-            <input list="tag" class='form-control' style='color: black;' placeholder="Tag">
-            <datalist id="tag">
-              <option value="Personal">
-              <option value="Political">
-              <option value="Technology">
-              <option value="Science">
-              <option value="Music">
-            </datalist>
-          </div>
-          <br /><br /><br />
-          <div style='position: absolute;width: 700px;'>
-            <div class="form-group">
-              <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
-                  <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span></div>
+          <div class='slideanim'>
+            <div style='position: absolute;width: 700px;'>
+              <input class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Title" >
+            </div>
+            <div style='position: absolute;width: 250px;margin-left:730px;'>
+              <input list="tag" class='form-control' style='color: black;' placeholder="Tag">
+              <datalist id="tag">
+                <option value="Personal">
+                <option value="Political">
+                <option value="Technology">
+                <option value="Science">
+                <option value="Music">
+              </datalist>
+            </div>
+            <br /><br /><br />
+            <div style='position: absolute;width: 700px;'>
+              <div class="form-group">
+                <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span></div>
+              </div>
+            </div>
+            <br /><br /><br />
+            <div>
+              <textarea></textarea>
+            </div>
+            <div class='article-btn' style='margin-left: 990px;padding-bottom: 25px;position: absolute'>
+              <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Finished!</button>
             </div>
           </div>
-          <br /><br /><br />
-          <div>
-            <textarea></textarea>
-          </div>
+
         </div>
       </div>
 
