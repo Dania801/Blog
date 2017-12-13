@@ -121,7 +121,7 @@ body {
   position: absolute;
 }
 .event-title{
-  @extend .title;
+  @extend .title ;
   font-size: 45px;
 }
 .event-image1{

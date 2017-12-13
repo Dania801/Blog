@@ -20,25 +20,22 @@
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
-
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_style.min.css" rel="stylesheet" type="text/css" />
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
-
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
-
+    <!--Froala Editor libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
     <!-- Javascript and CSS-->
     <link rel="stylesheet" href="style5.css">
     <link rel='stylesheet' href='welcome_style.css' />
     <link rel='stylesheet' href='homePage_style.css' />
+    <link rel='stylesheet' href='journal_style.css' />
     <script src='welcome_code.js'></script>
     <style>
-      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       .w3-quarter img{margin-bottom: -6px; cursor: pointer}
       .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
       #search{
@@ -62,23 +59,6 @@
        background-size: cover;
        background-attachment: fixed;
        position: absolute; }
-       #guitar-cover-mini
-       {
-          background-image: url('pictures/pic1.jpg');
-          background-position: top;
-          width: 100%;
-          height: 300px;
-          background-size: cover;
-          background-attachment: fixed;
-        }
-        #cover-outer{
-          margin-top: 90px;
-          color: white;
-          width: 28%;
-          height: 60px;
-          background: black;
-        }
-
     </style>
     <script>
     $(function() { $('textarea').froalaEditor() });
@@ -95,50 +75,52 @@
   </head>
   <body class="w3-light-grey">
     <!-- Sidebar/menu -->
-    <nav class="w3-card-4 w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
-      <div id='sidebar-x' class='container' style='width: 90px;margin-left: 180px;'><a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32"><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></a></div>
-      <div class='' style='margin-top: 250px;font-family: "Spectral SC", serif;letter-spacing: 2px;'>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
-        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Photo Album</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Events</a>
+    <nav class="w3-card-4 w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large sidebar-outer" id="mySidebar">
+      <div id='sidebar-x' class='container sidebar-x'><a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32"><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></a></div>
+      <div class='sidebar-options-outer'>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Photo Album</a>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Events</a>
       </div>
     </nav>
     <!-- Top menu on small screens -->
     <header class="w3-card-4 w3-top w3-white w3-xlarge" style='padding-top: 13px;'>
-      <div style='margin-bottom: 80px;padding-left: 40px;padding-right: 20px;'>
-        <span class="w3-left w3-padding" style="font-family: 'Arapey', serif;font-size: 25px;font-weight: bold;letter-spacing: 2px;padding-left: 40px;"><span style='font-family: "Great Vibes", cursive;font-size:35px;letter-spacing: 8px;'>B</span>LOGATE</span>
+      <div class='nav-header-outer'>
+        <span class="w3-left w3-padding nav-logo"><span class='nav-logo-b'>B</span>LOGATE</span>
         <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white"><i class="fa fa-bars w3-hover-opacity" aria-hidden="true"></i></a>
         <a id='search-btn' href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="search_open()"><i class="fa fa-search w3-hover-opacity" aria-hidden="true"></i></a>
         <a id='add-btn' href="#new" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
       </div>
       <!--Search panel -->
-      <div class='w3-container' id='search-panel' style='width: 100%; height: 80px;background-color: #141415;padding-top: 23px;padding-left: 40px;'>
-        <input id='search' class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Search for post.." />
+      <div class='w3-container nav-search-outer' id='search-panel' >
+        <input id='search' class='form-control' style='color: black;' placeholder="Search for post.." />
       </div>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-    <!-- !PAGE CONTENT! -->
+    <!-- Page Content - contains the footer -->
     <div id='top' class="" style="max-width: 100%;margin-top: 82px;">
-      <div class="container container" id="guitar-cover-mini">
+      <!--Top cover -->
+      <div class="container top-cover">
          <br /><br /><br /><br />
-         <div id="cover-outer">
-           <h1 style='font-family: "Philosopher", sans-serif;; color: white;letter-spacing: 3px;'><span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">O</span>rganize <span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">Y</span>our <span style="font-family: 'Great Vibes', cursive;letter-spacing: 6px;font-size: 50px;">J</span>ournal</h1>
+         <div class='top-title-outer'>
+           <h1 class='top-title'><span class='top-title-letter'>O</span>rganize <span class='top-title-letter'>Y</span>our <span class='top-title-letter'>J</span>ournal</h1>
          </div>
        </div>
       <!--Recent article outer container -->
-      <div class='container w3-padding-64 w3-card-4' style='width: 2000px;margin-left: 0px;background-color: #323536;'>
+      <div class='container w3-padding-64 w3-card-4 recent-outer'>
+        <!--Recent Article title -->
         <div class='text-center' >
-          <h4 style='color: white;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 35px;'>R</span>ecent <span style='font-size: 30px;'>A</span>rticles</h4>
+          <h4 class='recent-title'><span class='recent-title-letter-big'>R</span>ecent <span class='recent-title-letter-small'>A</span>rticles</h4>
           <h5 style='color: white'><b>_________</b></h5>
         </div>
         <!-- Article-->
-        <div id='first-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='first-article' class="col-xs-4 w3-margin-bottom article-outer">
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Journal</div>
-            <header style='width: 570px;height: 200px;background-image: url("pictures/art1.jpg"); background-position: center'>
+            <header class='article-pic-layout' style='background-image: url("pictures/art1.jpg");'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -146,7 +128,7 @@
                   21 October 2016, 07:00 pm
                 </p>
               </div>
-              <!-- Title containr-->
+              <!-- Title container-->
               <div class='article-title-layout'>
                 <h2 class='article-title-style'>Some Title</h2>
               </div>
@@ -162,10 +144,10 @@
           </div>
         </div>
         <!-- Article-->
-        <div id='second-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='second-article' class="col-xs-4 w3-margin-bottom article-outer">
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Political</div>
-            <header style='width: 570px;height: 200px;background-image: url("pictures/art2.jpg"); background-position: center'>
+            <header class='article-pic-layout' style='background-image: url("pictures/art2.jpg");'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -173,7 +155,7 @@
                   21 October 2016, 07:00 pm
                 </p>
               </div>
-              <!-- Title containr-->
+              <!-- Title container-->
               <div class='article-title-layout'>
                 <h2 class='article-title-style'>Some Title</h2>
               </div>
@@ -189,10 +171,10 @@
           </div>
         </div>
         <!-- Article-->
-        <div id='third-article' class="col-xs-4 w3-margin-bottom" style='margin-top: 82px;margin-left: 20px;width: 600px;'>
+        <div id='third-article' class="col-xs-4 w3-margin-bottom article-outer">
           <div class="w3-card w3-white">
             <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-            <header style='width: 570px;height: 200px;background-image: url("pictures/art3.jpg"); background-position: center'>
+            <header class='article-pic-layout' style='background-image: url("pictures/art3.jpg");'>
             </header>
             <div class='w3-margin' style='padding-bottom: 20px;'>
               <div style='margin-top: 30px;'>
@@ -200,7 +182,7 @@
                   21 October 2016, 07:00 pm
                 </p>
               </div>
-              <!-- Title containr-->
+              <!-- Title container-->
               <div class='article-title-layout'>
                 <h2 class='article-title-style'>Some Title</h2>
               </div>
@@ -216,20 +198,20 @@
           </div>
         </div>
       </div>
-      <!--Rest of page container -->
-      <div class='w3-card w3-content w3-white w3-container' style='max-width:1564px;padding-bottom: 100px;'>
+      <!--All articles container-->
+      <div class='w3-card w3-content w3-white w3-container all-outer'>
         <div class='text-center' style='margin-top: 100px;'>
-          <h4 style='color: black;font-family: "Spectral SC", serif; letter-spacing: 5px;'><span style='font-size: 35px;'>A</span>ll <span style='font-size: 30px;'>A</span>rticles</h4>
+          <h4 class='recent-title-black'><span class='recent-title-letter-big'>A</span>ll <span style='font-size: 30px;'>A</span>rticles</h4>
           <h5 style='color: black'><b>_________</b></h5>
         </div>
         <div class='' style='margin-left: 55px;'>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white">
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-              <header style='width: 420px;height: 200px;background-image: url("pictures/art4.jpg"); background-position: center'>
+              <header class='all-article-pic-layout' style='background-image: url("pictures/art4.jpg");'>
               </header>
-              <div class='w3-margin' style=''>
+              <div class='w3-margin'>
                 <div style='margin-top: 30px;'>
                   <p>
                     21 October 2016, 07:00 pm
@@ -245,17 +227,16 @@
                   </p>
                 </div>
               </div>
-              <div class='article-btn' style='margin-left: 35px;padding-bottom: 25px;'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Continue ..</button>
+              <div class='article-btn all-btn-outer'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
-
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
-              <header style='width: 420px;height: 200px;background-image: url("pictures/album7.jpg"); background-position: center'>
+              <header class='all-article-pic-layout' style='background-image: url("pictures/album7.jpg");'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -273,16 +254,16 @@
                   </p>
                 </div>
               </div>
-              <div class='article-btn' style='margin-left: 35px;padding-bottom: 25px;'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Continue ..</button>
+              <div class='article-btn all-btn-outer'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
-              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
-              <header style='width: 420px;height: 200px;background-image: url("pictures/album12.jpg"); background-position: center'>
+              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
+              <header class='all-article-pic-layout' style='background-image: url("pictures/album12.jpg");'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -300,16 +281,16 @@
                   </p>
                 </div>
               </div>
-              <div class='article-btn' style='margin-left: 35px;padding-bottom: 25px;'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Continue ..</button>
+              <div class='article-btn all-btn-outer'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim" style='margin-top: 82px;margin-left: 20px;width: 450px;'>
+          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
-              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Music</div>
-              <header style='width: 420px;height: 200px;background-image: url("pictures/advent8.jpg"); background-position: center'>
+              <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
+              <header class='all-article-pic-layout' style='background-image: url("pictures/advent8.jpg");'>
               </header>
               <div class='w3-margin' style=''>
                 <div style='margin-top: 30px;'>
@@ -327,28 +308,26 @@
                   </p>
                 </div>
               </div>
-              <div class='article-btn' style='margin-left: 35px;padding-bottom: 25px;'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Continue ..</button>
+              <div class='article-btn all-btn-outer'>
+                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
       <!-- Events -->
       <div class="new-post w3-card w3-opacity-max"></div>
       <div id='new' class='task-container' style='postion: absolute'>
         <div class='container large-margin-top'>
-          <h1 class='event-title' style="font-family: 'Great Vibes', cursive;font-size: 70px; letter-spacing: 4 px;">N<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold; '>ew</span> P<span style='font-family: "Spectral SC", serif;font-size: 25px;font-weight: bold;'>ost</span></h1>
+          <h1 class='event-title-letter'><span class='event-title'>N</span>ew <span class='event-title'>P</span>ost</h1>
           <h5 style='color: black'><b>_________</b></h5>
           <br /><br /><br /><br />
           <div class='slideanim'>
-            <div style='position: absolute;width: 700px;'>
-              <input class='form-control' style='color: black;' onkeyup="myFunction()" placeholder="Title" >
+            <div class='form-title'>
+              <input class='form-control' onkeyup="myFunction()" placeholder="Title" >
             </div>
-            <div style='position: absolute;width: 250px;margin-left:730px;'>
-              <input list="tag" class='form-control' style='color: black;' placeholder="Tag">
+            <div class='form-datalist'>
+              <input list="tag" class='form-control' placeholder="Tag">
               <datalist id="tag">
                 <option value="Personal">
                 <option value="Political">
@@ -358,21 +337,21 @@
               </datalist>
             </div>
             <br /><br /><br />
-            <div style='position: absolute;width: 700px;'>
+            <div class='form-textarea'>
               <div class="form-group">
                 <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
-                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span></div>
+                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+                </div>
               </div>
             </div>
             <br /><br /><br />
             <div>
               <textarea></textarea>
             </div>
-            <div class='article-btn' style='margin-left: 990px;padding-bottom: 25px;position: absolute'>
-              <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='width: 150px;letter-spacing: 2px;'>Finished!</button>
+            <div class='form-btn-outer'>
+              <button type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn">Finished!</button>
             </div>
           </div>
-
         </div>
       </div>
 
