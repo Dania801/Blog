@@ -12,11 +12,7 @@
     <!--W3C library -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300" rel="stylesheet">
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -138,7 +134,7 @@
                 </p>
               </div>
               <div class='article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/art1.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
           </div>
@@ -165,7 +161,7 @@
                 </p>
               </div>
               <div class='article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/art2.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
           </div>
@@ -192,7 +188,7 @@
                 </p>
               </div>
               <div class='article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/art3.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
           </div>
@@ -228,7 +224,7 @@
                 </div>
               </div>
               <div class='article-btn all-btn-outer'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
+                <button onclick="showArticle('pictures/art4.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
@@ -255,7 +251,7 @@
                 </div>
               </div>
               <div class='article-btn all-btn-outer'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
+                <button onclick="showArticle('pictures/album7.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
@@ -282,7 +278,7 @@
                 </div>
               </div>
               <div class='article-btn all-btn-outer'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
+                <button onclick="showArticle('pictures/album12.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
@@ -309,7 +305,7 @@
                 </div>
               </div>
               <div class='article-btn all-btn-outer'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
+                <button onclick="showArticle('pictures/advent8.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style all-btn">Continue ..</button>
               </div>
             </div>
           </div>
@@ -354,7 +350,6 @@
           </div>
         </div>
       </div>
-
       <!-- Footer -->
       <footer class="container-fluid text-center ">
         <a id='footer' href="#top" title="To Top">
@@ -362,6 +357,36 @@
         </a>
         <p class='btn-style'>GO TOP</p>
       </footer>
+      <!--Article Modal -->
+      <div id="article" class="w3-modal w3-animate-zoom" style='padding: 50px;'>
+        <div class="w3-container w3-white w3-card" style='width: 100%; padding-bottom: 100px;'>
+          <div class="w3-container" style='margin-right: 80px; margin-left: 80px;margin-top: 100px;'>
+            <span id='article-x' onclick="closeArticle()" class="w3-button w3-display-topright" style='color: white;background-color: black; height: 50px;padding-top: 11px;'><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></span>
+            <div style='text-align: center'>
+              <img id = 'article-pic' class='w3-border w3-card-4' src="" style='max-width: 80%; max-hight: 20%;'>
+            </div>
+            <br /><br /><br />
+            <div style='text-align: center'>
+              <h2 style='font-family: "Philosopher", serif;  font-size: 40px;'>Some Title</h2>
+            </div>
+            <div id='article-tag' class="w3-display-topleft w3-black w3-padding" style='margin-left: 50px;margin-top: 50px; '>Social</div>
+            <div style='margin-top: 30px;text-align: center'>
+              <p>
+                Posted on October 12, 2017
+              </p>
+            </div>
+            <div style='text-align: left; padding-right: 300px; padding-left: 300px;padding-top: 80px;'>
+              <p style='font-size: 30px; font-family: "Open Sans Condensed", serif; color: black; letter-spacing: 1px;'>
+                Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
+
+                Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
+
+                Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </body>

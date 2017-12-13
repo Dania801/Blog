@@ -1,14 +1,15 @@
 $(document).ready(function(){
+  $("#article").hide();
   $("#search-panel").hide();
   $("#first-article").hide();
-  $("#first-article").show(1000);
+  $("#first-article").show(1500);
   $("#second-article").hide();
-  $("#second-article").show(1000);
+  $("#second-article").show(1500);
   $("#third-article").hide();
-  $("#third-article").show(1000);
+  $("#third-article").show(1500);
 
   // Add smooth scrolling
-  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer").on('click', function(event) {
+  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer, #article").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -55,14 +56,26 @@ $(document).ready(function(){
 })
 
 function showLogin(){
-  document.getElementById('login').style.display='block'
+  $("#login").show() ;
 }
 
 function closeLogin(){
-  document.getElementById('login').style.display='none';
+  $("#login").hide(500) ;
 }
 
 function showPic(pic){
   document.getElementById('pic_container').src = pic;
-  document.getElementById('picture').style.display='block';
+  $("#picture").show() ;
+}
+
+function showArticle(pic){
+  document.getElementById('article-pic').src = pic;
+  $("#article").show() ;
+  $("#article-tag").show() ;
+  $("#article-x").show();
+}
+function closeArticle(){
+  $("#article-x").slideUp(500) ;
+  $("#article-tag").slideUp(500) ;
+  $("#article").slideUp(500) ;
 }
