@@ -164,3 +164,51 @@ $full-width: 100%;
   width: 150px;
   letter-spacing: 2px;
 }
+
+.article-modal-outer{
+  width: $full-width;
+  padding-bottom: $small-width;
+}
+.article-modal-outer-x2{
+  margin-right: $small-width - 20;
+  margin-left: $small-width - 20;
+  margin-top: $small-width;
+}
+.article-modal-x{
+  color: white;
+  background-color: black;
+  height: $small-width /2;
+  padding-top: 11px;
+}
+.article-modal-pic-outer{
+  text-align: center;
+  margin-bottom: $small-width;
+}
+.article-modal-pic{
+  max-width: 80%;
+  max-hight: 20%;
+}
+.article-modal-title{
+  font-family: "Philosopher", serif;
+  font-size: $small-width - 60;
+}
+.article-modal-tag{
+  margin-left: $small-width - 50;
+  margin-top: $small-width - 50;
+}
+.article-modal-date{
+  margin-top: $small-width - 70;
+  text-align: center;
+}
+.article-modal-text-outer{
+  text-align: left;
+  padding-right: $small-width *3 ;
+  padding-left: $small-width *3;
+  padding-top: $small-width - 20;
+}
+.article-modal-text{
+  font-size: 30px;
+  font-family: "Open Sans Condensed", serif;
+  color: black; 
+  letter-spacing: 1px;
+}
