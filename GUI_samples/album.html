@@ -82,7 +82,7 @@
       <div class='nav-header-outer'>
         <span class="w3-left w3-padding nav-logo"><span class='nav-logo-b'>B</span>LOGATE</span>
         <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white"><i class="fa fa-bars w3-hover-opacity" aria-hidden="true"></i></a>
-        <a id='add-btn' href="#new" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
+        <a id='add-btn' href="#add-pic" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
       </div>
     </header>
 
@@ -92,7 +92,7 @@
     <!-- Page Content - contains the footer -->
     <div id='top' class="" style="max-width: 100%;margin-top: 82px;">
       <!--Slide show div -->
-      <div class='w3-card-4' style='padding-left: 325px;padding-top: 50px;padding-bottom: 100px;background-color: #131418;margin-bottom: 50px;border-top: 20px solid #ef5350;'>
+      <div class='w3-card-4' style='padding-left: 325px;padding-top: 50px;padding-bottom: 100px;background-color: #131418;margin-bottom: 50px;border-top: 20px solid #ef5350;height: 1000px;'>
 
         <div style="margin-left: 500px;margin-bottom: 70px;">
           <h4 class='recent-title'><span class='recent-title-letter-big' style='color: #ef5350; font-size: 50px;'>F</span>eatured <span class='recent-title-letter-small' style='color: #ef5350;font-size: 50px;'>P</span>ictures</h4>
@@ -101,29 +101,29 @@
 
         <!-- Slideshow -->
         <div class="w3-container" style='width: 80%;'>
-          <div class="w3-display-container mySlides">
-            <img src="pictures/coffee1.jpg" style="width:100%">
+          <div class="w3-display-container mySlides" style='height: 560px;'>
+            <img id= "image-slide" src="pictures/coffee1.jpg" style="width:100%">
             <div class="w3-display-topleft w3-container w3-padding-32">
-              <span class="w3-white w3-padding-large w3-animate-bottom">Lorem ipsum</span>
+              <span class="w3-white w3-padding-large">Beautiful day</span>
             </div>
           </div>
-          <div class="w3-display-container mySlides">
+          <div id= "image-slide" class="w3-display-container mySlides">
             <img src="pictures/coffee2.jpg" style="width:100%">
-            <div class="w3-display-middle w3-container w3-padding-32">
-              <span class="w3-white w3-padding-large w3-animate-bottom">Klorim tipsum</span>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large">Beautiful day</span>
             </div>
           </div>
-          <div class="w3-display-container mySlides">
+          <div id= "image-slide" class="w3-display-container mySlides">
             <img src="pictures/coffee3.jpg" style="width:100%">
-            <div class="w3-display-topright w3-container w3-padding-32">
-              <span class="w3-white w3-padding-large w3-animate-bottom">Blorum pipsum</span>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large">Beautiful day</span>
             </div>
           </div>
 
           <!-- Slideshow next/previous buttons -->
           <div class="w3-container w3-padding w3-xlarge w3-card-4" style='background-color: #ef5350'>
-            <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-            <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+            <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal" style='color:white;'></i></div>
+            <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal" style='color:white;'></i></div>
 
             <div class="w3-center">
               <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
@@ -134,67 +134,126 @@
         </div>
       </div>
 
-      <div class='container' style='width: 100%;overflow:hidden;margin-top: 100px; margin-bottom: 200px;'>
+      <div class='container w3-card-4' style='width: 100%;margin-top: 100px; padding-bottom: 200px;'>
 
-        <div style="margin-left: 820px;margin-bottom: 70px;">
-          <h4 class='recent-title' style='color: black'><span class='recent-title-letter-big' style='color: #ef5350; font-size: 50px;'>A</span>ll <span class='recent-title-letter-small' style='color: #ef5350;font-size: 50px;'>P</span>ictures</h4>
-          <h5 style='color: #ef5350;margin-left: 70px;'><b>_________</b></h5>
-        </div>
+        <div>
+          <div class='row' style='margin-left: 60px;margin-right: 30px;padding-left: 35px;'>
 
-        <div style='overflow: hidden'>
-          <div class='row' style='margin-left: 100px;position: absolute'>
-            <a href="pictures/art1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: red;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/art1.jpg");background-position: center;'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/art4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: blue;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/art4.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/advent11.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: green;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/advent11.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: gray;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/girl2.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/art1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: pink;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/girl4.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/food3.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: yellow;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/food3.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/p1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: black;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/p1.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/p2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/p2.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/album8.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: pink;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/album12.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/art1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: yellow;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/album8.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
-            </div></a>
-            <a href="pictures/album13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: black;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/album13.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+            <div style="margin-left: 700px;margin-bottom: 70px;margin-top: 50px;">
+              <h4 class='recent-title' style='color: black'><span class='recent-title-letter-big' style='color: #ef5350; font-size: 50px;'>A</span>ll <span class='recent-title-letter-small' style='color: #ef5350;font-size: 50px;'>P</span>ictures</h4>
+              <h5 style='color: #ef5350;margin-left: 70px;'><b>_________</b></h5>
             </div>
-            <a href="pictures/food2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/food2.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+
+
+            <a href="pictures/art1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class=' pic' style='width: 390px; height: 350px;background-image: url("pictures/art1.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
             </div></a>
-            <a href="pictures/p4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/p4.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+            <a href="pictures/art4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/art4.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
             </div></a>
-            <a href="pictures/coffee1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/coffee1.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+            <a href="pictures/girl5.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/girl5.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
             </div></a>
-            <a href="pictures/p7.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/p7.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+            <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/girl4.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
             </div></a>
-            <a href="pictures/pic13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-sm-3 w3-margin w3-card-4 container pic' style='background-color: white;width: 400px;margin-right: 20px;height: 350px;background-image:url("pictures/pic13.jpg");background-position: center'>
-              <div class="w3-display-topright w3-padding w3-light-gray w3-card-4"><i class="fa fa-star fa-lg"></i></div>
+            <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/girl4.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/food3.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/food3.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/p1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/p1.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/p2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/p2.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/album8.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/album8.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/food4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/food4.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/album13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/album13.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/food2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/food2.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/p4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/p4.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/coffee1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='pic' style='width: 390px; height: 350px;background-image: url("pictures/coffee1.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/p7.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/p7.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+            </div></a>
+            <a href="pictures/pic13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container' style='width: 400px; height: 360px;margin-right: 20px;'>
+              <div class='w3-card-4 pic' style='width: 390px; height: 350px;background-image: url("pictures/pic13.jpg");background-position: center'/>
+              </div>
+              <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
             </div></a>
           </div>
         </div>
 
       </div>
+
+        <div id='add-pic' class='form-textarea w3-card-4' style='border-top: 10px solid #ef5350;background-color: #D7DBDD; width: 100%;padding-top: 100px;padding-bottom: 250px;margin-bottom: 100px;'>
+          <div style="margin-left: 850px;margin-bottom: 70px;margin-top: 50px;">
+            <h4 class='recent-title' style='color: black'><span class='recent-title-letter-big' style='color: #ef5350; font-size: 50px;'>N</span>ew <span class='recent-title-letter-small' style='color: #ef5350;font-size: 50px;'>P</span>icture</h4>
+            <h5 style='color: #ef5350;margin-left: 70px;'><b>_________</b></h5>
+          </div>
+          <div class="form-group" style='width: 40%;margin-left: 550px;'>
+            <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+                <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+            </div>
+            <div class='form-title' style='margin-top: 50px;width: 40%'>
+              <input class='form-control' onkeyup="myFunction()" placeholder="Caption" >
+            </div>
+          </div>
+        </div>
+
+        <div class='w3-white' style ='width: 100%;margin-top: 610px;'>
+          <!-- Footer -->
+          <footer class="container-fluid text-center ">
+            <a id='footer' href="#top" title="To Top">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p class='btn-style'>GO TOP</p>
+          </footer>
+        </div>
 
     </div>
     <script>
@@ -217,12 +276,13 @@
         if (n > x.length) {slideIndex = 1}
         if (n < 1) {slideIndex = x.length} ;
         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";
+          $(x[i]).slideUp(500);
         }
         for (i = 0; i < dots.length; i++) {
            dots[i].className = dots[i].className.replace(" w3-white", "");
         }
-        x[slideIndex-1].style.display = "block";
+        $(x[slideIndex-1]).show(500);
+        //x[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " w3-white";
       }
     </script>
