@@ -12,15 +12,23 @@
     <!--W3C library -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Slabo+27px|Raleway|Acme|Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Slabo+27px|Raleway|Acme|Josefin+Slab|" rel="stylesheet">
     <!--Fontawesome library -->
     <script src="https://use.fontawesome.com/67c4517658.js"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="datepickk-master/dist/datepickk.min.css">
+    <script src="datepickk-master/dist/datepickk.min.js"></script>
     <!-- Javascript and CSS-->
     <link rel="stylesheet" href="style5.css">
     <link rel='stylesheet' href='welcome_style.css' />
     <link rel='stylesheet' href='homePage_style.css' />
     <script src='welcome_code.js'></script>
+    <style>
+    #datepicker{
+      max-width: 500px;
+      height: 500px;
+      width: 100%;
+      }
+    </style>
   </head>
   <body >
     <!-- Sidebar/menu -->
@@ -95,14 +103,29 @@
           </div>
 
           <!--Calendar and social media container -->
-          <div class='col-xs-5' style='margin-top: 80px;'>
+          <div class='col-xs-5' style='margin-top: 50px;'>
             <!--Calendar container-->
-            <div class='container w3-card w3-white w3-padding-32 w3-animate-right calendar-outer'>
-              <div class= 'container w3-padding-16 calendar-inner'>
-                <p class='calendar-style'>
-                  Calendar
-                </p>
-              </div>
+            <div class='container w3-padding-32 w3-animate-right calendar-outer' style='font-family: "Spectral SC", Serif; margin-bottom: 130px;'>
+                <div class='w3-card-4' id="datepicker">
+                  <script>
+                  var highlight = {
+                	 start: new Date(2015,6,13),
+                	 end: new Date(2015,6,19),
+                	 backgroundColor: '#3faa56',
+                	 color: '#ffffff',
+                	 legend: 'CSS Conf.'
+                };
+
+                var datepicker = new Datepickk({
+                	container: document.querySelector('#datepicker'),
+                	inline: true,
+                	range: true,
+                	highlight: []
+                });
+
+                var datepicker = new Datepickk();
+                  </script>
+                </div>
             </div>
             <!--Social media container -->
             <div id='socialmedia' class='container w3-card w3-white w3-padding-32 w3-animate-right' style='width: 490px; height: 200px;margin-top: 50px;margin-left: 100px;'>
