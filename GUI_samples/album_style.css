@@ -1,0 +1,92 @@
+.page-content {
+  max-width: 100%;
+  margin-top: 82px; }
+
+.mySlides {
+  display: none; }
+
+.w3-tag, .fa {
+  cursor: pointer; }
+
+.w3-tag {
+  height: 15px;
+  width: 15px;
+  padding: 0;
+  margin-top: 6px; }
+
+.slide-outer {
+  padding-left: 325px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #131418;
+  border-top: 20px solid #ef5350;
+  height: 1000px; }
+
+.slide-title-outer {
+  margin-left: 500px;
+  margin-bottom: 70px; }
+
+.slide-title {
+  color: #ef5350;
+  font-size: 50px; }
+
+.slide-hr {
+  color: #ef5350;
+  margin-left: 110px; }
+
+.photo-album-outer {
+  width: 100%;
+  padding-bottom: 200px; }
+
+.photo-album-inner {
+  margin-left: 60px;
+  margin-right: 30px;
+  padding-left: 35px; }
+
+.photo-album-title-outer {
+  margin-left: 700px;
+  margin-bottom: 100px;
+  margin-top: 200px; }
+
+.photo-album-hr {
+  color: #ef5350;
+  margin-left: 70px; }
+
+.photo-album-pic-outer {
+  width: 400px;
+  height: 360px;
+  margin-right: 20px; }
+
+.photo-album-pic {
+  width: 390px;
+  height: 350px;
+  background-position: center;
+  transition: 1s ease; }
+
+.photo-album-pic:hover {
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+  transition: 1s ease; }
+
+.new-outer {
+  border-top: 10px solid #ef5350;
+  background-color: #D7DBDD;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 250px;
+  margin-bottom: 100px; }
+
+.new-inner {
+  width: 40%;
+  margin-left: 550px; }
+
+.new-caption {
+  margin-top: 50px;
+  width: 40%; }
+
+.footer-outer {
+  width: 100%;
+  margin-top: 610px; }
+
+/*# sourceMappingURL=album_style.css.map */

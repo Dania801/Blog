@@ -1,0 +1,95 @@
+$small-width: 100px;
+$full-width: 100%;
+
+.page-content{
+  max-width: $full-width ;
+  margin-top: 82px;
+}
+.mySlides{
+  display: none;
+}
+.w3-tag, .fa {
+  cursor:pointer
+}
+.w3-tag {
+  height:15px;width:15px;padding:0;margin-top:6px
+}
+
+.slide-outer{
+  padding-left: 325px;
+  padding-top: $small-width - 50;
+  padding-bottom: $small-width;
+  background-color: #131418;
+  border-top: 20px solid #ef5350;
+  height: $small-width *10;
+}
+.slide-title-outer{
+  margin-left: $small-width *5;
+  margin-bottom: $small-width - 30;
+}
+.slide-title{
+  color: #ef5350;
+  font-size: $small-width - 50;
+}
+.slide-hr{
+  color: #ef5350;
+  margin-left: $small-width + 10 ;
+}
+
+.photo-album-outer{
+  width: $full-width;
+  padding-bottom: $small-width *2;
+}
+.photo-album-inner{
+  margin-left: $small-width - 40;
+  margin-right: $small-width - 70;
+  padding-left: 35px;
+}
+.photo-album-title-outer{
+  margin-left: $small-width *7;
+  margin-bottom: $small-width;
+  margin-top: $small-width *2;
+}
+.photo-album-hr{
+  color: #ef5350;
+  margin-left: $small-width - 30;
+}
+.photo-album-pic-outer{
+  width: $small-width *4;
+  height: 360px;
+  margin-right: $small-width - 80;
+}
+.photo-album-pic{
+  width: 390px;
+  height: 350px;
+  background-position: center;
+  transition: 1s ease;
+}
+.photo-album-pic:hover{
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+  transition: 1s ease;
+}
+
+.new-outer{
+  border-top: 10px solid #ef5350;
+  background-color: #D7DBDD;
+  width: $full-width;
+  padding-top: $small-width;
+  padding-bottom: 250px;
+  margin-bottom: $small-width;
+}
+.new-inner{
+  width: 40%;
+  margin-left: 550px;
+}
+.new-caption{
+  margin-top: $small-width - 50;
+  width: 40%
+}
+
+.footer-outer{
+  width: $full-width;
+  margin-top: 610px;
+}
