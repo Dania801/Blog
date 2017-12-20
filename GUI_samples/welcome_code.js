@@ -9,7 +9,7 @@ $(document).ready(() => {
   $("#third-article").show(1500);
 
   // Add smooth scrolling
-  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer, #article").on("click", function (event) {
+  $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer, #article, #pic-stand, #add-pic").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
