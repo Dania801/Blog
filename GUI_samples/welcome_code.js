@@ -7,6 +7,7 @@ $(document).ready(() => {
   $("#second-article").show(1500);
   $("#third-article").hide();
   $("#third-article").show(1500);
+  $("#menu-panel").hide();
 
   // Add smooth scrolling
   $(".navbar a, footer a[href='#myPage'], footer a[href='#home'], nav a, #add-btn, #footer, #article, #pic-stand, #add-pic").on("click", function (event) {
@@ -37,6 +38,11 @@ $(document).ready(() => {
     document.getElementById("mySidebar").style.display = "block";
     $("#sidebar-x").show(500);
     document.getElementById("myOverlay").style.display = "block";
+  });
+  // show sidebar
+  $("#menu-btn").on("click", () => {
+    $("#menu-panel").show() ;
+    document.getElementById('#menu-panel').style.visibility='visible';
   });
   // show search panel
   $("#search-btn").on("click", () => {

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Events</title>
+    <!--Bootstrap and JQuery libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--W3C library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300" rel="stylesheet">
+    <!--Fontawesome library -->
+    <script src="https://use.fontawesome.com/67c4517658.js"></script>
+    <!--Calendar Library -->
+    <link rel="stylesheet" href="datepickk-master/dist/datepickk.min.css">
+    <script src="datepickk-master/dist/datepickk.min.js"></script>
+    <!-- Javascript and CSS-->
+    <link rel="stylesheet" href="style5.css">
+    <link rel='stylesheet' href='welcome_style.css' />
+    <link rel='stylesheet' href='homePage_style.css' />
+    <link rel='stylesheet' href='journal_style.css' />
+    <link rel='stylesheet' href='album_style.css'/>
+    <script src='welcome_code.js'></script>
+    <style>
+    #datepicker{
+      height: 720px;
+      margin-top: 30px;
+    }
+
+    </style>
+  </head>
+  <body class='w3-light-gray'>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-white" style="width:25%;right:0;">
+      <h3 class="w3-bar-item"></h3>
+
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-right:25%">
+
+
+      <!-- Sidebar/menu -->
+      <nav class="w3-sidebar w3-card-4 w3-black w3-collapse w3-top w3-large w3-padding w3-animate-left sidebar-layout"><br>
+        <div class="w3-container sidebar-logo">
+          <a class="navbar-brand logo w3-padding-32" href="#home"><span class="logo-B">B</span>LOGATE</a>
+        </div>
+        <div class="w3-bar-block">
+          <a href="#home" class="w3-bar-item w3-button w3-hover-white">Home</a>
+          <a href="#journal" class="w3-bar-item w3-button w3-hover-white">Journal</a>
+          <a href="#events" class="w3-bar-item w3-button w3-hover-white">Events</a>
+          <a href="#album" class="w3-bar-item w3-button w3-hover-white">Album</a>
+          <a href="#socialmedia" class="w3-bar-item w3-button w3-hover-white">Social Media</a>
+        </div>
+        <div style='margin-top: 380px;'>
+          <a href=''><i class="fa fa-cog fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a>
+          <a href=''><i class="fa fa-sign-out fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a>
+        </div>
+      </nav>
+
+
+      <div style='margin-left: 300px;'>
+        <!--Calendar container-->
+        <div class='container w3-padding-32 w3-animate-right' style='font-family: "Spectral SC";width: 1000px;'>
+            <div class='w3-card-4' id="datepicker" style='margin-top: 70px;'>
+              <script>
+              var highlight = {
+               start: new Date(2015,6,13),
+               end: new Date(2015,6,19),
+               backgroundColor: '#3faa56',
+               color: '#ffffff',
+               legend: 'CSS Conf.'
+            };
+
+            var datepicker = new Datepickk({
+              container: document.querySelector('#datepicker'),
+              inline: true,
+              range: true,
+              highlight: []
+            });
+
+            var datepicker = new Datepickk();
+              </script>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>
