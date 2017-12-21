@@ -38,8 +38,27 @@
 
     <!-- Sidebar -->
     <div class="w3-sidebar w3-bar-block w3-card w3-white" style="width:25%;right:0;">
-      <h3 class="w3-bar-item"></h3>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
 
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
+      <div class='w3-card-4 w3-light-gray' style='width: 100%; height: 150px;'>
+
+      </div>
     </div>
 
     <!-- Page Content -->
@@ -68,7 +87,10 @@
       <div style='margin-left: 300px;'>
         <!--Calendar container-->
         <div class='container w3-padding-32 w3-animate-right' style='font-family: "Spectral SC";width: 1000px;'>
-            <div class='w3-card-4' id="datepicker" style='margin-top: 70px;'>
+          <div>
+            <a id='add-event' onclick="showAddEvent()" class="w3-right w3-button w3-white w3-card-4"><i class="fa fa-plus-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></a>
+          </div>
+          <div class='w3-card-4' id="datepicker" style='margin-top: 70px;'>
               <script>
               var highlight = {
                start: new Date(2015,6,13),
@@ -87,9 +109,40 @@
 
             var datepicker = new Datepickk();
               </script>
-            </div>
+          </div>
         </div>
+      </div>
 
+      <!--New Event modal -->
+      <div id="new-event" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+          <div class="w3-container w3-display-container">
+            <span onclick="closeAddEvent()" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
+            <h1 class='text-center main-title'>New Event</h1>
+          </div>
+          <div style='margin-top: 30px;text-align:center;'>
+            <div style='width: 500px; margin-left: 80px;margin-bottom: 30px;'>
+              <input class="w3-input w3-border w3-hover-border-black full-width" type="text" placeholder="Title" required>
+            </div>
+            <div style='margin-left: 100px;margin-right: 60px;margin-bottom: 40px;'>
+              <div class='row'>
+                <div class='col-sm-6'>
+                  <p style='float:left;margin-top: 10px;margin-right: 20px;'>From</p>
+                  <div style='width: 150px;float: left;'>
+                    <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="From" required>
+                  </div>
+                </div>
+                <div class='col-sm-6'>
+                  <p style='float:left;margin-top: 10px;margin-right: 20px;'>To</p>
+                  <div style='width: 150px;float: left;'>
+                    <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="To" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="w3-button w3-black btn-style">DONE</button>
+          </div>
+        </div>
       </div>
 
     </div>

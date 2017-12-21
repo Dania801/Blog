@@ -61,6 +61,13 @@ $(document).ready(() => {
   });
 })
 
+function showAddEvent(){
+  $("#new-event").show() ;
+}
+function closeAddEvent(){
+  $("#new-event").hide() ; 
+}
+
 function showLogin(){
   $("#login").show() ;
 }
