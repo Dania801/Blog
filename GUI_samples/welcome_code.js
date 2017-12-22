@@ -62,10 +62,51 @@ $(document).ready(() => {
 })
 
 function showAddEvent(){
-  $("#new-event").show() ;
+  $("#new-event").slideDown(500) ;
+  $("#new-event-inner").slideDown(500) ;
 }
 function closeAddEvent(){
-  $("#new-event").hide() ; 
+  $("#new-event-inner").slideUp(250) ;
+  $("#new-event").slideUp(500) ;
+}
+
+function showEvent(){
+  $("#event").slideDown(500) ;
+  $("#event-inner").slideDown(500);
+  $("#event-title").show() ;
+  $("#event-time").show() ;
+  $("#event-detail").show() ;
+
+  $("#edit-title").hide();
+  $("#edit-date").hide();
+  $("#edit-detail").hide();
+}
+function closeEvent(){
+  $("#event-inner").slideUp(350);
+  $("#event").slideUp(500) ;
+}
+function editEvent(){
+  $("#event-title").hide();
+  $("#edit-title").show(500);
+  $("#event-time").hide();
+  $("#edit-date").show(500);
+  $("#event-detail").hide();
+  $("#edit-detail").show(500);
+}
+function backEvent(){
+  $("#edit-title").slideUp(500);
+  $("#edit-date").slideUp(500);
+  $("#edit-detail").slideUp(500);
+
+  $("#event-title").show(500) ;
+  $("#event-time").show(500) ;
+  $("#event-detail").show(500) ;
+}
+function ensureDelete(){
+  $("#delete-event").show();
+}
+function closeConfirm(){
+  $("#delete-event").hide(500);
 }
 
 function showLogin(){
