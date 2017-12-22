@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photo album</title>
+    <!--Bootstrap and JQuery libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--W3C library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300" rel="stylesheet">
+    <!--Fontawesome library -->
+    <script src="https://use.fontawesome.com/67c4517658.js"></script>
+    <!-- Lightbox Llibrary-->
+    <link href="../../lightbox2-master/src/css/lightbox.css" rel="stylesheet">
+    <script src="../../lightbox2-master/src/js/lightbox.js"></script>
+    <!-- Javascript and CSS-->
+    <link rel="stylesheet" href="../style5.css">
+    <link rel='stylesheet' href='../Welcome/welcome_style.css' />
+    <link rel='stylesheet' href='../Home/homePage_style.css' />
+    <link rel='stylesheet' href='../Journal/journal_style.css' />
+    <link rel='stylesheet' href='album_style.css'/>
+    <script src='../Welcome/welcome_code.js'></script>
+  </head>
+  <body style='background-color: lavender;'>
+    <!-- Sidebar -->
+    <nav class="w3-card-4 w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large sidebar-outer" id="mySidebar">
+      <div id='sidebar-x' class='container sidebar-x'><a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32"><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></a></div>
+      <div class='sidebar-options-outer'>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Journal</a>
+        <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Events</a>
+      </div>
+    </nav>
+    <!-- Navigator -->
+    <header class="w3-card-4 w3-top w3-white w3-xlarge" style='padding-top: 13px;'>
+      <div class='nav-header-outer'>
+        <span class="w3-left w3-padding nav-logo"><span class='nav-logo-b'>B</span>LOGATE</span>
+        <a id='sidebar-btn' href="javascript:void(0)" class="w3-right w3-button w3-white"><i class="fa fa-bars w3-hover-opacity" aria-hidden="true"></i></a>
+        <a id='add-btn' href="#add-pic" class="w3-right w3-button w3-white"><i class="fa fa-plus-circle w3-hover-opacity" aria-hidden="true"></i></a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div id='top' class="page-content">
+      <!--Slideshow div -->
+      <div class='w3-card-4 slide-outer'>
+        <!-- Slideshow title-->
+        <div class='slide-title-outer'>
+          <h4 class='recent-title'><span class='recent-title-letter-big slide-title'>F</span>eatured <span class='recent-title-letter-small slide-title'>P</span>ictures</h4>
+          <h5 class='slide-hr'><b>_________</b></h5>
+        </div>
+
+        <!-- Slideshow -->
+        <div class="w3-container" style='width: 80%;'>
+          <!--Image 1 -->
+          <div class="w3-display-container mySlides" style='height: 560px;'>
+            <a href="pictures/coffee1.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img id= "image-slide" src="pictures/coffee1.jpg" style="width:100%"></a>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large">Beautiful day</span>
+            </div>
+          </div>
+          <!--Image 2 -->
+          <div id= "image-slide" class="w3-display-container mySlides">
+            <a href="pictures/coffee2.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img src="pictures/coffee2.jpg" style="width:100%"></a>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large">Beautiful day</span>
+            </div>
+          </div>
+          <!--Image 3 -->
+          <div id= "image-slide" class="w3-display-container mySlides">
+            <a href="pictures/coffee3.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img src="pictures/coffee3.jpg" style="width:100%"></a>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large">Beautiful day</span>
+            </div>
+          </div>
+
+          <!-- Slideshow next/previous buttons -->
+          <div class="w3-container w3-padding w3-xlarge w3-card-4" style='background-color: #ef5350'>
+            <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal" style='color:white;'></i></div>
+            <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal" style='color:white;'></i></div>
+
+            <div class="w3-center">
+              <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+              <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+              <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Album Container -->
+      <div class='container w3-card-4 photo-album-outer'>
+          <div class='row photo-album-inner'>
+
+            <div class='photo-album-title-outer'>
+              <h4 class='recent-title' style='color: black'><span class='recent-title-letter-big slide-title'>A</span>ll <span class='recent-title-letter-small' style='color: #ef5350;font-size: 50px;'>P</span>ictures</h4>
+              <h5 class='photo-album-hr'><b>_________</b></h5>
+            </div>
+
+            <div class='slideanim' id='pic-stand'>
+              <a href="pictures/art1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/art1.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/art4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/art4.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/girl5.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl5.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl4.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl4.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/food3.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/food3.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/p1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p1.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/p2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p2.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/album8.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/album8.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/food4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/food4.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/album13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/album13.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/food2.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/food2.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/p4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p4.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/coffee1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/coffee1.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/p7.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p7.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+              <a href="pictures/pic13.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+                <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/pic13.jpg");'/>
+                </div>
+                <div class="w3-display-topleft w3-padding w3-light-gray w3-card-4"><i class="fa fa-star"></i></div>
+              </div></a>
+            </div>
+
+          </div>
+      </div>
+      <!-- Add new pic container-->
+      <div id='add-pic' class='form-textarea w3-card-4 slideanim new-outer'>
+        <div style="margin-left: 850px;margin-bottom: 70px;margin-top: 50px;">
+          <h4 class='recent-title' style='color: black'><span class='recent-title-letter-big slide-title'>N</span>ew <span class='recent-title-letter-small slide-title'>P</span>icture</h4>
+          <h5 class='photo-album-hr'><b>_________</b></h5>
+        </div>
+        <div class="form-group new-inner">
+          <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+              <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+          </div>
+          <div class='form-title new-caption'>
+            <input class='form-control' onkeyup="myFunction()" placeholder="Caption" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='w3-white footer-outer'>
+      <!-- Footer -->
+      <footer class="container-fluid text-center ">
+        <a id='footer' href="#top" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p class='btn-style'>GO TOP</p>
+      </footer>
+    </div>
+
+    <script>
+      // Slideshow
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demodots");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+          $(x[i]).slideUp(500);
+        }
+        for (i = 0; i < dots.length; i++) {
+           dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        $(x[slideIndex-1]).show(500);
+        dots[slideIndex-1].className += " w3-white";
+      }
+    </script>
+  </body>
+</html>
