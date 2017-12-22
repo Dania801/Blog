@@ -27,6 +27,8 @@ $(document).ready(() => {
       });
     }
   });
+
+
   // close sidebar smoothly
   $("#sidebar-x").on("click", () => {
     $("#sidebar-x").hide(500);
