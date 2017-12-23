@@ -182,7 +182,7 @@ $small-width: 100px;
   @extend .generic-font ;
   margin-left: 650px;
   font-family: 'Josefin Slab', serif;
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 60px;
 }
 .album-pic{
@@ -202,7 +202,7 @@ $small-width: 100px;
    background-color: #D0D3D4 ;
    width: 1620px;
    margin-left: 285px ;
-   margin-top: 2930px;
+   margin-top: 2430px;
    position: absolute;
    padding-bottom: 50px;
 }
@@ -272,7 +272,7 @@ $small-width: 100px;
 
 .event-background{
   margin-left: 285px;
-  margin-top: 4785px;
+  margin-top: 4285px;
   background-color: #D5D8DC;
   background-image: url('pictures/pic12.jpg');
   background-position:center;
@@ -284,7 +284,7 @@ $small-width: 100px;
 }
 .event-outer{
   margin-left: 550px;
-  margin-top: 4750px;
+  margin-top: 4250px;
   position: absolute;
 }
 .events-title{
@@ -297,6 +297,6 @@ $small-width: 100px;
 
 .footer{
   position: absolute;
-  margin-top: 5700px;
+  margin-top: 5200px;
   margin-left: $small-width *10 ;
 }

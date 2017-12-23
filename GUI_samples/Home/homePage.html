@@ -22,7 +22,12 @@
     <link rel="stylesheet" href="../style5.css">
     <link rel='stylesheet' href='../Welcome/welcome_style.css' />
     <link rel='stylesheet' href='homePage_style.css' />
+    <link rel='stylesheet' href='../Album/album_style.css' />
+    <link rel='stylesheet' href='../Journal/journal_style.css'/>
     <script src='../Welcome/welcome_code.js'></script>
+    <!-- Lightbox Llibrary-->
+    <link href="../../lightbox2-master/src/css/lightbox.css" rel="stylesheet">
+    <script src="../../lightbox2-master/src/js/lightbox.js"></script>
     <style>
     #datepicker{
       max-width: 500px;
@@ -33,8 +38,8 @@
   </head>
   <body >
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-card-4 w3-black w3-collapse w3-top w3-large w3-padding w3-animate-left sidebar-layout"><br>
-      <div class="w3-container sidebar-logo">
+    <nav class="w3-sidebar w3-card-4 w3-black w3-collapse w3-top w3-large w3-padding sidebar-layout"><br>
+      <div class="w3-container sidebar-logo w3-animate-zoom">
         <a class="navbar-brand logo w3-padding-32" href="#home"><span class="logo-B">B</span>LOGATE</a>
       </div>
       <div class="w3-bar-block">
@@ -57,7 +62,7 @@
       <div style='margin-left:300px;'>
         <!--Cover image container -->
         <div class='post-cover-layout'>
-          <div class="container w3-opacity w3-grayscale-min w3-animate-zoom image-cover"></div>
+          <div class="container w3-opacity w3-grayscale-min image-cover"></div>
           <div class='container w3-card-4 cover-decoration-light'></div>
           <div class='container w3-card-4 cover-decoration-dark'></div>
         </div>
@@ -65,10 +70,10 @@
         <!--Personal Picture and name container-->
         <div class='personal-info'>
           <div class='row'>
-            <div class='col-xs-4 w3-animate-zoom personal-image-outer'>
-              <img onclick="showPic('pictures/album2.jpg')" class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me">
+            <div class='col-xs-4 personal-image-outer w3-animate-zoom'>
+              <a href="pictures/album2.jpg" data-lightbox="galleryone"><img onclick="showPic('pictures/album2.jpg')" class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
             </div>
-            <div class='col-xs-8 w3-animate-top personal-name'>
+            <div class='col-xs-8 personal-name'>
               <h2 class='personl-name-style'><span style='font-size: 140px;'>W</span>elcome, Julia</h2>
             </div>
           </div>
@@ -148,33 +153,41 @@
       </div>
 
       <!--Photo album outer container-->
-      <div id='album' class= 'container w3-padding-16 w3-card-4 album-outer'>
+      <div id='album' class= 'container w3-padding-16 w3-card-4 album-outer' style='height: 1200px;'>
         <h1 class='album-title'>Photo Album</h1>
         <!--Photo album inner container-->
-        <div class="container-fluid text-center">
-          <!-- Wrapper for slides -->
-          <div class="slideanim" style='height: 700px; '>
-            <!--Images-->
-            <!-- Grid for photos -->
-            <div class="w3-row-padding">
-              <div class="w3-half">
-                <img class='album-pic' onclick="showPic('pictures/advent1.jpg')" src="pictures/advent1.jpg">
-                <img class='album-pic' onclick="showPic('pictures/advent2.jpg')" src="pictures/advent2.jpg">
-                <img class='album-pic' onclick="showPic('pictures/advent3.jpg')" src="pictures/advent3.jpg">
-              </div>
-
-              <div class="w3-half" style='margin-bottom: 150px;'>
-                <img class='album-pic' onclick="showPic('pictures/advent4.jpg')" src="pictures/advent4.jpg">
-                <img class='album-pic' onclick="showPic('pictures/advent5.jpg')" src="pictures/advent5.jpg">
-                <img class='album-pic' onclick="showPic('pictures/advent6.jpg')" src="pictures/advent6.jpg">
-              </div>
-              <div class='album-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">More images</button>
-              </div>
+        <div style='margin-left: 150px;margin-top: 50px;padding-bottom: 100px;position: relative;'>
+          <a href="pictures/art4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/art4.jpg");'/>
             </div>
+          </div></a>
+          <a href="pictures/girl5.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl5.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl4.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/food3.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/food3.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/p1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p1.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/coffee1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/coffee1.jpg");'/>
+            </div>
+          </div></a>
+
+          <div class='form-btn-outer' style='width: 75%;margin-left: 100px;margin-top: 700px; padding-top: 100px;position: absolute;'>
+            <button type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn">Get More Photos</button>
           </div>
         </div>
       </div>
+    </div>
 
       <!--Picture modal -->
       <div id="picture" class="w3-modal">
@@ -208,7 +221,7 @@
               </div>
               <h5 class='col-title'>Exploring Norway's Coast</h5>
               <div class= 'col-pic'>
-                <img src='pictures/album10.jpg' class='col-pic'>
+                <img src='pictures/advent5.jpg' class='col-pic'>
               </div>
               <div class='col-article-outer'>
                 <p class='col-article'>
@@ -216,7 +229,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/advent5.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -231,7 +244,7 @@
               </div>
               <h5 class='col-title'>Exploring Norway's Coast</h5>
               <div class= 'col-pic'>
-                <img src='pictures/album10.jpg' class='col-pic'>
+                <img src='pictures/advent9.jpg' class='col-pic'>
               </div>
               <div class='col-article-outer'>
                 <p class='col-article'>
@@ -239,7 +252,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/advent9.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -269,7 +282,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album10.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -284,7 +297,7 @@
               </div>
               <h5 class='col-title'>Exploring Norway's Coast</h5>
               <div class= 'col-pic'>
-                <img src='pictures/album10.jpg' class='col-pic'>
+                <img src='pictures/album11.jpg' class='col-pic'>
               </div>
               <div class='col-article-outer'>
                 <p class='col-article'>
@@ -292,7 +305,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -314,7 +327,7 @@
               </div>
               <h5 class='col-title'>Exploring Norway's Coast</h5>
               <div class= 'col-pic'>
-                <img src='pictures/album10.jpg' class='col-pic'>
+                <img src='pictures/album12.jpg' class='col-pic'>
               </div>
               <div class='col-article-outer'>
                 <p class='col-article'>
@@ -322,7 +335,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -337,7 +350,7 @@
               </div>
               <h5 class='col-title'>Exploring Norway's Coast</h5>
               <div class= 'col-pic'>
-                <img src='pictures/album10.jpg' class='col-pic'>
+                <img src='pictures/album13.jpg' class='col-pic'>
               </div>
               <div class='col-article-outer'>
                 <p class='col-article'>
@@ -345,7 +358,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -469,6 +482,38 @@
         </a>
         <p class='btn-style'>GO TOP</p>
       </footer>
+
+
+      <!--Article Modal -->
+      <div id="article" class="w3-modal w3-animate-zoom" style='padding: 50px;'>
+        <div class="w3-container w3-white w3-card article-modal-outer">
+          <div class="w3-container article-modal-outer-x2">
+            <span id='article-x' onclick="closeArticle()" class="w3-button w3-display-topright article-modal-x" ><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></span>
+            <div class='article-modal-pic-outer'>
+              <img id = 'article-pic' class='w3-border w3-card-4 article-modal-pic' src="">
+            </div>
+            <div style='text-align: center'>
+              <h2 class='article-modal-title'>Some Title</h2>
+            </div>
+            <div id='article-tag' class="w3-display-topleft w3-black w3-padding article-modal-tag">Social</div>
+            <div class='article-modal-date'>
+              <p>
+                Posted on October 12, 2017
+              </p>
+            </div>
+            <div class='article-modal-text-outer'>
+              <p class='article-modal-text'>
+                Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
+
+                Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
+
+                Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
