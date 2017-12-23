@@ -71,7 +71,7 @@
         <div class='personal-info'>
           <div class='row'>
             <div class='col-xs-4 personal-image-outer w3-animate-zoom'>
-              <a href="pictures/album2.jpg" data-lightbox="galleryone"><img onclick="showPic('pictures/album2.jpg')" class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
+              <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
             </div>
             <div class='col-xs-8 personal-name'>
               <h2 class='personl-name-style'><span style='font-size: 140px;'>W</span>elcome, Julia</h2>
@@ -95,7 +95,7 @@
                 <h2 class='article-title-style'>Exploring Norway's Coast</h2>
               </div>
               <!-- Article image container-->
-              <div class= 'container w3-padding-16 article-image'></div>
+              <div class= 'container w3-padding-16 article-image' style="background-image: url('pictures/album9.jpg');"></div>
               <!-- Article container-->
               <div class='article-content'>
                 <p class='article-content-font'>
@@ -103,7 +103,7 @@
                 </p>
               </div>
               <div class='article-btn'>
-                <button type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album9.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
           </div>
@@ -182,8 +182,8 @@
             </div>
           </div></a>
 
-          <div class='form-btn-outer' style='width: 75%;margin-left: 100px;margin-top: 700px; padding-top: 100px;position: absolute;'>
-            <button type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn">Get More Photos</button>
+          <div style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;'>
+            <button type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn" style='width: 400px;'>Get More Photos</button>
           </div>
         </div>
       </div>
@@ -314,7 +314,7 @@
           </div>
           <!--Third Column -->
           <div class='container col-xs-4 w3-card-4 w3-white slideanim journal-col-outer'>
-            <h3 class='col-tag'>POLITICAL</h3>
+            <h3 class='col-tag'>TECHNOLOGY</h3>
             <div style="margin-left: 153px;">
               <hr class='hr-short'/>
             </div>
@@ -335,7 +335,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album12.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -358,7 +358,7 @@
                 </p>
               </div>
               <div class='col-article-btn'>
-                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+                <button onclick="showArticle('pictures/album13.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
               </div>
             </div>
             <div class='hr-outer'>
@@ -379,7 +379,7 @@
             <h3 class='events-title'>Events for this month</h3>
               <!-- First Event-->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style='height: 160px;'>
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>
@@ -395,7 +395,7 @@
               </div>
               <!--Second Event -->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style="height: 160px;">
+                <div class="w3-card-4 w3-white" style="height: 160px;border-top: 10px solid black;">
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>
@@ -411,7 +411,7 @@
               </div>
               <!-- Third Event-->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style='height: 160px;'>
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>
@@ -427,7 +427,7 @@
               </div>
               <!--Fourth event -->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style='height: 160px;'>
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>
@@ -443,7 +443,7 @@
               </div>
               <!-- Fifth event -->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style='height: 160px;'>
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>
@@ -459,7 +459,7 @@
               </div>
               <!-- Sixth event-->
               <div class="col-xs-4 w3-margin-bottom">
-                <div class="w3-card-4 w3-white" style='height: 160px;'>
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
                   <footer class='w3-container' style='padding-top: 50px;'>
                     <div class='row'>
                       <div class='col-xs-2 w3-card-4 w3-black event-date'>

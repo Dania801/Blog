@@ -40,18 +40,18 @@ NEEDED MODIFICATION
 - - - - - - - - - -
 1- entering animation of welcome page [X]
 2- entering animation of home page [X]
-3- photo album of home page looks ugly 
-4- use light box for photo album in home page
-5- use light box for profile and cover picture in home page 
-6- add the ability of opening the recent post in home page 
+3- photo album of home page looks ugly  [X]
+4- use light box for photo album in home page [X]
+5- use light box for profile and cover picture in home page [X] 
+6- add the ability of opening the recent post in home page [X]
 7- do something about the social media thing 
-8- add the ability to open posts in columns in home page 
-9- customize events in home page
+8- add the ability to open posts in columns in home page [X]
+9- customize events in home page [X]
 10- setting modal in home page 
 11- logout confirmation 
-12- edit the sidebar of journal and album page
+12- edit the sidebar of journal and album page [X]
 13- add the ability to add pic to favourite (JS work)
-14- modify the ugly titles in album and jounal pages
+14- modify the ugly titles in album and jounal pages [X]
 15- code the settings and logout in event page
 16- add logout property to journal page
 17- add logout property to album page
