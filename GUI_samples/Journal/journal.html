@@ -78,6 +78,10 @@
         <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Photo Album</a>
         <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">Events</a>
       </div>
+      <div style='margin-top: 350px;margin-left: 20px;'>
+        <a style='margin-right: 10px;'><i onclick="openSetting()" class="fa fa-cog fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a>
+        <a><i onclick="openLogout()" class="fa fa-sign-out fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i></a>
+      </div>
     </nav>
     <header class="w3-card-4 w3-top w3-white w3-xlarge" style='padding-top: 13px;'>
       <div class='nav-header-outer'>
@@ -381,6 +385,71 @@
 
                 Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Setting Modal-->
+      <div id="setting" class="w3-modal">
+        <div id='setting-inner' class="w3-modal-content w3-animate-zoom login-modal" style='width: 600px;'>
+          <div class="w3-display-container" style=''>
+            <span onclick="closeSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+            <div id='event-title'>
+              <span id='edit-icon' onclick="editSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-pencil w3-hover-opacity" aria-hidden="true"></i></span>
+              <h1 class=' main-title' style="text-align: center;margin-left: 40px;">Settings</h1>
+            </div>
+          </div>
+            <div id='info' class='row' style='margin-top: 40px;margin-bottom: 20px;margin-left: 30px;'>
+              <div class='col-sm-6' style='width:200px;height:200px;'>
+                <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
+              </div>
+              <div class='col-sm-6' style='margin-top: 42px;margin-left: 20px;'>
+                <p style='font-family: "#413b3b", serif; font-size: 22px;color: black'>Julia something</p>
+                <p style='font-family: "#413b3b", serif; font-size: 20px;color: black'>example1@gmail.com</p>
+              </div>
+            </div>
+            <div id='edit-info'>
+              <div class="form-group" style='width: 400px;margin-left: 70px;margin-top: 40px;'>
+                <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+                </div>
+                <br />
+                  <input class='form-control' placeholder="Name" >
+                  <br />
+                  <input class='form-control' placeholder="Email" >
+                  <br />
+                  <input class='form-control' placeholder="Password" >
+                  <br />
+              </div>
+              <div class='row' style='text-align: center;'>
+                <div class='col-sm-6'>
+                  <button type="submit" class="w3-button w3-black btn-style">DONE</button>
+                </div>
+                <div class='col-sm-6'>
+                  <button type="submit" onclick="backSetting()" class="w3-button w3-black btn-style">BACK</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Cancel an event modal-->
+      <div id="logout" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+          <div class="w3-container w3-display-container">
+            <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+            <h4 style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;'>
+              Are you sure you want to logout ?
+            </h4>
+          </div>
+
+          <div class='row' style='text-align: center;'>
+            <div class='col-sm-6'>
+              <button type="submit" class="w3-button w3-black btn-style">YES</button>
+            </div>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>
             </div>
           </div>
         </div>

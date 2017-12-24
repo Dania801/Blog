@@ -63,6 +63,33 @@ $(document).ready(() => {
   });
 })
 
+function openLogout(){
+  $("#logout").slideDown(500);
+}
+function closeLogout(){
+  $("#logout").slideUp(500);
+}
+
+function openSetting(){
+  $("#edit-info").hide();
+  $("#setting").slideDown(500);
+  $("#setting-inner").slideDown(500);
+}
+function editSetting(){
+  $("#info").hide(500);
+  $("#edit-icon").hide();
+  $("#edit-info").show(500);
+}
+function backSetting(){
+  $("#edit-info").hide(500);
+  $("#edit-icon").show(500);
+  $("#info").show(500);
+}
+function closeSetting(){
+  $("#setting-inner").slideUp(500);
+  $("#setting").slideUp(500);
+}
+
 function showAddEvent(){
   $("#new-event").slideDown(500) ;
   $("#new-event-inner").slideDown(500) ;
