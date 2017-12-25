@@ -161,12 +161,10 @@
         <div class="w3-container sidebar-logo">
           <a class="navbar-brand logo w3-padding-32" href="#home"><span class="logo-B">B</span>LOGATE</a>
         </div>
-        <div class="w3-bar-block">
-          <a href="#home" class="w3-bar-item w3-button w3-hover-white">Home</a>
-          <a href="#journal" class="w3-bar-item w3-button w3-hover-white">Journal</a>
-          <a href="#events" class="w3-bar-item w3-button w3-hover-white">Events</a>
-          <a href="#album" class="w3-bar-item w3-button w3-hover-white">Album</a>
-          <a href="#socialmedia" class="w3-bar-item w3-button w3-hover-white">Social Media</a>
+        <div class="w3-bar-block" style='margin-top: 100px;'>
+          <a href="../Home/homePage.html" class="w3-bar-item w3-button w3-hover-white">Home</a>
+          <a href="../Journal/journal.html" class="w3-bar-item w3-button w3-hover-white">Journal</a>
+          <a href="../Album/album.html" class="w3-bar-item w3-button w3-hover-white">Album</a>
         </div>
         <div style='margin-top: 380px;'>
           <i onclick="openSetting()" class="fa fa-cog fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i>
@@ -370,7 +368,7 @@
 
           <div class='row' style='text-align: center;'>
             <div class='col-sm-6'>
-              <button type="submit" class="w3-button w3-black btn-style">YES</button>
+              <button onclick="location.href='../Welcome/welcomePage.html'" type="submit" class="w3-button w3-black btn-style">YES</button>
             </div>
             <div class='col-sm-6'>
               <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>

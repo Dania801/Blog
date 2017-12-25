@@ -51,7 +51,7 @@
       </div>
       <div style='margin-top: 380px;'>
         <i class="fa fa-cog fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true" onclick="openSetting()"></i>
-        <i class="fa fa-sign-out fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true"></i>
+        <i class="fa fa-sign-out fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true" onclick="openLogout()"></i>
       </div>
     </nav>
 
@@ -183,7 +183,7 @@
           </div></a>
 
           <div style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;'>
-            <button type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn" style='width: 400px;'>Get More Photos</button>
+            <button onclick="location.href='../Album/album.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn" style='width: 400px;'>Get More Photos</button>
           </div>
         </div>
       </div>
@@ -368,7 +368,7 @@
         </div>
         <!-- View more article-->
         <div class='more-article-outer'>
-          <button type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='font-size: 20px;'>Read more posts</button>
+          <button onclick="location.href='../Journal/journal.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='font-size: 20px;'>Read more posts</button>
         </div>
       </div>
 
@@ -473,6 +473,10 @@
                   </footer>
                 </div>
               </div>
+
+              <div class='more-article-outer' style='margin-left: 300px;margin-top: 500px;'>
+                <button onclick="location.href='../Event/events.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='font-size: 20px;'>Check All Events</button>
+              </div>
           </div>
       </div>
       <!-- Footer -->
@@ -509,6 +513,27 @@
 
                 Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancel an event modal-->
+      <div id="logout" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+          <div class="w3-container w3-display-container">
+            <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+            <h4 style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;'>
+              Are you sure you want to logout ?
+            </h4>
+          </div>
+
+          <div class='row' style='text-align: center;'>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="location.href='../Welcome/welcomePage.html'" class="w3-button w3-black btn-style">YES</button>
+            </div>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>
             </div>
           </div>
         </div>
