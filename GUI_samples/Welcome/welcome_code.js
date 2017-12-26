@@ -27,8 +27,6 @@ $(document).ready(() => {
       });
     }
   });
-
-
   // close sidebar smoothly
   $("#sidebar-x").on("click", () => {
     $("#sidebar-x").hide(500);
@@ -158,4 +156,14 @@ function closeArticle(){
   $("#article-x").slideUp(500) ;
   $("#article-tag").slideUp(500) ;
   $("#article").slideUp(500) ;
+}
+
+
+
+function addToFavourit(e){
+  $(e.target).css("color", "#C0392B");
+  //$(e.target.parentElement).parent().css("background-color", "blue");
+  //$(e.target.parentElement).parent().children(':first-child').children().css('height', "700px");
+  let pic = $(e.target.parentElement).parent().children(':first-child').children().css('background-image') ;
+  alert(pic);
 }
