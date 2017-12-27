@@ -75,14 +75,14 @@
           </div>
           <!--Image 2 -->
           <div id= "image-slide" class="w3-display-container mySlides">
-            <a href="pictures/coffee2.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img src="pictures/coffee2.jpg" style="width:100%"></a>
+            <a href="pictures/coffee2.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img id= "image-slide2" src="pictures/coffee2.jpg" style="width:100%"></a>
             <div class="w3-display-topleft w3-container w3-padding-32">
               <span class="w3-white w3-padding-large">Beautiful day</span>
             </div>
           </div>
           <!--Image 3 -->
           <div id= "image-slide" class="w3-display-container mySlides">
-            <a href="pictures/coffee3.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img src="pictures/coffee3.jpg" style="width:100%"></a>
+            <a href="pictures/coffee3.jpg" data-lightbox="gallery2" data-title="Beautiful day"><img id= "image-slide3" src="pictures/coffee3.jpg" style="width:100%"></a>
             <div class="w3-display-topleft w3-container w3-padding-32">
               <span class="w3-white w3-padding-large">Beautiful day</span>
             </div>
@@ -275,6 +275,22 @@
             <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Cancel an event modal-->
+    <div id="favourite-error" class="w3-modal">
+      <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+        <div class="w3-container w3-display-container">
+          <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+          <h4 style='text-align:center;font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;'>
+            The maximum number of favourites is 3 pictures . unstar a picture .
+          </h4>
+        </div>
+
+          <div style='margin-left: 280px;'>
+            <button type="submit" onclick="closeFavouriteError()" class="w3-button w3-black btn-style">Ok</button>
+          </div>
       </div>
     </div>
 

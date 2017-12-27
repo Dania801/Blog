@@ -1,4 +1,8 @@
+let favouriteCount = 0 ;
+let favourites = [] ;
+
 $(document).ready(() => {
+
   $("#article").hide();
   $("#search-panel").hide();
   $("#first-article").hide();
@@ -59,6 +63,7 @@ $(document).ready(() => {
         }
     });
   });
+
 })
 
 function openLogout(){
@@ -161,9 +166,38 @@ function closeArticle(){
 
 
 function addToFavourit(e){
-  $(e.target).css("color", "#C0392B");
-  //$(e.target.parentElement).parent().css("background-color", "blue");
-  //$(e.target.parentElement).parent().children(':first-child').children().css('height', "700px");
-  let pic = $(e.target.parentElement).parent().children(':first-child').children().css('background-image') ;
-  alert(pic);
+  let currentPic = $(e.target.parentElement).parent().children(':first-child').children().css('background-image') ;
+  let picState = favourites.includes(currentPic);
+  alert(favouriteCount + "\n" + picState);
+  if((favouriteCount < 3) && (!picState)){
+    favouriteCount++ ;
+    $(e.target).css("color", "#C0392B");
+    let pic = $(e.target.parentElement).parent().children(':first-child').children().css('background-image') ;
+    favourites.push(pic) ;
+    let third = $("#image-slide3").attr('src');
+    let second = $("#image-slide2").attr('src');
+    let first = $("#image-slide").attr('src');
+
+    $("#image-slide3").attr('src', second);
+    $("#image-slide2").attr('src', first);
+    $("#image-slide").attr('src', second);
+  }else{
+    if(picState){
+      favourites = favourites.filter(function(pic) {
+          return pic !== currentPic
+      })
+      favouriteCount-- ;
+      $(e.target).css("color", "black");
+    }else{
+      showFavouriteError();
+    }
+  }
+}
+
+function showFavouriteError(){
+  $("#favourite-error").slideDown(500);
+}
+
+function closeFavouriteError(){
+  $("#favourite-error").slideUp(500);
 }
