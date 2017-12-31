@@ -1,5 +1,6 @@
 let favouriteCount = 0 ;
 let favourites = [] ;
+let qsRegex = "" ;
 
 $(document).ready(() => {
 
@@ -64,6 +65,17 @@ $(document).ready(() => {
     });
   });
 
+
+  // init Isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.grid-item',
+  layoutMode: 'fitRows',
+  filter: function() {
+    return qsRegex ? $(this).text().match( qsRegex ) : true;
+  }
+});
+
+
 })
 
 function openLogout(){
@@ -74,9 +86,11 @@ function closeLogout(){
 }
 
 function openSetting(){
-  $("#edit-info").hide();
   $("#setting").slideDown(500);
+  $("#edit-info").hide();
   $("#setting-inner").slideDown(500);
+  $("#edit-icon").show(500);
+  $("#info").show(500);
 }
 function editSetting(){
   $("#info").hide(500);
@@ -168,7 +182,6 @@ function closeArticle(){
 function addToFavourit(e){
   let currentPic = $(e.target.parentElement).parent().children(':first-child').children().css('background-image') ;
   let picState = favourites.includes(currentPic);
-  alert(favouriteCount + "\n" + picState);
   if((favouriteCount < 3) && (!picState)){
     favouriteCount++ ;
     $(e.target).css("color", "#C0392B");
@@ -180,7 +193,7 @@ function addToFavourit(e){
 
     $("#image-slide3").attr('src', second);
     $("#image-slide2").attr('src', first);
-    $("#image-slide").attr('src', second);
+    $("#image-slide").attr('src', pic);
   }else{
     if(picState){
       favourites = favourites.filter(function(pic) {
@@ -200,4 +213,25 @@ function showFavouriteError(){
 
 function closeFavouriteError(){
   $("#favourite-error").slideUp(500);
+}
+
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    timeout = setTimeout( delayed, threshold || 100 );
+  }
 }

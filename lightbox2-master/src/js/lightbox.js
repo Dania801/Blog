@@ -486,7 +486,7 @@
     var key     = String.fromCharCode(keycode).toLowerCase();
     if (keycode === KEYCODE_ESC || key.match(/x|o|c/)) {
       this.end();
-    } else if (key === 'p' || keycode === KEYCODE_LEFTARROW) {
+    } else if (key === 'b' || keycode === KEYCODE_LEFTARROW) {
       if (this.currentImageIndex !== 0) {
         this.changeImage(this.currentImageIndex - 1);
       } else if (this.options.wrapAround && this.album.length > 1) {

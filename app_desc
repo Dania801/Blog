@@ -50,11 +50,17 @@ NEEDED MODIFICATION
 10- setting modal in home page [X]
 11- logout confirmation [X]
 12- edit the sidebar of journal and album page [X]
-13- add the ability to add pic to favourite (JS work)
+13- add the ability to add pic to favourite (JS work) [X]
 14- modify the ugly titles in album and jounal pages [X]
 15- code the settings and logout in event page [X]
 16- add logout property to journal page [X]
 17- add logout property to album page [X]
+
+
+More Work Needed For UI
+- - - - - - - - - - - - -
+1- do something about setting modal 
+2- edit the favourite pic in slide show 
 
 
 

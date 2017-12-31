@@ -21,6 +21,8 @@
     <script src="../../datepickk-master/dist/datepickk.min.js"></script>
     <!-- Javascript and CSS-->
     <link rel="stylesheet" href="../style5.css">
+    <link rel='stylesheet' href='events_style.css'/>
+
     <link rel='stylesheet' href='../Welcome/welcome_style.css' />
     <link rel='stylesheet' href='../Home/homePage_style.css' />
     <link rel='stylesheet' href='../Journal/journal_style.css' />
@@ -32,12 +34,99 @@
       margin-top: 30px;
     }
 
+
     </style>
   </head>
   <body style='background-color: #CBCBCB'>
 
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-white" style="width:25%;right:0;">
+    <div class="w3-sidebar w3-bar-block w3-card w3-white side-outer">
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
+        <div style='text-align:right;'>
+          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+        </div>
+        <footer class='w3-container' style='padding-top: 0px;'>
+          <div class='row'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
+              <span class='event-number' style='margin-left: 15px;'>12</span>
+            </div>
+            <div class='col-xs-6 text-left small-margin-left'>
+              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
+              <span class="event-image-caption">Dec - 13 Dec 2017</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
+        <div style='text-align:right;'>
+          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+        </div>
+        <footer class='w3-container' style='padding-top: 0px;'>
+          <div class='row'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
+              <span class='event-number' style='margin-left: 15px;'>12</span>
+            </div>
+            <div class='col-xs-6 text-left small-margin-left'>
+              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
+              <span class="event-image-caption">Dec - 13 Dec 2017</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
+        <div style='text-align:right;'>
+          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+        </div>
+        <footer class='w3-container' style='padding-top: 0px;'>
+          <div class='row'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
+              <span class='event-number' style='margin-left: 15px;'>12</span>
+            </div>
+            <div class='col-xs-6 text-left small-margin-left'>
+              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
+              <span class="event-image-caption">Dec - 13 Dec 2017</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
+        <div style='text-align:right;'>
+          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+        </div>
+        <footer class='w3-container' style='padding-top: 0px;'>
+          <div class='row'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
+              <span class='event-number' style='margin-left: 15px;'>12</span>
+            </div>
+            <div class='col-xs-6 text-left small-margin-left'>
+              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
+              <span class="event-image-caption">Dec - 13 Dec 2017</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
+        <div style='text-align:right;'>
+          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+        </div>
+        <footer class='w3-container' style='padding-top: 0px;'>
+          <div class='row'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
+              <span class='event-number' style='margin-left: 15px;'>12</span>
+            </div>
+            <div class='col-xs-6 text-left small-margin-left'>
+              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
+              <span class="event-image-caption">Dec - 13 Dec 2017</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Event -->
       <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
         <div style='text-align:right;'>
           <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
@@ -54,93 +143,14 @@
           </div>
         </footer>
       </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
+      <!-- Event -->
+      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom side-event-outer'>
         <div style='text-align:right;'>
           <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
         </div>
         <footer class='w3-container' style='padding-top: 0px;'>
           <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
-              <span class='event-number' style='margin-left: 15px;'>12</span>
-            </div>
-            <div class='col-xs-6 text-left small-margin-left'>
-              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
-              <span class="event-image-caption">Dec - 13 Dec 2017</span>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
-        <div style='text-align:right;'>
-          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-        </div>
-        <footer class='w3-container' style='padding-top: 0px;'>
-          <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
-              <span class='event-number' style='margin-left: 15px;'>12</span>
-            </div>
-            <div class='col-xs-6 text-left small-margin-left'>
-              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
-              <span class="event-image-caption">Dec - 13 Dec 2017</span>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
-        <div style='text-align:right;'>
-          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-        </div>
-        <footer class='w3-container' style='padding-top: 0px;'>
-          <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
-              <span class='event-number' style='margin-left: 15px;'>12</span>
-            </div>
-            <div class='col-xs-6 text-left small-margin-left'>
-              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
-              <span class="event-image-caption">Dec - 13 Dec 2017</span>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
-        <div style='text-align:right;'>
-          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-        </div>
-        <footer class='w3-container' style='padding-top: 0px;'>
-          <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
-              <span class='event-number' style='margin-left: 15px;'>12</span>
-            </div>
-            <div class='col-xs-6 text-left small-margin-left'>
-              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
-              <span class="event-image-caption">Dec - 13 Dec 2017</span>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
-        <div style='text-align:right;'>
-          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-        </div>
-        <footer class='w3-container' style='padding-top: 0px;'>
-          <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
-              <span class='event-number' style='margin-left: 15px;'>12</span>
-            </div>
-            <div class='col-xs-6 text-left small-margin-left'>
-              <a href="#" onclick="showEvent()"><span class="event-image-title">Review mockups</span></a><br />
-              <span class="event-image-caption">Dec - 13 Dec 2017</span>
-            </div>
-          </div>
-        </footer>
-      </div>
-      <div id='event-card' class='w3-card-4 w3-light-gray w3-animate-zoom' style='width: 100%; height: 150px;border-left: 10px solid #ef5350;'>
-        <div style='text-align:right;'>
-          <span onclick='ensureDelete()' class="w3-button w3-large main-title"><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-        </div>
-        <footer class='w3-container' style='padding-top: 0px;'>
-          <div class='row'>
-            <div class='col-xs-2 w3-card-4 w3-black' style='margin-left: 20px;padding: 15px;'>
+            <div class='col-xs-2 w3-card-4 w3-black side-event-date'>
               <span class='event-number' style='margin-left: 15px;'>12</span>
             </div>
             <div class='col-xs-6 text-left small-margin-left'>
@@ -175,7 +185,7 @@
 
       <div style='margin-left: 300px;'>
         <!--Calendar container-->
-        <div class='container w3-padding-32' style='font-family: "Spectral SC";width: 1000px;'>
+        <div class='container w3-padding-32 calend-outer'>
           <div>
             <a id='add-event' onclick="showAddEvent()" class="w3-right w3-button w3-white w3-card-4"><i class="fa fa-plus-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></a>
           </div>
@@ -209,27 +219,27 @@
             <span onclick="closeAddEvent()" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
             <h1 class='text-center main-title'>New Event</h1>
           </div>
-          <div style='margin-top: 30px;text-align:center;'>
-            <div style='width: 500px; margin-left: 80px;margin-bottom: 30px;'>
+          <div class='new-event-outer'>
+            <div class='new-event-title'>
               <input class="w3-input w3-border w3-hover-border-black full-width" type="text" placeholder="Title" required>
             </div>
-            <div style='margin-left: 100px;margin-right: 60px;margin-bottom: 40px;'>
+            <div class='new-event-form-outer'>
               <div class='row'>
                 <div class='col-sm-6'>
-                  <p style='float:left;margin-top: 10px;margin-right: 20px;'>From</p>
-                  <div style='width: 150px;float: left;'>
+                  <p class='new-event-from'>From</p>
+                  <div class='new-event-from-outer'>
                     <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="From" required>
                   </div>
                 </div>
                 <div class='col-sm-6'>
-                  <p style='float:left;margin-top: 10px;margin-right: 20px;'>To</p>
-                  <div style='width: 150px;float: left;'>
+                  <p class='new-event-from'>To</p>
+                  <div class='new-event-from-outer'>
                     <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="To" required>
                   </div>
                 </div>
               </div>
             </div>
-            <div style='width: 500px; margin-left: 80px;margin-bottom: 30px;'>
+            <div class='new-event-notes'>
               <textarea class="w3-input w3-border w3-hover-border-black" rows="3" placeholder="More details .. " required></textarea>
             </div>
             <button type="submit" class="w3-button w3-black btn-style">DONE</button>
@@ -246,7 +256,7 @@
               <span onclick="editEvent()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-pencil w3-hover-opacity" aria-hidden="true"></i></span>
               <h1 class=' main-title'>Review Mockups</h1>
             </div>
-            <div id='edit-title' style='width: 500px;margin-bottom: 0px;'>
+            <div id='edit-title' class='event-title-outer'>
               <input class="w3-input w3-border w3-hover-border-black full-width" type="text" placeholder="Review Mockups" required>
             </div>
           </div>
@@ -258,14 +268,14 @@
             </div>
             <div id='edit-date' class='row'>
               <div class='col-sm-6'>
-                <p style='float:left;margin-right: 20px;'>From</p>
-                <div style='width: 150px;float: left;'>
+                <p class='event-from'>From</p>
+                <div class='new-event-from-outer'>
                   <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="From" required>
                 </div>
               </div>
               <div class='col-sm-6'>
-                <p style='float:left;margin-right: 20px;'>To</p>
-                <div style='width: 150px;float: left;'>
+                <p class='event-from'>To</p>
+                <div class='new-event-from-outer'>
                   <input class="w3-input w3-border w3-hover-border-black full-width" type="date" placeholder="To" required>
                 </div>
               </div>
@@ -273,10 +283,10 @@
 
           </div>
           <div id='event-detail' style='letter-spacing: 2px;'>
-            <span style='font-size: 20px; color: black'>Details:</span> Should be done within a day
+            <span class='event-detail'>Details:</span> Should be done within a day
           </div>
           <div id='edit-detail'>
-              <div style='width: 500px;margin-bottom: 30px;'>
+              <div class='event-edit-detail'>
                 <textarea class="w3-input w3-border w3-hover-border-black" rows="3" placeholder="Should be done within a day" required></textarea>
               </div>
               <div class='row' style='text-align: center;'>
@@ -296,11 +306,10 @@
         <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
           <div class="w3-container w3-display-container">
             <span onclick="closeConfirm()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-            <h4 style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;'>
+            <h4 class='cancel-event-question'>
               Are you sure you want to cancel Review Mockups ?
             </h4>
           </div>
-
           <div class='row' style='text-align: center;'>
             <div class='col-sm-6'>
               <button type="submit" class="w3-button w3-black btn-style">YES</button>
@@ -319,29 +328,29 @@
             <span onclick="closeSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
             <div id='event-title'>
               <span id='edit-icon' onclick="editSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-pencil w3-hover-opacity" aria-hidden="true"></i></span>
-              <h1 class=' main-title' style="text-align: center;margin-left: 40px;">Settings</h1>
+              <h1 class=' main-title setting-title'>Settings</h1>
             </div>
           </div>
-            <div id='info' class='row' style='margin-top: 40px;margin-bottom: 20px;margin-left: 30px;'>
-              <div class='col-sm-6' style='width:200px;height:200px;'>
+            <div id='info' class='row setting-info-outer'>
+              <div class='col-sm-6 setting-info-pic'>
                 <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
               </div>
-              <div class='col-sm-6' style='margin-top: 42px;margin-left: 20px;'>
-                <p style='font-family: "#413b3b", serif; font-size: 22px;color: black'>Julia something</p>
-                <p style='font-family: "#413b3b", serif; font-size: 20px;color: black'>example1@gmail.com</p>
+              <div class='col-sm-6 setting-info-personal'>
+                <p class='setting-info-name' >Julia something</p>
+                <p class='setting-info-email'>example1@gmail.com</p>
               </div>
             </div>
             <div id='edit-info'>
-              <div class="form-group" style='width: 400px;margin-left: 70px;margin-top: 40px;'>
+              <div class="form-group setting-edit-outer">
                 <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
-                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+                    <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
                 </div>
                 <br />
-                  <input class='form-control' placeholder="Name" >
+                <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Name" >
                   <br />
-                  <input class='form-control' placeholder="Email" >
+                  <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Email" >
                   <br />
-                  <input class='form-control' placeholder="Password" >
+                  <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Password" required>
                   <br />
               </div>
               <div class='row' style='text-align: center;'>
@@ -356,16 +365,15 @@
         </div>
       </div>
 
-      <!-- Cancel an event modal-->
+      <!-- Logout modal-->
       <div id="logout" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
           <div class="w3-container w3-display-container">
             <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
-            <h4 style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black'>
+            <h4 class='logout-question'>
               Are you sure you want to logout ?
             </h4>
           </div>
-
           <div class='row' style='text-align: center;'>
             <div class='col-sm-6'>
               <button onclick="location.href='../Welcome/welcomePage.html'" type="submit" class="w3-button w3-black btn-style">YES</button>
@@ -376,7 +384,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
 

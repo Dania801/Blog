@@ -25,10 +25,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="../../isotope-docs/isotope.pkgd.min.js"></script>
     <!-- Javascript and CSS-->
     <link rel="stylesheet" href="../style5.css">
     <link rel='stylesheet' href='../Welcome/welcome_style.css' />
     <link rel='stylesheet' href='../Home/homePage_style.css' />
+    <link rel='stylesheet' href='../Event/events_style.css' />
     <link rel='stylesheet' href='journal_style.css' />
     <script src='../Welcome/welcome_code.js'></script>
     <style>
@@ -92,7 +96,7 @@
       </div>
       <!--Search panel -->
       <div class='w3-container nav-search-outer' id='search-panel' >
-        <input id='search' class='form-control' style='color: black;' placeholder="Search for post.." />
+        <input id='search' class='form-control quicksearch' style='color: black;' placeholder="Search for post.." />
       </div>
     </header>
 
@@ -198,14 +202,14 @@
         </div>
       </div>
       <!--All articles container-->
-      <div class='w3-card w3-content w3-white w3-container all-outer'>
+      <div class='grid w3-card w3-content w3-white w3-container all-outer'>
         <div class='text-center' style='margin-top: 100px;'>
           <h4 class='recent-title-black'><span class='recent-title-letter-big'>A</span>ll <span style='font-size: 30px;'>A</span>rticles</h4>
           <h5 style='color: black'><b>_________</b></h5>
         </div>
         <div class='' style='margin-left: 55px;'>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
+          <div class="grid-item col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white">
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Technology</div>
               <header class='all-article-pic-layout' style='background-image: url("pictures/art4.jpg");'>
@@ -216,9 +220,9 @@
                     21 October 2016, 07:00 pm
                   </p>
                 </div>
-                <!-- Title containr-->
+                <!-- Title container-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Some Title</h2>
+                  <h2 class='article-title-style'>A Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -232,7 +236,7 @@
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
+          <div class="grid-item col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
               <header class='all-article-pic-layout' style='background-image: url("pictures/album7.jpg");'>
@@ -245,7 +249,7 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Some Title</h2>
+                  <h2 class='article-title-style'>B Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -259,7 +263,7 @@
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
+          <div class="grid-item col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
               <header class='all-article-pic-layout' style='background-image: url("pictures/album12.jpg");'>
@@ -272,7 +276,7 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Some Title</h2>
+                  <h2 class='article-title-style'>C Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -286,7 +290,7 @@
             </div>
           </div>
           <!-- Article-->
-          <div class="col-xs-4 w3-margin-bottom slideanim all-article-outer">
+          <div class="grid-item col-xs-4 w3-margin-bottom slideanim all-article-outer">
             <div class="w3-card w3-white" style=''>
               <div class="w3-display-topleft w3-black w3-padding" style='margin-left: 14px;'>Social</div>
               <header class='all-article-pic-layout' style='background-image: url("pictures/advent8.jpg");'>
@@ -299,7 +303,7 @@
                 </div>
                 <!-- Title containr-->
                 <div class='article-title-layout'>
-                  <h2 class='article-title-style'>Some Title</h2>
+                  <h2 class='article-title-style'>D Some Title</h2>
                 </div>
                 <div class='article-content' style='padding-right: 20px;'>
                   <p class='article-content-font'>
@@ -397,29 +401,29 @@
             <span onclick="closeSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
             <div id='event-title'>
               <span id='edit-icon' onclick="editSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-pencil w3-hover-opacity" aria-hidden="true"></i></span>
-              <h1 class=' main-title' style="text-align: center;margin-left: 40px;">Settings</h1>
+              <h1 class=' main-title setting-title'>Settings</h1>
             </div>
           </div>
-            <div id='info' class='row' style='margin-top: 40px;margin-bottom: 20px;margin-left: 30px;'>
-              <div class='col-sm-6' style='width:200px;height:200px;'>
+            <div id='info' class='row setting-info-outer'>
+              <div class='col-sm-6 setting-info-pic'>
                 <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
               </div>
-              <div class='col-sm-6' style='margin-top: 42px;margin-left: 20px;'>
-                <p style='font-family: "#413b3b", serif; font-size: 22px;color: black'>Julia something</p>
-                <p style='font-family: "#413b3b", serif; font-size: 20px;color: black'>example1@gmail.com</p>
+              <div class='col-sm-6 setting-info-personal'>
+                <p class='setting-info-name' >Julia something</p>
+                <p class='setting-info-email'>example1@gmail.com</p>
               </div>
             </div>
             <div id='edit-info'>
-              <div class="form-group" style='width: 400px;margin-left: 70px;margin-top: 40px;'>
+              <div class="form-group setting-edit-outer">
                 <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
-                    <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+                    <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
                 </div>
                 <br />
-                  <input class='form-control' placeholder="Name" >
+                <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Name" >
                   <br />
-                  <input class='form-control' placeholder="Email" >
+                  <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Email" >
                   <br />
-                  <input class='form-control' placeholder="Password" >
+                  <input class="w3-input w3-border w3-hover-border-black full-width" placeholder="Password" required>
                   <br />
               </div>
               <div class='row' style='text-align: center;'>
@@ -433,6 +437,27 @@
             </div>
         </div>
       </div>
+
+      <!-- Logout modal-->
+      <div id="logout" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+          <div class="w3-container w3-display-container">
+            <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+            <h4 class='logout-question'>
+              Are you sure you want to logout ?
+            </h4>
+          </div>
+          <div class='row' style='text-align: center;'>
+            <div class='col-sm-6'>
+              <button onclick="location.href='../Welcome/welcomePage.html'" type="submit" class="w3-button w3-black btn-style">YES</button>
+            </div>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <!-- Cancel an event modal-->
       <div id="logout" class="w3-modal">
