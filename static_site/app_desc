@@ -1,0 +1,77 @@
+-> Purpose 
+1- journal 
+2- photo album 
+3- calendar and events
+4- social media panel 
+
+-> Workflow 
+- main page describes the featues of the website [DONE]
+- signup / login [DONE]
+- home page (recent post, recent articles in 3 tags, recent pictures, events for the current month) [DONE]
+- posts page [DONE]
+- images page [DONE]
+- events page 
+
+- display the personal profile 
+	- display posts 
+	- events and dates
+	- photo album
+	- social media
+	- personal image
+	
+- posts : - photo 
+	  - date 
+	  - tag 
+	  - title 
+	  - journal 
+	  
+- photo album : - add photo 
+		- add title 
+		- date
+
+- events and dates : - disply events 
+		     - add events through a calendar
+		     
+		  
+- social media pannel : redirect to social media pages
+
+
+NEEDED MODIFICATION
+- - - - - - - - - -
+1- entering animation of welcome page [X]
+2- entering animation of home page [X]
+3- photo album of home page looks ugly  [X]
+4- use light box for photo album in home page [X]
+5- use light box for profile and cover picture in home page [X] 
+6- add the ability of opening the recent post in home page [X]
+7- do something about the social media thing 
+8- add the ability to open posts in columns in home page [X]
+9- customize events in home page [X]
+10- setting modal in home page [X]
+11- logout confirmation [X]
+12- edit the sidebar of journal and album page [X]
+13- add the ability to add pic to favourite (JS work) [X]
+14- modify the ugly titles in album and jounal pages [X]
+15- code the settings and logout in event page [X]
+16- add logout property to journal page [X]
+17- add logout property to album page [X]
+
+
+More Work Needed For UI
+- - - - - - - - - - - - -
+1- do something about setting modal 
+2- edit the favourite pic in slide show 
+
+----------------------------------------------------------------------------------------
+
+EXPRESS APP
+- - - - - - 
+-> URL ROUTES 
+/ -> Welcome page
+
+/home -> Home page
+/journal -> Journal page
+/album -> Album page
+/event -> Event page
+
+

@@ -1,0 +1,386 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Journal
+    // Bootstrap and JQuery libraries
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // W3C library
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // Google fonts
+    link(href='https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300', rel='stylesheet')
+    // Fontawesome library
+    script(src='https://use.fontawesome.com/67c4517658.js')
+    link(rel='stylesheet', href='path/to/font-awesome/css/font-awesome.min.css')
+    // Froala Editor libraries
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_editor.pkgd.min.css', rel='stylesheet', type='text/css')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_style.min.css', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js')
+    script(src='https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js')
+    script(src='../../isotope-docs/isotope.pkgd.min.js')
+    // Javascript and CSS
+    link(rel='stylesheet', href='/stylesheets/style5.css')
+    link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
+    link(rel='stylesheet', href='/stylesheets/Home/homePage_style.css')
+    link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
+    link(rel='stylesheet', href='journal_style.css')
+    script(type='text/javascript', src='/javascripts/js-functions.js')
+    style.
+      .w3-quarter img{margin-bottom: -6px; cursor: pointer}
+      .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+      #search{
+      background-image: url('search.png');
+      background-position: 8px 5px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      color: white;
+      width: 50%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      }
+      .new-post {
+      background-color: #D5D8DC;
+      background-image: url("pictures/pic2.jpg");
+      background-position: center;
+      width: 100%;
+      height: 900px;
+      background-size: cover;
+      background-attachment: fixed;
+      position: absolute; }
+    script.
+      $(function() { $('textarea').froalaEditor() });
+      // Modal Image Gallery
+      function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+      }
+  body.w3-light-grey
+    // Sidebar/menu
+    nav#mySidebar.w3-card-4.w3-sidebar.w3-bar-block.w3-animate-right.w3-black.w3-top.w3-text-light-grey.w3-large.sidebar-outer
+      #sidebar-x.container.sidebar-x
+        a.w3-bar-item.w3-button.w3-center.w3-padding-32.w3-hover-black(href='javascript:void()', onclick='w3_close()')
+          i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
+      .sidebar-options-outer
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Home/homePage.html') Home
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Album/album.html') Photo Album
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Event/events.html') Events
+      div(style='margin-top: 350px;margin-left: 20px;')
+        a(style='margin-right: 10px;')
+          i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
+        a
+          i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openLogout()', aria-hidden='true')
+    header.w3-card-4.w3-top.w3-white.w3-xlarge(style='padding-top: 13px;')
+      .nav-header-outer
+        span.w3-left.w3-padding.nav-logo
+          span.nav-logo-b B
+          | LOGATE
+        a#sidebar-btn.w3-right.w3-button.w3-white(href='javascript:void(0)')
+          i.fa.fa-bars.w3-hover-opacity(aria-hidden='true')
+        a#search-btn.w3-right.w3-button.w3-white(href='javascript:void(0)', onclick='search_open()')
+          i.fa.fa-search.w3-hover-opacity(aria-hidden='true')
+        a#add-btn.w3-right.w3-button.w3-white(href='#new')
+          i.fa.fa-plus-circle.w3-hover-opacity(aria-hidden='true')
+      // Search panel
+      #search-panel.w3-container.nav-search-outer
+        input#search.form-control.quicksearch(style='color: black;', placeholder='Search for post..')
+    // Overlay effect when opening sidebar on small screens
+    #myOverlay.w3-overlay.w3-animate-opacity(onclick='w3_close()', style='cursor:pointer', title='close side menu')
+    // Page Content - contains the footer
+    #top(style='max-width: 100%;margin-top: 82px;')
+      // Top cover
+      .container.top-cover
+        br
+        br
+        br
+        br
+        .top-title-outer
+          h1.top-title
+            span.top-title-letter O
+            | rganize 
+            span.top-title-letter Y
+            | our 
+            span.top-title-letter J
+            | ournal
+      // Recent article outer container
+      .container.w3-padding-64.w3-card-4.recent-outer
+        // Recent Article title
+        .text-center
+          h4.recent-title
+            span.recent-title-letter-big R
+            | ecent 
+            span.recent-title-letter-small A
+            | rticles
+          h5(style='color: white')
+            b _________
+        // Article
+        #first-article.col-xs-4.w3-margin-bottom.article-outer
+          .w3-card.w3-white
+            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Journal
+            header.article-pic-layout(style='background-image: url("pictures/art1.jpg");')
+            .w3-margin(style='padding-bottom: 20px;')
+              div(style='margin-top: 30px;')
+                p
+                  | 21 October 2016, 07:00 pm
+              // Title container
+              .article-title-layout
+                h2.article-title-style Some Title
+              .article-content(style='padding-right: 20px;')
+                p.article-content-font
+                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn
+                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art1.jpg')", type='submit') Continue Reading
+        // Article
+        #second-article.col-xs-4.w3-margin-bottom.article-outer
+          .w3-card.w3-white
+            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Political
+            header.article-pic-layout(style='background-image: url("pictures/art2.jpg");')
+            .w3-margin(style='padding-bottom: 20px;')
+              div(style='margin-top: 30px;')
+                p
+                  | 21 October 2016, 07:00 pm
+              // Title container
+              .article-title-layout
+                h2.article-title-style Some Title
+              .article-content(style='padding-right: 20px;')
+                p.article-content-font
+                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn
+                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art2.jpg')", type='submit') Continue Reading
+        // Article
+        #third-article.col-xs-4.w3-margin-bottom.article-outer
+          .w3-card.w3-white
+            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Technology
+            header.article-pic-layout(style='background-image: url("pictures/art3.jpg");')
+            .w3-margin(style='padding-bottom: 20px;')
+              div(style='margin-top: 30px;')
+                p
+                  | 21 October 2016, 07:00 pm
+              // Title container
+              .article-title-layout
+                h2.article-title-style Some Title
+              .article-content(style='padding-right: 20px;')
+                p.article-content-font
+                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn
+                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art3.jpg')", type='submit') Continue Reading
+      // All articles container
+      .grid.w3-card.w3-content.w3-white.w3-container.all-outer
+        .text-center(style='margin-top: 100px;')
+          h4.recent-title-black
+            span.recent-title-letter-big A
+            | ll 
+            span(style='font-size: 30px;') A
+            | rticles
+          h5(style='color: black')
+            b _________
+        div(style='margin-left: 55px;')
+          // Article
+          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
+            .w3-card.w3-white
+              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Technology
+              header.all-article-pic-layout(style='background-image: url("pictures/art4.jpg");')
+              .w3-margin
+                div(style='margin-top: 30px;')
+                  p
+                    | 21 October 2016, 07:00 pm
+                // Title container
+                .article-title-layout
+                  h2.article-title-style A Some Title
+                .article-content(style='padding-right: 20px;')
+                  p.article-content-font
+                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn.all-btn-outer
+                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/art4.jpg')", type='submit') Continue ..
+          // Article
+          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
+            .w3-card.w3-white(style='')
+              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
+              header.all-article-pic-layout(style='background-image: url("pictures/album7.jpg");')
+              .w3-margin(style='')
+                div(style='margin-top: 30px;')
+                  p
+                    | 21 October 2016, 07:00 pm
+                // Title containr
+                .article-title-layout
+                  h2.article-title-style B Some Title
+                .article-content(style='padding-right: 20px;')
+                  p.article-content-font
+                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn.all-btn-outer
+                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/album7.jpg')", type='submit') Continue ..
+          // Article
+          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
+            .w3-card.w3-white(style='')
+              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
+              header.all-article-pic-layout(style='background-image: url("pictures/album12.jpg");')
+              .w3-margin(style='')
+                div(style='margin-top: 30px;')
+                  p
+                    | 21 October 2016, 07:00 pm
+                // Title containr
+                .article-title-layout
+                  h2.article-title-style C Some Title
+                .article-content(style='padding-right: 20px;')
+                  p.article-content-font
+                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn.all-btn-outer
+                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/album12.jpg')", type='submit') Continue ..
+          // Article
+          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
+            .w3-card.w3-white(style='')
+              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
+              header.all-article-pic-layout(style='background-image: url("pictures/advent8.jpg");')
+              .w3-margin(style='')
+                div(style='margin-top: 30px;')
+                  p
+                    | 21 October 2016, 07:00 pm
+                // Title containr
+                .article-title-layout
+                  h2.article-title-style D Some Title
+                .article-content(style='padding-right: 20px;')
+                  p.article-content-font
+                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn.all-btn-outer
+                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/advent8.jpg')", type='submit') Continue ..
+      // Events
+      .new-post.w3-card.w3-opacity-max
+      #new.task-container(style='postion: absolute')
+        .container.large-margin-top
+          h1.event-title-letter
+            span.event-title N
+            | ew 
+            span.event-title P
+            | ost
+          h5(style='color: black')
+            b _________
+          br
+          br
+          br
+          br
+          .slideanim
+            .form-title
+              input.form-control(onkeyup='myFunction()', placeholder='Title')
+            .form-datalist
+              input.form-control(list='tag', placeholder='Tag')
+              datalist#tag
+                option(value='Personal')
+                option(value='Political')
+                option(value='Technology')
+                option(value='Science')
+                option(value='Music')
+            br
+            br
+            br
+            .form-textarea
+              .form-group
+                .input-group
+                  span.input-group-btn
+                    span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                    input(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+                  span.form-control
+            br
+            br
+            br
+            div
+              textarea
+            .form-btn-outer
+              button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(type='submit') Finished!
+      // Footer
+      footer.container-fluid.text-center
+        a#footer(href='#top', title='To Top')
+          span.glyphicon.glyphicon-chevron-up
+        p.btn-style GO TOP
+      // Article Modal
+      #article.w3-modal.w3-animate-zoom(style='padding: 50px;')
+        .w3-container.w3-white.w3-card.article-modal-outer
+          .w3-container.article-modal-outer-x2
+            span#article-x.w3-button.w3-display-topright.article-modal-x(onclick='closeArticle()')
+              i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
+            .article-modal-pic-outer
+              img#article-pic.w3-border.w3-card-4.article-modal-pic(src='')
+            div(style='text-align: center')
+              h2.article-modal-title Some Title
+            #article-tag.w3-display-topleft.w3-black.w3-padding.article-modal-tag Social
+            .article-modal-date
+              p
+                | Posted on October 12, 2017
+            .article-modal-text-outer
+              p.article-modal-text
+                | Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
+                | Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
+                | Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+      // Setting Modal
+      #setting.w3-modal
+        #setting-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
+          .w3-display-container(style='')
+            span.w3-button.w3-large.main-title(onclick='closeSetting()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            #event-title
+              span#edit-icon.w3-button.w3-large.main-title(onclick='editSetting()', style='float: right;')
+                i.fa.fa-pencil.w3-hover-opacity(aria-hidden='true')
+              h1.main-title.setting-title Settings
+          #info.row.setting-info-outer
+            .col-sm-6.setting-info-pic
+              a(href='pictures/album2.jpg', data-lightbox='galleryone')
+                img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+            .col-sm-6.setting-info-personal
+              p.setting-info-name Julia something
+              p.setting-info-email example1@gmail.com
+          #edit-info
+            .form-group.setting-edit-outer
+              .input-group
+                span.input-group-btn
+                  span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                  input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+                span.form-control
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Name')
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Email')
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Password', required='')
+              br
+            .row(style='text-align: center;')
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit') DONE
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit', onclick='backSetting()') BACK
+      // Logout modal
+      #logout.w3-modal
+        .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+          .w3-container.w3-display-container
+            span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            h4.logout-question
+              | Are you sure you want to logout ?
+          .row(style='text-align: center;')
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+    // Cancel an event modal
+    #logout.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+        .w3-container.w3-display-container
+          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          h4(style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;')
+            | Are you sure you want to logout ?
+        .row(style='text-align: center;')
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../Welcome/welcomePage.html';") YES
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO

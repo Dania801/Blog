@@ -1,0 +1,419 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Home
+    // Bootstrap and JQuery libraries
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // W3C library
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // Google fonts
+    link(href='https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Slabo+27px|Raleway|Acme|Josefin+Slab|', rel='stylesheet')
+    // Fontawesome library
+    script(src='https://use.fontawesome.com/67c4517658.js')
+    // Calendar Library
+    link(rel='stylesheet', href='../../datepickk-master/dist/datepickk.min.css')
+    script(src='../../datepickk-master/dist/datepickk.min.js')
+    // Javascript and CSS
+    link(rel='stylesheet', href='/stylesheets/style5.css')
+    link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
+    link(rel='stylesheet', href='/stylesheets/Home/homePage_style.css')
+    link(rel='stylesheet', href='/stylesheets/Album/album_style.css')
+    link(rel='stylesheet', href='/stylesheets/Journal/journal_style.css')
+    script(type='text/javascript', src='/javascripts/js-functions.js')
+    // Lightbox Llibrary
+    link(href='../../lightbox2-master/src/css/lightbox.css', rel='stylesheet')
+    script(src='../../lightbox2-master/src/js/lightbox.js')
+    style.
+      #datepicker{
+      max-width: 500px;
+      height: 500px;
+      width: 100%;
+      }
+  body
+    // Sidebar/menu
+    nav.w3-sidebar.w3-card-4.w3-black.w3-collapse.w3-top.w3-large.w3-padding.sidebar-layout
+      br
+      .w3-container.sidebar-logo.w3-animate-zoom
+        a.navbar-brand.logo.w3-padding-32(href='#home')
+          span.logo-B B
+          | LOGATE
+      .w3-bar-block
+        a.w3-bar-item.w3-button.w3-hover-white(href='#home') Home
+        a.w3-bar-item.w3-button.w3-hover-white(href='#journal') Journal
+        a.w3-bar-item.w3-button.w3-hover-white(href='#events') Events
+        a.w3-bar-item.w3-button.w3-hover-white(href='#album') Album
+        a.w3-bar-item.w3-button.w3-hover-white(href='#socialmedia') Social Media
+      div(style='margin-top: 380px;')
+        i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(aria-hidden='true', onclick='openSetting()')
+        i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(aria-hidden='true', onclick='openLogout()')
+    // Full page container
+    #home
+      // Top of the page
+      div(style='margin-left:300px;')
+        // Cover image container
+        .post-cover-layout
+          .container.w3-opacity.w3-grayscale-min.image-cover
+          .container.w3-card-4.cover-decoration-light
+          .container.w3-card-4.cover-decoration-dark
+        // Personal Picture and name container
+        .personal-info
+          .row
+            .col-xs-4.personal-image-outer.w3-animate-zoom
+              a(href='pictures/album2.jpg', data-lightbox='galleryone')
+                img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+            .col-xs-8.personal-name
+              h2.personl-name-style
+                span(style='font-size: 140px;') W
+                | elcome, Julia
+        // Post Cover container
+        .container.w3-card-4.row.post-cover
+          // Recent Article container
+          .col-xs-6
+            .container.w3-card.w3-white.article
+              // Date container
+              .article-date
+                p
+                  | 21 October 2016, 07:00 pm
+              // Title containr
+              .article-title-layout
+                h2.article-title-style Exploring Norway's Coast
+              // Article image container
+              .container.w3-padding-16.article-image(style="background-image: url('pictures/album9.jpg');")
+              // Article container
+              .article-content
+                p.article-content-font
+                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+              .article-btn
+                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/album9.jpg')", type='submit') Continue Reading
+          // Calendar and social media container
+          .col-xs-5(style='margin-top: 50px;')
+            // Calendar container
+            .container.w3-padding-32.w3-animate-right.calendar-outer(style='font-family: "Spectral SC", Serif; margin-bottom: 130px;')
+              #datepicker.w3-card-4
+                script.
+                  var highlight = {
+                  start: new Date(2015,6,13),
+                  end: new Date(2015,6,19),
+                  backgroundColor: '#3faa56',
+                  color: '#ffffff',
+                  legend: 'CSS Conf.'
+                  };
+                  var datepicker = new Datepickk({
+                  container: document.querySelector('#datepicker'),
+                  inline: true,
+                  range: true,
+                  highlight: []
+                  });
+                  var datepicker = new Datepickk();
+            // Social media container
+            #socialmedia.container.w3-card.w3-white.w3-padding-32.w3-animate-right(style='width: 490px; height: 200px;margin-top: 50px;margin-left: 100px;')
+              .container.w3-padding-16(style='width: 400px;height:60px;background-color: #212121')
+                p(style="font-family: 'Spectral SC';letter-spacing: 2px;color: white;text-align: center")
+                  | Social Media
+              .container(style='margin-top: 20px;')
+                a(href='http://www.facebook.com')
+                  i.fa.fa-facebook-official.fa-4x.w3-hover-opacity.social-media-fb(aria-hidden='true')
+                a(href='http://www.twitter.com')
+                  i.fa.fa-twitter.fa-4x.w3-hover-opacity.social-media-twitter(aria-hidden='true')
+                a(href='http://www.github.com')
+                  i.fa.fa-github.fa-4x.w3-hover-opacity.social-media-git(aria-hidden='true')
+                a(href='http://www.reddit.com')
+                  i.fa.fa-reddit-alien.fa-4x.w3-hover-opacity.social-media-reddit(aria-hidden='true')
+                a(href='http://www.instagram.com')
+                  i.fa.fa-instagram.fa-4x.w3-hover-opacity.social-media-insta(aria-hidden='true')
+      // Photo album outer container
+      #album.container.w3-padding-16.w3-card-4.album-outer(style='height: 1200px;')
+        h1.album-title Photo Album
+        // Photo album inner container
+        div(style='margin-left: 150px;margin-top: 50px;padding-bottom: 100px;position: relative;')
+          a(href='pictures/art4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/art4.jpg");')
+          a(href='pictures/girl5.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl5.jpg");')
+          a(href='pictures/girl4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl4.jpg");')
+          a(href='pictures/food3.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food3.jpg");')
+          a(href='pictures/p1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p1.jpg");')
+          a(href='pictures/coffee1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/coffee1.jpg");')
+          div(style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;')
+            button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(onclick="location.href='../Album/album.html';", type='submit', style='width: 400px;') Get More Photos
+    // Picture modal
+    #picture.w3-modal
+      .w3-modal-content.w3-animate-top.container.album-modal-outer
+        .w3-container.w3-display-container
+          span.w3-button.w3-black.w3-display-topright.w3-large.main-title(onclick="document.getElementById('picture').style.display='none';") x
+        .container
+          img#pic_container(style='margin-left: auto;margin-right: auto;display: block;')
+    // Journal Container
+    #journal.container.journal-outer
+      // First Column
+      h1.text-center.text-xs-center.journal-title Journal
+      .row
+        // First Column
+        .container.col-xs-4.w3-card-4.w3-white.slideanim.journal-col-outer
+          h3.col-tag PERSONAL
+          div(style='margin-left: 153px;')
+            hr.hr-short
+          // First article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/advent5.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/advent5.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+          // Second article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/advent9.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/advent9.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+        // Second Column
+        .container.col-xs-4.w3-card-4.w3-white.slideanim.journal-col-outer
+          h3.col-tag POLITICAL
+          div(style='margin-left: 153px;')
+            hr.hr-short
+          // First Article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/album10.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/album10.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+          // Second Article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/album11.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/album11.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+        // Third Column
+        .container.col-xs-4.w3-card-4.w3-white.slideanim.journal-col-outer
+          h3.col-tag TECHNOLOGY
+          div(style='margin-left: 153px;')
+            hr.hr-short
+          // First Article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/album12.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/album12.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+          // Second Article
+          div(style='margin-left: 10px;')
+            div(style='margin-top: 40px;')
+              p
+                | 21 October 2016, 07:00 pm
+            h5.col-title Exploring Norway's Coast
+            .col-pic
+              img.col-pic(src='pictures/album13.jpg')
+            .col-article-outer
+              p.col-article
+                | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+            .col-article-btn
+              button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/album13.jpg')", type='submit') Continue Reading
+          .hr-outer
+            hr.hr-long
+      // View more article
+      .more-article-outer
+        button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../Journal/journal.html';", type='submit', style='font-size: 20px;') Read more posts
+    // Events
+    .w3-card.w3-opacity-max.event-background
+    #events.task-container.event-outer
+      .container.large-margin-top.row.slideanim
+        h3.events-title Events for this month
+        // First Event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 12
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Review mockups
+                  br
+                  span.event-image-caption Dec, 2017
+        // Second Event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 20
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Team meeting
+                  br
+                  span.event-image-caption Dec, 2017
+        // Third Event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 15
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Purchase ticket
+                  br
+                  span.event-image-caption Jan, 2018
+        // Fourth event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 15
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Purchase ticket
+                  br
+                  span.event-image-caption Jan, 2018
+        // Fifth event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 15
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Purchase ticket
+                  br
+                  span.event-image-caption Jan, 2018
+        // Sixth event
+        .col-xs-4.w3-margin-bottom
+          .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+            footer.w3-container(style='padding-top: 50px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.event-date
+                  span.event-number 15
+                .col-xs-8.text-left.small-margin-left
+                  span.event-image-title Purchase ticket
+                  br
+                  span.event-image-caption Jan, 2018
+        .more-article-outer(style='margin-left: 300px;margin-top: 500px;')
+          button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../Event/events.html';", type='submit', style='font-size: 20px;') Check All Events
+    // Footer
+    footer.container-fluid.text-center.footer
+      a(href='#home', title='To Top')
+        span.glyphicon.glyphicon-chevron-up
+      p.btn-style GO TOP
+    // Article Modal
+    #article.w3-modal.w3-animate-zoom(style='padding: 50px;')
+      .w3-container.w3-white.w3-card.article-modal-outer
+        .w3-container.article-modal-outer-x2
+          span#article-x.w3-button.w3-display-topright.article-modal-x(onclick='closeArticle()')
+            i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
+          .article-modal-pic-outer
+            img#article-pic.w3-border.w3-card-4.article-modal-pic(src='')
+          div(style='text-align: center')
+            h2.article-modal-title Some Title
+          #article-tag.w3-display-topleft.w3-black.w3-padding.article-modal-tag Social
+          .article-modal-date
+            p
+              | Posted on October 12, 2017
+          .article-modal-text-outer
+            p.article-modal-text
+              | Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
+              | Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
+              | Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+    // Cancel an event modal
+    #logout.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+        .w3-container.w3-display-container
+          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          h4(style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;')
+            | Are you sure you want to logout ?
+        .row(style='text-align: center;')
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../Welcome/welcomePage.html'") YES
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+    // Setting Modal
+    #setting.w3-modal
+      #setting-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
+        .w3-display-container(style='')
+          span.w3-button.w3-large.main-title(onclick='closeSetting()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          #event-title
+            span#edit-icon.w3-button.w3-large.main-title(onclick='editSetting()', style='float: right;')
+              i.fa.fa-pencil.w3-hover-opacity(aria-hidden='true')
+            h1.main-title(style='text-align: center;margin-left: 40px;') Settings
+        #info.row(style='margin-top: 40px;margin-bottom: 20px;margin-left: 30px;')
+          .col-sm-6(style='width:200px;height:200px;')
+            a(href='pictures/album2.jpg', data-lightbox='galleryone')
+              img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+          .col-sm-6(style='margin-top: 42px;margin-left: 20px;')
+            p(style='font-family: "#413b3b", serif; font-size: 22px;color: black') Julia something
+            p(style='font-family: "#413b3b", serif; font-size: 20px;color: black') example1@gmail.com
+        #edit-info
+          .form-group(style='width: 400px;margin-left: 70px;margin-top: 40px;')
+            .input-group
+              span.input-group-btn
+                span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                input(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+              span.form-control
+            br
+            input.form-control(placeholder='Name')
+            br
+            input.form-control(placeholder='Email')
+            br
+            input.form-control(placeholder='Password')
+            br
+          .row(style='text-align: center;')
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit') DONE
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit', onclick='backSetting()') BACK

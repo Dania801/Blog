@@ -1,0 +1,295 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Events
+    // Bootstrap and JQuery libraries
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // W3C library
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // Google fonts
+    link(href='https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300', rel='stylesheet')
+    // Fontawesome library
+    script(src='https://use.fontawesome.com/67c4517658.js')
+    // Calendar Library
+    link(rel='stylesheet', href='../../datepickk-master/dist/datepickk.min.css')
+    script(src='../../datepickk-master/dist/datepickk.min.js')
+    // Javascript and CSS
+    link(rel='stylesheet', href='/stylesheets/style5.css')
+    link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
+    link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
+    link(rel='stylesheet', href='/stylesheets/Home/homePage_style.css')
+    link(rel='stylesheet', href='/stylesheets/Journal/journal_style.css')
+    link(rel='stylesheet', href='/stylesheets/Album/album_style.css')
+    script(type='text/javascript', src='/javascripts/js-functions.js')
+    style.
+      #datepicker{
+      height: 720px;
+      margin-top: 30px;
+      }
+  body(style='background-color: #CBCBCB')
+    // Sidebar
+    .w3-sidebar.w3-bar-block.w3-card.w3-white.side-outer
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom(style='width: 100%; height: 150px;border-left: 10px solid #ef5350;')
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black(style='margin-left: 20px;padding: 15px;')
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+      // Event
+      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+        div(style='text-align:right;')
+          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+        footer.w3-container(style='padding-top: 0px;')
+          .row
+            .col-xs-2.w3-card-4.w3-black.side-event-date
+              span.event-number(style='margin-left: 15px;') 12
+            .col-xs-6.text-left.small-margin-left
+              a(href='#', onclick='showEvent()')
+                span.event-image-title Review mockups
+              br
+              span.event-image-caption Dec - 13 Dec 2017
+    // Page Content
+    div(style='margin-right:25%')
+      // Sidebar/menu
+      nav.w3-sidebar.w3-card-4.w3-black.w3-collapse.w3-top.w3-large.w3-padding.w3-animate-left.sidebar-layout
+        br
+        .w3-container.sidebar-logo
+          a.navbar-brand.logo.w3-padding-32(href='#home')
+            span.logo-B B
+            | LOGATE
+        .w3-bar-block(style='margin-top: 100px;')
+          a.w3-bar-item.w3-button.w3-hover-white(href='../Home/homePage.html') Home
+          a.w3-bar-item.w3-button.w3-hover-white(href='../Journal/journal.html') Journal
+          a.w3-bar-item.w3-button.w3-hover-white(href='../Album/album.html') Album
+        div(style='margin-top: 380px;')
+          i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
+          i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openLogout()', aria-hidden='true')
+      div(style='margin-left: 300px;')
+        // Calendar container
+        .container.w3-padding-32.calend-outer
+          div
+            a#add-event.w3-right.w3-button.w3-white.w3-card-4(onclick='showAddEvent()')
+              i.fa.fa-plus-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
+          #datepicker.w3-card-4(style='margin-top: 70px;')
+            script.
+              var highlight = {
+              start: new Date(2015,6,13),
+              end: new Date(2015,6,19),
+              backgroundColor: '#3faa56',
+              color: '#ffffff',
+              legend: 'CSS Conf.'
+              };
+              var datepicker = new Datepickk({
+              container: document.querySelector('#datepicker'),
+              inline: true,
+              range: true,
+              highlight: []
+              });
+              var datepicker = new Datepickk();
+      // New Event modal
+      #new-event.w3-modal
+        #new-event-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+          .w3-container.w3-display-container
+            span.w3-button.w3-black.w3-display-topright.w3-large.main-title(onclick='closeAddEvent()') x
+            h1.text-center.main-title New Event
+          .new-event-outer
+            .new-event-title
+              input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', placeholder='Title', required='')
+            .new-event-form-outer
+              .row
+                .col-sm-6
+                  p.new-event-from From
+                  .new-event-from-outer
+                    input.w3-input.w3-border.w3-hover-border-black.full-width(type='date', placeholder='From', required='')
+                .col-sm-6
+                  p.new-event-from To
+                  .new-event-from-outer
+                    input.w3-input.w3-border.w3-hover-border-black.full-width(type='date', placeholder='To', required='')
+            .new-event-notes
+              textarea.w3-input.w3-border.w3-hover-border-black(rows='3', placeholder='More details .. ', required='')
+            button.w3-button.w3-black.btn-style(type='submit') DONE
+      // Event Modal
+      #event.w3-modal
+        #event-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
+          .w3-display-container(style='')
+            span.w3-button.w3-large.main-title(onclick='closeEvent()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            #event-title
+              span.w3-button.w3-large.main-title(onclick='editEvent()', style='float: right;')
+                i.fa.fa-pencil.w3-hover-opacity(aria-hidden='true')
+              h1.main-title Review Mockups
+            #edit-title.event-title-outer
+              input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', placeholder='Review Mockups', required='')
+          .w3-padding-32(style='text-align: left;')
+            #event-time
+              p.event-image-caption
+                span.w3-card-4.w3-black.w3-padding 12
+                |  Dec 2017 - 
+                span.w3-card-4.w3-black.w3-padding 13
+                |  Dec 2017
+            #edit-date.row
+              .col-sm-6
+                p.event-from From
+                .new-event-from-outer
+                  input.w3-input.w3-border.w3-hover-border-black.full-width(type='date', placeholder='From', required='')
+              .col-sm-6
+                p.event-from To
+                .new-event-from-outer
+                  input.w3-input.w3-border.w3-hover-border-black.full-width(type='date', placeholder='To', required='')
+          #event-detail(style='letter-spacing: 2px;')
+            span.event-detail Details:
+            |  Should be done within a day
+          #edit-detail
+            .event-edit-detail
+              textarea.w3-input.w3-border.w3-hover-border-black(rows='3', placeholder='Should be done within a day', required='')
+            .row(style='text-align: center;')
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit') DONE
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit', onclick='backEvent()') BACK
+      // Cancel an event modal
+      #delete-event.w3-modal
+        .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+          .w3-container.w3-display-container
+            span.w3-button.w3-large.main-title(onclick='closeConfirm()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            h4.cancel-event-question
+              | Are you sure you want to cancel Review Mockups ?
+          .row(style='text-align: center;')
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit') YES
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit', onclick='closeConfirm()') NO
+      // Setting Modal
+      #setting.w3-modal
+        #setting-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
+          .w3-display-container(style='')
+            span.w3-button.w3-large.main-title(onclick='closeSetting()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            #event-title
+              span#edit-icon.w3-button.w3-large.main-title(onclick='editSetting()', style='float: right;')
+                i.fa.fa-pencil.w3-hover-opacity(aria-hidden='true')
+              h1.main-title.setting-title Settings
+          #info.row.setting-info-outer
+            .col-sm-6.setting-info-pic
+              a(href='pictures/album2.jpg', data-lightbox='galleryone')
+                img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+            .col-sm-6.setting-info-personal
+              p.setting-info-name Julia something
+              p.setting-info-email example1@gmail.com
+          #edit-info
+            .form-group.setting-edit-outer
+              .input-group
+                span.input-group-btn
+                  span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                  input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+                span.form-control
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Name')
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Email')
+              br
+              input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Password', required='')
+              br
+            .row(style='text-align: center;')
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit') DONE
+              .col-sm-6
+                button.w3-button.w3-black.btn-style(type='submit', onclick='backSetting()') BACK
+      // Logout modal
+      #logout.w3-modal
+        .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+          .w3-container.w3-display-container
+            span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            h4.logout-question
+              | Are you sure you want to logout ?
+          .row(style='text-align: center;')
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO

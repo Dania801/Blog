@@ -1,0 +1,105 @@
+.side-outer {
+  width: 25%;
+  right: 0; }
+
+.side-event-outer {
+  width: 100%;
+  height: 150px;
+  border-left: 10px solid #ef5350; }
+
+.side-event-date {
+  margin-left: 20px;
+  padding: 15px; }
+
+.calend-outer {
+  font-family: "Spectral SC";
+  width: 1000px; }
+
+.new-event-outer {
+  margin-top: 30px;
+  text-align: center; }
+
+.new-event-title {
+  width: 500px;
+  margin-left: 80px;
+  margin-bottom: 30px; }
+
+.new-event-form-outer {
+  margin-left: 100px;
+  margin-right: 60px;
+  margin-bottom: 40px; }
+
+.new-event-from {
+  float: left;
+  margin-top: 10px;
+  margin-right: 20px; }
+
+.new-event-from-outer {
+  width: 150px;
+  float: left; }
+
+.new-event-notes {
+  width: 500px;
+  margin-left: 80px;
+  margin-bottom: 30px; }
+
+.event-title-outer {
+  width: 500px;
+  margin-bottom: 0px; }
+
+.event-from {
+  float: left;
+  margin-right: 20px; }
+
+.event-detail {
+  font-size: 20px;
+  color: black; }
+
+.event-edit-detail {
+  width: 500px;
+  margin-bottom: 30px; }
+
+.cancel-event-question {
+  font-family: "Spectral SC", Serif;
+  margin-bottom: 50px;
+  margin-top: 30px; }
+
+.setting-title {
+  text-align: center;
+  margin-left: 40px; }
+
+.setting-info-outer {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 30px; }
+
+.setting-info-pic {
+  width: 200px;
+  height: 200px; }
+
+.setting-info-personal {
+  margin-top: 42px;
+  margin-left: 20px; }
+
+.setting-info-generic, .setting-info-name, .setting-info-email {
+  font-family: "#413b3b", serif;
+  color: black; }
+
+.setting-info-name {
+  font-size: 22px; }
+
+.setting-info-email {
+  font-size: 20px; }
+
+.setting-edit-outer {
+  width: 400px;
+  margin-left: 70px;
+  margin-top: 40px; }
+
+.logout-question {
+  font-family: "Spectral SC", Serif;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  color: black; }
+
+/*# sourceMappingURL=events_style.css.map */

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to Blogate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap and JQuery libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Fontawesome library -->
+  <script src="https://use.fontawesome.com/67c4517658.js"></script>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <!--Fonts library -->
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Great+Vibes|Amatic+SC|Arapey" rel="stylesheet">
+  <!-- W3school library-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- CSS file library-->
+  <link rel='stylesheet' href='welcome_style.css' />
+  <script type="text/javascript" src='welcome_code.js'></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<!--Navigator -->
+<nav class="navbar navbar-default navbar-fixed-top w3-card-4 w3-white">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo w3-animate-zoom" href="#myPage"><span class="logo-B">B</span>LOGATE</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#journal" class='w3-animate-zoom'>JOURNAL</a></li>
+        <li><a href="#task" class='w3-animate-zoom'>TASKS</a></li>
+        <li><a href="#album" class='w3-animate-zoom'>ALBUM</a></li>
+        <li><a href="#socialmedia" class='w3-animate-zoom'>SOCIAL MEDIA</a></li>
+        <li><a href="#register" class='w3-animate-zoom'>REGISTER</a></li>
+        <li><a onclick="showLogin()" class='w3-animate-zoom'>LOGIN</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Login modal -->
+<div id="login" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom login-modal">
+    <div class="w3-container w3-display-container">
+      <span onclick="closeLogin()" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
+      <h1 class='text-center main-title'>Login</h1>
+    </div>
+    <div class="w3-container">
+      <div class='container w3-animate-top text-center full-width'>
+        <form class="w3-container" action="../Home/homePage.html" target="_blank">
+          <div class="w3-section">
+            <input class="w3-input w3-border w3-hover-border-black full-width" type="text" name="email" placeholder="Email" required>
+          </div>
+          <div class="w3-section">
+            <input class="w3-input w3-border w3-hover-border-black full-width" type="password" name="password" placeholder="Password" required>
+          </div>
+          <br /><br />
+          <button type="submit" class="w3-button w3-black btn-style">Let me in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header and Cover -->
+<div class="container welcome-main-cover">
+  <div class='welcome-main-title-div'>
+    <h1 class="text-center text-xs-center welcome-main-title w3-animate-zoom">START YOUR OWN STUNNING BLOG</h1>
+  </div>
+</div>
+
+<!--Journal -->
+<div id="journal" class="container-fluid bg-grey w3-card-4 journal-container">
+  <div class='slideanim'>
+    <h1 class='journal-title'>Go ahead, Make it last!</h1>
+    <br /><br />
+    <p class='journal-desc'>
+      Blogate is so easy to use and you can organize your daily journal in a very neat way
+    </p>
+  </div>
+</div>
+
+<!-- Events -->
+<div class="events w3-card w3-opacity-max"></div>
+<div id='task' class='task-container'>
+  <div class='container large-margin-top'>
+    <div class='row slideanim'>
+      <h1 class='event-title'>Plan your life and organize your events</h1>
+      <br /><br /><br /><br />
+
+      <div class="col-xs-4 w3-margin-bottom">
+        <div class="w3-card-4 w3-white">
+          <header class='w3-container event-image1'>
+          </header>
+          <footer class='w3-container w3-padding-32'>
+            <div class='row'>
+              <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                <span class='event-number'>12</span>
+              </div>
+              <div class='col-xs-8 text-left small-margin-left'>
+                <span class="event-image-title">Review mockups</span><br />
+                <span class="event-image-caption">Dec, 2017</span>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <div class="col-xs-4 w3-margin-bottom">
+        <div class="w3-card-4 w3-white">
+          <header class='w3-container event-image2'>
+          </header>
+          <footer class='w3-container w3-padding-32'>
+            <div class='row'>
+              <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                <span class='event-number'>20</span>
+              </div>
+              <div class='col-xs-8 text-left small-margin-left'>
+                <span class="event-image-title">Team meeting</span><br />
+                <span class="event-image-caption">Dec, 2017</span>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <div class="col-xs-4 w3-margin-bottom">
+        <div class="w3-card-4 w3-white">
+          <header class='w3-container event-image3'>
+          </header>
+          <footer class='w3-container w3-padding-32'>
+            <div class='row'>
+              <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                <span class='event-number'>15</span>
+              </div>
+              <div class='col-xs-8 text-left small-margin-left'>
+                <span class="event-image-title">Purchase ticket</span><br />
+                <span class="event-image-caption">Jan, 2018</span>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Album -->
+<div id='album' class='w3-card-4 large-height'>
+  <div class='medium-top-padding'><h1 class='text-center title'>Create your own photo album</h1></div>
+  <br /><br />
+  <div class='w3-card-4 slideanim album-container'>
+    <div class='row large-width'>
+
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album1.jpg" />
+      </div>
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album2.jpg" />
+      </div>
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album3.jpg" />
+      </div>
+    </div>
+
+    <br />
+    <div class='row large-width'>
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album4.jpg" />
+      </div>
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album5.jpg" />
+      </div>
+      <div class='col-xs-3 w3-card-4 photo-container'>
+        <img src="pictures/album6.jpg" />
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Social media -->
+<div id="socialmedia" class="container-fluid bg-grey w3-card-4 socialmedia-container">
+    <br />
+    <h1 class='btn-style'>Have an access to your social media networks</h1>
+    <br /><br />
+    <div class='slideanim'>
+    <a href='http://www.facebook.com'><i class="fa fa-facebook-official fa-5x medium-right-margin" aria-hidden="true" style='margin-left: 100px;'></i></a>
+    <a href='http://www.twitter.com'><i class="fa fa-twitter fa-5x medium-right-margin" aria-hidden="true"></i></a>
+    <a href='http://www.github.com'><i class="fa fa-github fa-5x medium-right-margin" aria-hidden="true"></i></a>
+    <a href='http://www.reddit.com'><i class="fa fa-reddit-alien fa-5x medium-right-margin" aria-hidden="true"></i></a>
+    <a href='http://www.instagram.com'><i class="fa fa-instagram fa-5x medium-right-margin" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+<!-- Register -->
+<div id="register" class="container-fluid bg-grey w3-card-4 register-container">
+  <h1 class='btn-style'>REGISTER</h1>
+  <span class='btn-style'>Have an access to your social media networks</span>
+  <br /><br />
+  <div class='container slideanim medium-width'>
+    <form class="w3-container" action="../Home/homePage.html" target="_blank">
+      <div class="w3-section">
+        <input class="w3-input w3-border w3-hover-border-black full-width" type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="w3-section">
+        <input class="w3-input w3-border w3-hover-border-black full-width" type="text" name="email" placeholder="Email" required>
+      </div>
+      <div class="w3-section">
+        <input class="w3-input w3-border w3-hover-border-black full-width" type="password" name="password" placeholder="Password" required>
+      </div>
+      <br /><br />
+      <button class="w3-button w3-block w3-black btn-style">Become a member</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p class='btn-style'>Created By <a href="https://www.twitter.com/Dania801">Dania</a> with &nbsp;<i class="fa fa-heart" aria-hidden="true"></i></p>
+</footer>
+
+</body>
+</html>

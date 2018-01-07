@@ -1,0 +1,275 @@
+.generic-font, .personl-name-style, .calendar-style, .album-title {
+  letter-spacing: 2px;
+  color: white; }
+
+.sidebar-layout {
+  z-index: 3;
+  width: 300px;
+  font-family: 'Spectral SC';
+  letter-spacing: 2px; }
+
+.sidebar-logo {
+  padding-bottom: 100px;
+  padding-top: 64px; }
+
+.sidebar-icon {
+  color: #F9E79F; }
+
+.logo-B {
+  font-family: "Great Vibes", cursive;
+  font-size: 35px;
+  letter-spacing: 8px; }
+
+.logo {
+  font-family: "Arapey", serif;
+  font-size: 25px;
+  font-weight: bold; }
+
+.image-layout {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%; }
+
+.image-cover {
+  height: 250px;
+  width: 100%;
+  background-image: url("pictures/pic11.jpg");
+  background-position: bottom; }
+
+.cover-decoration, .cover-decoration-light, .cover-decoration-dark {
+  width: 100%;
+  position: relative;
+  height: 60px; }
+
+.cover-decoration-light {
+  background-color: #424242; }
+
+.cover-decoration-dark {
+  background-color: black; }
+
+.post-cover-layout, .personal-info, .post-cover {
+  position: absolute;
+  width: 100%; }
+
+.personal-info {
+  margin-top: 100px; }
+
+.personal-image-outer {
+  width: 300px;
+  margin-left: 100px;
+  margin-top: 30px; }
+
+.personal-image {
+  border-color: #757575;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%; }
+
+.personal-name {
+  margin-top: 100px;
+  color: white; }
+
+.personl-name-style {
+  font-family: 'Dancing Script', cursive;
+  font-size: 90px; }
+
+.post-cover {
+  margin-top: 370px;
+  padding-bottom: 70px; }
+
+.article {
+  margin-top: 80px;
+  margin-left: 80px;
+  width: 100%;
+  padding-bottom: 50px; }
+
+.article-date {
+  margin-left: 40px;
+  margin-top: 80px; }
+
+.article-title-layout {
+  margin-left: 40px;
+  margin-bottom: 25px; }
+
+.article-title-style {
+  font-family: 'Slabo 27px', serif;
+  letter-spacing: 2px; }
+
+.article-image {
+  width: 800px;
+  height: 330px;
+  background-image: url("pictures/album9.jpg"); }
+
+.article-content {
+  margin-left: 40px;
+  margin-bottom: 25px;
+  margin-top: 25px; }
+
+.article-content-font {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px; }
+
+.article-btn {
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 40px; }
+
+.calendar-outer {
+  width: 490px;
+  height: 500px;
+  margin-left: 100px; }
+
+.calendar-inner {
+  width: 400px;
+  height: 60px;
+  background-color: #212121; }
+
+.calendar-style {
+  font-family: 'Spectral SC';
+  text-align: center; }
+
+.social-media, .social-media-insta, .social-media-reddit, .social-media-git, .social-media-twitter, .social-media-fb {
+  margin-right: 20px; }
+
+.social-media-insta {
+  color: #dd3333; }
+
+.social-media-reddit {
+  color: #ff8400; }
+
+.social-media-git {
+  color: #555555; }
+
+.social-media-twitter {
+  color: #7ba5cb; }
+
+.social-media-fb {
+  margin-left: 30px;
+  color: #336699; }
+
+.album-outer {
+  background-color: #424949;
+  margin-top: 20px;
+  margin-left: 285px;
+  position: absolute;
+  margin-top: 1300px;
+  width: 1650px; }
+
+.album-title {
+  margin-left: 650px;
+  font-family: 'Josefin Slab', serif;
+  margin-top: 100px;
+  font-size: 60px; }
+
+.album-pic {
+  width: 100%; }
+
+.album-btn {
+  width: 25%;
+  margin-left: 550px; }
+
+.album-modal-outer {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  width: auto; }
+
+.journal-outer {
+  background-color: #D0D3D4;
+  width: 1620px;
+  margin-left: 285px;
+  margin-top: 2430px;
+  position: absolute;
+  padding-bottom: 50px; }
+
+.journal-title {
+  font-family: 'Josefin Slab', serif;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  color: black;
+  font-size: 60px; }
+
+.journal-col-outer {
+  margin-left: 80px;
+  width: 450px;
+  margin-top: 100px;
+  margin-bottom: 100px; }
+
+.col-tag {
+  font-family: 'Spectral SC';
+  letter-spacing: 2px;
+  text-align: center;
+  color: black;
+  margin-top: 50px; }
+
+.hr, .hr-short, .hr-long {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset; }
+
+.hr-short {
+  width: 110px; }
+
+.hr-long {
+  width: 340px; }
+
+.hr-outer {
+  margin-left: 40px;
+  margin-top: 50px; }
+
+.col-title {
+  font-family: 'Acme', sans-serif;
+  font-size: 27px;
+  color: black; }
+
+.col-pic {
+  width: 400px;
+  height: 200px; }
+
+.col-article-outer {
+  margin-bottom: 25px;
+  margin-top: 25px; }
+
+.col-article {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px; }
+
+.col-article-btn {
+  width: 250px;
+  margin-top: 20px; }
+
+.more-article-outer {
+  width: 470px;
+  margin-left: 585px;
+  margin-top: 10px; }
+
+.event-background {
+  margin-left: 285px;
+  margin-top: 4285px;
+  background-color: #D5D8DC;
+  background-image: url("pictures/pic12.jpg");
+  background-position: center;
+  width: 100%;
+  height: 900px;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute; }
+
+.event-outer {
+  margin-left: 550px;
+  margin-top: 4250px;
+  position: absolute; }
+
+.events-title {
+  letter-spacing: 4px;
+  font-family: "Spectral SC", serif;
+  color: black;
+  margin-bottom: 50px;
+  font-size: 30px; }
+
+.footer {
+  position: absolute;
+  margin-top: 5200px;
+  margin-left: 1000px; }
+
+/*# sourceMappingURL=homePage_style.css.map */

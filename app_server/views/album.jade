@@ -1,0 +1,310 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Photo album
+    // Bootstrap and JQuery libraries
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // W3C library
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // Google fonts
+    link(href='https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Philosopher|Open+Sans+Condensed:300', rel='stylesheet')
+    // Fontawesome library
+    script(src='https://use.fontawesome.com/67c4517658.js')
+    // Lightbox Llibrary
+    link(href='../../lightbox2-master/src/css/lightbox.css', rel='stylesheet')
+    script(src='../../lightbox2-master/src/js/lightbox.js')
+    // Javascript and CSS
+    link(rel='stylesheet', href='/stylesheets/style5.css')
+    link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
+    link(rel='stylesheet', href='/stylesheets/Home/homePage_style.css')
+    link(rel='stylesheet', href='/stylesheets/Journal/journal_style.css')
+    link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
+    link(rel='stylesheet', href='/stylesheets/Album/album_style.css')
+    script(type='text/javascript', src='/javascripts/js-functions.js')
+  body(style='background-color: lavender;')
+    // Sidebar
+    nav#mySidebar.w3-card-4.w3-sidebar.w3-bar-block.w3-animate-right.w3-black.w3-top.w3-text-light-grey.w3-large.sidebar-outer
+      #sidebar-x.container.sidebar-x
+        a.w3-bar-item.w3-button.w3-center.w3-padding-32.w3-hover-black(href='javascript:void()', onclick='w3_close()')
+          i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
+      .sidebar-options-outer
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Home/homePage.html') Home
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Journal/journal.html') Journal
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Event/events.html') Events
+      div(style='margin-top: 350px;margin-left: 20px;')
+        a(style='margin-right: 10px;')
+          i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
+        i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openLogout()', aria-hidden='true')
+    // Navigator
+    header.w3-card-4.w3-top.w3-white.w3-xlarge(style='padding-top: 13px;')
+      .nav-header-outer
+        span.w3-left.w3-padding.nav-logo
+          span.nav-logo-b B
+          | LOGATE
+        a#sidebar-btn.w3-right.w3-button.w3-white(href='javascript:void(0)')
+          i.fa.fa-bars.w3-hover-opacity(aria-hidden='true')
+        a#add-btn.w3-right.w3-button.w3-white(href='#add-pic')
+          i.fa.fa-plus-circle.w3-hover-opacity(aria-hidden='true')
+    // Overlay effect when opening sidebar on small screens
+    #myOverlay.w3-overlay.w3-animate-opacity(onclick='w3_close()', style='cursor:pointer', title='close side menu')
+    // Page Content
+    #top.page-content
+      // Slideshow div
+      .w3-card-4.slide-outer
+        // Slideshow title
+        .slide-title-outer
+          h4.recent-title
+            span.recent-title-letter-big.slide-title F
+            | eatured 
+            span.recent-title-letter-small.slide-title P
+            | ictures
+          h5.slide-hr
+            b _________
+        // Slideshow
+        .w3-container(style='width: 80%;')
+          // Image 1
+          .w3-display-container.mySlides(style='height: 560px;')
+            a(href='pictures/coffee1.jpg', data-lightbox='gallery2', data-title='Beautiful day')
+              img#image-slide(src='pictures/coffee1.jpg', style='width:100%')
+            .w3-display-topleft.w3-container.w3-padding-32
+              span.w3-white.w3-padding-large Beautiful day
+          // Image 2
+          #image-slide.w3-display-container.mySlides
+            a(href='pictures/coffee2.jpg', data-lightbox='gallery2', data-title='Beautiful day')
+              img#image-slide2(src='pictures/coffee2.jpg', style='width:100%')
+            .w3-display-topleft.w3-container.w3-padding-32
+              span.w3-white.w3-padding-large Beautiful day
+          // Image 3
+          #image-slide.w3-display-container.mySlides
+            a(href='pictures/coffee3.jpg', data-lightbox='gallery2', data-title='Beautiful day')
+              img#image-slide3(src='pictures/coffee3.jpg', style='width:100%')
+            .w3-display-topleft.w3-container.w3-padding-32
+              span.w3-white.w3-padding-large Beautiful day
+          // Slideshow next/previous buttons
+          .w3-container.w3-padding.w3-xlarge.w3-card-4(style='background-color: #ef5350')
+            .w3-left(onclick='plusDivs(-1)')
+              i.fa.fa-arrow-circle-left.w3-hover-text-teal(style='color:white;')
+            .w3-right(onclick='plusDivs(1)')
+              i.fa.fa-arrow-circle-right.w3-hover-text-teal(style='color:white;')
+            .w3-center
+              span.w3-tag.demodots.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(1)')
+              span.w3-tag.demodots.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(2)')
+              span.w3-tag.demodots.w3-border.w3-transparent.w3-hover-white(onclick='currentDiv(3)')
+      // Album Container
+      .container.w3-card-4.photo-album-outer
+        .row.photo-album-inner
+          .text-center(style='margin-top: 150px;margin-bottom: 100px;')
+            h4.recent-title(style='color: black;')
+              span.recent-title-letter-big P
+              | hoto 
+              span.recent-title-letter-small A
+              | lbum
+            h5(style='color: black')
+              b _________
+          #pic-stand.slideanim
+            a(href='pictures/art1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+              .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+                .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/art1.jpg");')
+            .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+              i.fa.fa-star(onclick='addToFavourit(event)')
+          a(href='pictures/art4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/art4.jpg");')
+          .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+            i.fa.fa-star(onclick='addToFavourit(event)')
+        a(href='pictures/girl5.jpg', data-lightbox='gallery', data-title='Beautiful day')
+          .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+            .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl5.jpg");')
+        .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+          i.fa.fa-star(onclick='addToFavourit(event)')
+      a(href='pictures/girl4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+        .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+          .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl4.jpg");')
+      .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+        i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/girl4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl4.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/food3.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food3.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/p1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p1.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/p2.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p2.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/album8.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/album8.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/food4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food4.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/album13.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/album13.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/food2.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food2.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/p4.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p4.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/coffee1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/coffee1.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/p7.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p7.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    a(href='pictures/pic13.jpg', data-lightbox='gallery', data-title='Beautiful day')
+      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/pic13.jpg");')
+    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+      i.fa.fa-star(onclick='addToFavourit(event)')
+    // Add new pic container
+    #add-pic.form-textarea.w3-card-4.slideanim.new-outer
+      .text-center(style='margin-top: 90px;margin-bottom: 100px;')
+        h4.recent-title(style='color: black')
+          span.recent-title-letter-big N
+          | ew 
+          span.recent-title-letter-small P
+          | icture
+        h5(style='color: black')
+          b _________
+      .form-group.new-inner
+        .input-group
+          span.input-group-btn
+            span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+            input(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+          span.form-control
+        .form-title.new-caption
+          input.form-control(onkeyup='myFunction()', placeholder='Caption')
+    // Setting Modal
+    #setting.w3-modal
+      #setting-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
+        .w3-display-container(style='')
+          span.w3-button.w3-large.main-title(onclick='closeSetting()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          #event-title
+            span#edit-icon.w3-button.w3-large.main-title(onclick='editSetting()', style='float: right;')
+              i.fa.fa-pencil.w3-hover-opacity(aria-hidden='true')
+            h1.main-title.setting-title Settings
+        #info.row.setting-info-outer
+          .col-sm-6.setting-info-pic
+            a(href='pictures/album2.jpg', data-lightbox='galleryone')
+              img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+          .col-sm-6.setting-info-personal
+            p.setting-info-name Julia something
+            p.setting-info-email example1@gmail.com
+        #edit-info
+          .form-group.setting-edit-outer
+            .input-group
+              span.input-group-btn
+                span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
+              span.form-control
+            br
+            input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Name')
+            br
+            input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Email')
+            br
+            input.w3-input.w3-border.w3-hover-border-black.full-width(placeholder='Password', required='')
+            br
+          .row(style='text-align: center;')
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit') DONE
+            .col-sm-6
+              button.w3-button.w3-black.btn-style(type='submit', onclick='backSetting()') BACK
+    // Logout modal
+    #logout.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+        .w3-container.w3-display-container
+          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          h4.logout-question
+            | Are you sure you want to logout ?
+        .row(style='text-align: center;')
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+    // Cancel an event modal
+    #logout.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+        .w3-container.w3-display-container
+          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          h4(style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;')
+            | Are you sure you want to logout ?
+        .row(style='text-align: center;')
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../Welcome/welcomePage.html'") YES
+          .col-sm-6
+            button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+    // Cancel an event modal
+    #favourite-error.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
+        .w3-container.w3-display-container
+          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
+            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          h4(style='text-align:center;font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;')
+            | The maximum number of favourites is 3 pictures . unstar a picture .
+        div(style='margin-left: 280px;')
+          button.w3-button.w3-black.btn-style(type='submit', onclick='closeFavouriteError()') Ok
+    .w3-white.footer-outer
+      // Footer
+      footer.container-fluid.text-center
+        a#footer(href='#top', title='To Top')
+          span.glyphicon.glyphicon-chevron-up
+        p.btn-style GO TOP
+    script.
+      // Slideshow
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demodots");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+      $(x[i]).slideUp(500);
+      }
+      for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      $(x[slideIndex-1]).show(500);
+      dots[slideIndex-1].className += " w3-white";
+      }

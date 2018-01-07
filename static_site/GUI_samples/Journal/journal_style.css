@@ -1,0 +1,200 @@
+.sidebar-outer {
+  z-index: 3;
+  width: 250px;
+  font-weight: bold;
+  display: none;
+  right: 0; }
+
+.sidebar-x {
+  width: 90px;
+  margin-left: 160px; }
+
+.sidebar-options-outer {
+  margin-top: 250px;
+  font-family: "Spectral SC", serif;
+  letter-spacing: 2px; }
+
+.nav-header-outer {
+  margin-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 20px; }
+
+.nav-logo {
+  font-family: 'Arapey', serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-left: 40px; }
+
+.nav-logo-b {
+  font-family: "Great Vibes", cursive;
+  font-size: 35px;
+  letter-spacing: 8px; }
+
+.nav-search-outer {
+  width: 100%;
+  height: 80px;
+  background-color: #141415;
+  padding-top: 23px;
+  padding-left: 40px; }
+
+.top-cover {
+  background-image: url("pictures/pic1.jpg");
+  background-position: top;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.top-title-outer {
+  margin-top: 90px;
+  color: white;
+  width: 28%;
+  height: 60px;
+  background: black; }
+
+.top-title {
+  font-family: "Philosopher", sans-serif;
+  color: white;
+  letter-spacing: 3px; }
+
+.top-title-letter {
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 6px;
+  font-size: 50px; }
+
+.title, .recent-title, .recent-title-black {
+  font-family: "Spectral SC", serif;
+  letter-spacing: 5px; }
+
+.pic-layout, .article-pic-layout, .all-article-pic-layout {
+  height: 200px;
+  background-position: center; }
+
+.recent-outer {
+  width: 2000px;
+  background-color: #323536; }
+
+.recent-title {
+  color: white; }
+
+.recent-title-black {
+  color: black; }
+
+.recent-title-letter-big {
+  font-size: 35px; }
+
+.recent-title-letter-small {
+  font-size: 30px; }
+
+.article-outer {
+  margin-top: 82px;
+  margin-left: 20px;
+  width: 600px; }
+
+.article-pic-layout {
+  width: 570px; }
+
+.all-outer {
+  max-width: 1564px;
+  padding-bottom: 100px; }
+
+.all-article-outer {
+  margin-top: 82px;
+  margin-left: 20px;
+  width: 450px; }
+
+.all-article-pic-layout {
+  width: 420px; }
+
+.all-btn-outer {
+  margin-left: 35px;
+  padding-bottom: 25px; }
+
+.all-btn {
+  width: 150px;
+  letter-spacing: 2px; }
+
+.event-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  letter-spacing: 4 px; }
+
+.event-title-letter {
+  font-family: "Spectral SC", serif;
+  font-size: 25px;
+  font-weight: bold; }
+
+.form-title {
+  position: absolute;
+  width: 700px;
+  color: black; }
+
+.form-datalist {
+  position: absolute;
+  width: 250px;
+  margin-left: 730px;
+  color: black; }
+
+.form-textarea {
+  position: absolute;
+  width: 700px; }
+
+.form-btn-outer {
+  margin-left: 990px;
+  padding-bottom: 25px;
+  position: absolute;
+  margin-top: 50px; }
+
+.form-btn {
+  width: 150px;
+  letter-spacing: 2px; }
+
+.article-modal-outer {
+  width: 100%;
+  padding-bottom: 100px; }
+
+.article-modal-outer-x2 {
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 100px; }
+
+.article-modal-x {
+  color: white;
+  background-color: black;
+  height: 50px;
+  padding-top: 11px; }
+
+.article-modal-pic-outer {
+  text-align: center;
+  margin-bottom: 100px; }
+
+.article-modal-pic {
+  max-width: 80%;
+  max-hight: 20%; }
+
+.article-modal-title {
+  font-family: "Philosopher", serif;
+  font-size: 40px; }
+
+.article-modal-tag {
+  margin-left: 50px;
+  margin-top: 50px; }
+
+.article-modal-date {
+  margin-top: 30px;
+  text-align: center; }
+
+.article-modal-text-outer {
+  text-align: left;
+  padding-right: 300px;
+  padding-left: 300px;
+  padding-top: 80px; }
+
+.article-modal-text {
+  font-size: 30px;
+  font-family: "Open Sans Condensed", serif;
+  color: black;
+  letter-spacing: 1px; }
+
+/*# sourceMappingURL=journal_style.css.map */

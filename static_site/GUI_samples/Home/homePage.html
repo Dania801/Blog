@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <!--Bootstrap and JQuery libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--W3C library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Great+Vibes|Arapey|Slabo+27px|Raleway|Acme|Josefin+Slab|" rel="stylesheet">
+    <!--Fontawesome library -->
+    <script src="https://use.fontawesome.com/67c4517658.js"></script>
+    <!--Calendar Library -->
+    <link rel="stylesheet" href="../../datepickk-master/dist/datepickk.min.css">
+    <script src="../../datepickk-master/dist/datepickk.min.js"></script>
+    <!-- Javascript and CSS-->
+    <link rel="stylesheet" href="../style5.css">
+    <link rel='stylesheet' href='../Welcome/welcome_style.css' />
+    <link rel='stylesheet' href='homePage_style.css' />
+    <link rel='stylesheet' href='../Album/album_style.css' />
+    <link rel='stylesheet' href='../Journal/journal_style.css'/>
+    <script src='../Welcome/welcome_code.js'></script>
+    <!-- Lightbox Llibrary-->
+    <link href="../../lightbox2-master/src/css/lightbox.css" rel="stylesheet">
+    <script src="../../lightbox2-master/src/js/lightbox.js"></script>
+    <style>
+    #datepicker{
+      max-width: 500px;
+      height: 500px;
+      width: 100%;
+      }
+    </style>
+  </head>
+  <body >
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-card-4 w3-black w3-collapse w3-top w3-large w3-padding sidebar-layout"><br>
+      <div class="w3-container sidebar-logo w3-animate-zoom">
+        <a class="navbar-brand logo w3-padding-32" href="#home"><span class="logo-B">B</span>LOGATE</a>
+      </div>
+      <div class="w3-bar-block">
+        <a href="#home" class="w3-bar-item w3-button w3-hover-white">Home</a>
+        <a href="#journal" class="w3-bar-item w3-button w3-hover-white">Journal</a>
+        <a href="#events" class="w3-bar-item w3-button w3-hover-white">Events</a>
+        <a href="#album" class="w3-bar-item w3-button w3-hover-white">Album</a>
+        <a href="#socialmedia" class="w3-bar-item w3-button w3-hover-white">Social Media</a>
+      </div>
+      <div style='margin-top: 380px;'>
+        <i class="fa fa-cog fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true" onclick="openSetting()"></i>
+        <i class="fa fa-sign-out fa-lg w3-hover-opacity sidebar-icon" aria-hidden="true" onclick="openLogout()"></i>
+      </div>
+    </nav>
+
+    <!-- Full page container-->
+    <div id='home'>
+
+      <!--Top of the page-->
+      <div style='margin-left:300px;'>
+        <!--Cover image container -->
+        <div class='post-cover-layout'>
+          <div class="container w3-opacity w3-grayscale-min image-cover"></div>
+          <div class='container w3-card-4 cover-decoration-light'></div>
+          <div class='container w3-card-4 cover-decoration-dark'></div>
+        </div>
+
+        <!--Personal Picture and name container-->
+        <div class='personal-info'>
+          <div class='row'>
+            <div class='col-xs-4 personal-image-outer w3-animate-zoom'>
+              <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
+            </div>
+            <div class='col-xs-8 personal-name'>
+              <h2 class='personl-name-style'><span style='font-size: 140px;'>W</span>elcome, Julia</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Cover container-->
+        <div class='container w3-card-4 row post-cover'>
+          <!-- Recent Article container-->
+          <div class='col-xs-6'>
+            <div class='container w3-card w3-white article'>
+              <!-- Date container-->
+              <div class='article-date'>
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <!-- Title containr-->
+              <div class='article-title-layout'>
+                <h2 class='article-title-style'>Exploring Norway's Coast</h2>
+              </div>
+              <!-- Article image container-->
+              <div class= 'container w3-padding-16 article-image' style="background-image: url('pictures/album9.jpg');"></div>
+              <!-- Article container-->
+              <div class='article-content'>
+                <p class='article-content-font'>
+                  Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='article-btn'>
+                <button onclick="showArticle('pictures/album9.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+          </div>
+
+          <!--Calendar and social media container -->
+          <div class='col-xs-5' style='margin-top: 50px;'>
+            <!--Calendar container-->
+            <div class='container w3-padding-32 w3-animate-right calendar-outer' style='font-family: "Spectral SC", Serif; margin-bottom: 130px;'>
+                <div class='w3-card-4' id="datepicker">
+                  <script>
+                  var highlight = {
+                	 start: new Date(2015,6,13),
+                	 end: new Date(2015,6,19),
+                	 backgroundColor: '#3faa56',
+                	 color: '#ffffff',
+                	 legend: 'CSS Conf.'
+                };
+
+                var datepicker = new Datepickk({
+                	container: document.querySelector('#datepicker'),
+                	inline: true,
+                	range: true,
+                	highlight: []
+                });
+
+                var datepicker = new Datepickk();
+                  </script>
+                </div>
+            </div>
+            <!--Social media container -->
+            <div id='socialmedia' class='container w3-card w3-white w3-padding-32 w3-animate-right' style='width: 490px; height: 200px;margin-top: 50px;margin-left: 100px;'>
+              <div class= 'container w3-padding-16' style='width: 400px;height:60px;background-color: #212121'>
+                <p style="font-family: 'Spectral SC';letter-spacing: 2px;color: white;text-align: center">
+                  Social Media
+                </p>
+              </div>
+              <div class='container' style='margin-top: 20px;'>
+                <a href='http://www.facebook.com'><i class="fa fa-facebook-official fa-4x w3-hover-opacity social-media-fb" aria-hidden="true"></i></a>
+                <a href='http://www.twitter.com'><i class="fa fa-twitter fa-4x w3-hover-opacity social-media-twitter" aria-hidden="true"></i></a>
+                <a href='http://www.github.com'><i class="fa fa-github fa-4x w3-hover-opacity social-media-git" aria-hidden="true"></i></a>
+                <a href='http://www.reddit.com'><i class="fa fa-reddit-alien fa-4x w3-hover-opacity social-media-reddit" aria-hidden="true"></i></a>
+                <a href='http://www.instagram.com'><i class="fa fa-instagram fa-4x w3-hover-opacity social-media-insta" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Photo album outer container-->
+      <div id='album' class= 'container w3-padding-16 w3-card-4 album-outer' style='height: 1200px;'>
+        <h1 class='album-title'>Photo Album</h1>
+        <!--Photo album inner container-->
+        <div style='margin-left: 150px;margin-top: 50px;padding-bottom: 100px;position: relative;'>
+          <a href="pictures/art4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/art4.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/girl5.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl5.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/girl4.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/girl4.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/food3.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/food3.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/p1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/p1.jpg");'/>
+            </div>
+          </div></a>
+          <a href="pictures/coffee1.jpg" data-lightbox="gallery" data-title="Beautiful day"><div class='col-xs-3 w3-card-4 photo-container photo-album-pic-outer'>
+            <div class='w3-card-4 pic photo-album-pic' style='background-image: url("pictures/coffee1.jpg");'/>
+            </div>
+          </div></a>
+
+          <div style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;'>
+            <button onclick="location.href='../Album/album.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style form-btn" style='width: 400px;'>Get More Photos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!--Picture modal -->
+      <div id="picture" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top container album-modal-outer">
+          <div class="w3-container w3-display-container">
+            <span onclick="document.getElementById('picture').style.display='none';" class="w3-button w3-black w3-display-topright w3-large main-title">x</span>
+          </div>
+          <div class='container'>
+            <img id='pic_container' style="margin-left: auto;margin-right: auto;display: block;"/>
+          </div>
+        </div>
+      </div>
+
+      <!--Journal Container-->
+      <div id='journal' class='container journal-outer'>
+        <!-- First Column-->
+        <h1 class='text-center text-xs-center journal-title'>Journal</h1>
+        <div class='row'>
+          <!-- First Column-->
+          <div class='container col-xs-4 w3-card-4 w3-white slideanim journal-col-outer'>
+            <h3 class='col-tag'>PERSONAL</h3>
+            <div style="margin-left: 153px;">
+              <hr class='hr-short'/>
+            </div>
+            <!-- First article-->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/advent5.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/advent5.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class="hr-long"/>
+            </div>
+            <!-- Second article-->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/advent9.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/advent9.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class='hr-long'/>
+            </div>
+          </div>
+          <!--Second Column -->
+          <div class='container col-xs-4 w3-card-4 w3-white slideanim journal-col-outer'>
+            <h3 class='col-tag'>POLITICAL</h3>
+            <div style="margin-left: 153px;">
+              <hr class='hr-short'/>
+            </div>
+            <!-- First Article-->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/album10.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/album10.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class='hr-long'/>
+            </div>
+            <!--Second Article -->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/album11.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/album11.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class='hr-long'/>
+            </div>
+          </div>
+          <!--Third Column -->
+          <div class='container col-xs-4 w3-card-4 w3-white slideanim journal-col-outer'>
+            <h3 class='col-tag'>TECHNOLOGY</h3>
+            <div style="margin-left: 153px;">
+              <hr class='hr-short'/>
+            </div>
+            <!-- First Article-->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/album12.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/album12.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class='hr-long'/>
+            </div>
+            <!--Second Article -->
+            <div style='margin-left: 10px;'>
+              <div style="margin-top: 40px;">
+                <p>
+                  21 October 2016, 07:00 pm
+                </p>
+              </div>
+              <h5 class='col-title'>Exploring Norway's Coast</h5>
+              <div class= 'col-pic'>
+                <img src='pictures/album13.jpg' class='col-pic'>
+              </div>
+              <div class='col-article-outer'>
+                <p class='col-article'>
+                   Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                </p>
+              </div>
+              <div class='col-article-btn'>
+                <button onclick="showArticle('pictures/album13.jpg')" type="submit" class="w3-button w3-block w3-white w3-border btn-style">Continue Reading</button>
+              </div>
+            </div>
+            <div class='hr-outer'>
+              <hr class='hr-long'/>
+            </div>
+          </div>
+        </div>
+        <!-- View more article-->
+        <div class='more-article-outer'>
+          <button onclick="location.href='../Journal/journal.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='font-size: 20px;'>Read more posts</button>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="w3-card w3-opacity-max event-background"></div>
+      <div id='events' class='task-container event-outer'>
+          <div class='container large-margin-top row slideanim'>
+            <h3 class='events-title'>Events for this month</h3>
+              <!-- First Event-->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>12</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Review mockups</span><br />
+                        <span class="event-image-caption">Dec, 2017</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+              <!--Second Event -->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style="height: 160px;border-top: 10px solid black;">
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>20</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Team meeting</span><br />
+                        <span class="event-image-caption">Dec, 2017</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+              <!-- Third Event-->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>15</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Purchase ticket</span><br />
+                        <span class="event-image-caption">Jan, 2018</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+              <!--Fourth event -->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>15</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Purchase ticket</span><br />
+                        <span class="event-image-caption">Jan, 2018</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+              <!-- Fifth event -->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>15</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Purchase ticket</span><br />
+                        <span class="event-image-caption">Jan, 2018</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+              <!-- Sixth event-->
+              <div class="col-xs-4 w3-margin-bottom">
+                <div class="w3-card-4 w3-white" style='height: 160px;border-top: 10px solid black;'>
+                  <footer class='w3-container' style='padding-top: 50px;'>
+                    <div class='row'>
+                      <div class='col-xs-2 w3-card-4 w3-black event-date'>
+                        <span class='event-number'>15</span>
+                      </div>
+                      <div class='col-xs-8 text-left small-margin-left'>
+                        <span class="event-image-title">Purchase ticket</span><br />
+                        <span class="event-image-caption">Jan, 2018</span>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+
+              <div class='more-article-outer' style='margin-left: 300px;margin-top: 500px;'>
+                <button onclick="location.href='../Event/events.html';" type="submit" class="w3-button w3-block w3-white w3-border btn-style" style='font-size: 20px;'>Check All Events</button>
+              </div>
+          </div>
+      </div>
+      <!-- Footer -->
+      <footer class="container-fluid text-center footer">
+        <a href="#home" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p class='btn-style'>GO TOP</p>
+      </footer>
+
+
+      <!--Article Modal -->
+      <div id="article" class="w3-modal w3-animate-zoom" style='padding: 50px;'>
+        <div class="w3-container w3-white w3-card article-modal-outer">
+          <div class="w3-container article-modal-outer-x2">
+            <span id='article-x' onclick="closeArticle()" class="w3-button w3-display-topright article-modal-x" ><i class="fa fa-times-circle fa-lg w3-hover-opacity" aria-hidden="true"></i></span>
+            <div class='article-modal-pic-outer'>
+              <img id = 'article-pic' class='w3-border w3-card-4 article-modal-pic' src="">
+            </div>
+            <div style='text-align: center'>
+              <h2 class='article-modal-title'>Some Title</h2>
+            </div>
+            <div id='article-tag' class="w3-display-topleft w3-black w3-padding article-modal-tag">Social</div>
+            <div class='article-modal-date'>
+              <p>
+                Posted on October 12, 2017
+              </p>
+            </div>
+            <div class='article-modal-text-outer'>
+              <p class='article-modal-text'>
+                Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
+
+                Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
+
+                Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancel an event modal-->
+      <div id="logout" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom login-modal" style='width: 700px;'>
+          <div class="w3-container w3-display-container">
+            <span onclick="closeLogout()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+            <h4 style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;'>
+              Are you sure you want to logout ?
+            </h4>
+          </div>
+
+          <div class='row' style='text-align: center;'>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="location.href='../Welcome/welcomePage.html'" class="w3-button w3-black btn-style">YES</button>
+            </div>
+            <div class='col-sm-6'>
+              <button type="submit" onclick="closeLogout()" class="w3-button w3-black btn-style">NO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Setting Modal-->
+    <div id="setting" class="w3-modal">
+      <div id='setting-inner' class="w3-modal-content w3-animate-zoom login-modal" style='width: 600px;'>
+        <div class="w3-display-container" style=''>
+          <span onclick="closeSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-times w3-hover-opacity" aria-hidden="true"></i></span>
+          <div id='event-title'>
+            <span id='edit-icon' onclick="editSetting()" class="w3-button w3-large main-title" style='float: right;'><i class="fa fa-pencil w3-hover-opacity" aria-hidden="true"></i></span>
+            <h1 class=' main-title' style="text-align: center;margin-left: 40px;">Settings</h1>
+          </div>
+        </div>
+          <div id='info' class='row' style='margin-top: 40px;margin-bottom: 20px;margin-left: 30px;'>
+            <div class='col-sm-6' style='width:200px;height:200px;'>
+              <a href="pictures/album2.jpg" data-lightbox="galleryone"><img class="img-responsive w3-card-4 personal-image" src="pictures/album2.jpg" alt="Me"></a>
+            </div>
+            <div class='col-sm-6' style='margin-top: 42px;margin-left: 20px;'>
+              <p style='font-family: "#413b3b", serif; font-size: 22px;color: black'>Julia something</p>
+              <p style='font-family: "#413b3b", serif; font-size: 20px;color: black'>example1@gmail.com</p>
+            </div>
+          </div>
+          <div id='edit-info'>
+            <div class="form-group" style='width: 400px;margin-left: 70px;margin-top: 40px;'>
+              <div class="input-group"><span class="input-group-btn"><span class="btn w3-btn w3-black " onclick="$(this).parent().find('input[type=file]').click();">Picture</span>
+                  <input placeholder="Upload song cover" name="cover" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());" style="display: none" type="file"/></span><span class="form-control"></span>
+              </div>
+              <br />
+                <input class='form-control' placeholder="Name" >
+                <br />
+                <input class='form-control' placeholder="Email" >
+                <br />
+                <input class='form-control' placeholder="Password" >
+                <br />
+            </div>
+            <div class='row' style='text-align: center;'>
+              <div class='col-sm-6'>
+                <button type="submit" class="w3-button w3-black btn-style">DONE</button>
+              </div>
+              <div class='col-sm-6'>
+                <button type="submit" onclick="backSetting()" class="w3-button w3-black btn-style">BACK</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>

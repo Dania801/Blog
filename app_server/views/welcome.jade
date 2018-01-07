@@ -1,0 +1,156 @@
+doctype html
+html(lang='en')
+  head
+    title= pageInfo.title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Bootstrap and JQuery libraries
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // Fontawesome library
+    script(src='https://use.fontawesome.com/67c4517658.js')
+    link(rel='stylesheet', href='path/to/font-awesome/css/font-awesome.min.css')
+    // Fonts library
+    link(href='https://fonts.googleapis.com/css?family=Spectral+SC|Great+Vibes|Amatic+SC|Arapey', rel='stylesheet')
+    // W3school library
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    // CSS file library
+    link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
+    script(type='text/javascript', src='/javascripts/js-functions.js')
+  body#myPage(data-spy='scroll', data-target='.navbar', data-offset='60')
+    // Navigator
+    nav.navbar.navbar-default.navbar-fixed-top.w3-card-4.w3-white
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.logo.w3-animate-zoom(href='#myPage')
+            span.logo-B B
+            | LOGATE
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.w3-animate-zoom(href='#journal') JOURNAL
+            li
+              a.w3-animate-zoom(href='#task') TASKS
+            li
+              a.w3-animate-zoom(href='#album') ALBUM
+            li
+              a.w3-animate-zoom(href='#socialmedia') SOCIAL MEDIA
+            li
+              a.w3-animate-zoom(href='#register') REGISTER
+            li
+              a.w3-animate-zoom(onclick='showLogin()') LOGIN
+    // Login modal
+    #login.w3-modal
+      .w3-modal-content.w3-animate-zoom.login-modal
+        .w3-container.w3-display-container
+          span.w3-button.w3-black.w3-display-topright.w3-large.main-title(onclick='closeLogin()') x
+          h1.text-center.main-title Login
+        .w3-container
+          .container.w3-animate-top.text-center.full-width
+            form.w3-container(action='../Home/homePage.html', target='_blank')
+              .w3-section
+                input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', name='email', placeholder='Email', required='')
+              .w3-section
+                input.w3-input.w3-border.w3-hover-border-black.full-width(type='password', name='password', placeholder='Password', required='')
+              br
+              br
+              button.w3-button.w3-black.btn-style(type='submit') Let me in
+    // Header and Cover
+    .container.welcome-main-cover(style="background-image: url('/images/Welcome/pictures/pic7.jpg')")
+      .welcome-main-title-div
+        h1.text-center.text-xs-center.welcome-main-title.w3-animate-zoom= pageInfo.desc
+    // Journal
+    #journal.container-fluid.bg-grey.w3-card-4.journal-container
+      .slideanim
+        h1.journal-title= pageInfo.journalTitle
+        br
+        br
+        p.journal-desc
+          | #{pageInfo.journalDesc}
+    // Events
+    .events.w3-card.w3-opacity-max(style="background-image: url('/images/Welcome/pictures/pic6.jpg');")
+    #task.task-container
+      .container.large-margin-top
+        .row.slideanim
+          h1.event-title= pageInfo.eventsTitle
+          br
+          br
+          br
+          br
+          each event in events
+            .col-xs-4.w3-margin-bottom
+              .w3-card-4.w3-white
+                header.w3-container.event-image1(style="background-image: url('#{event.image}');background-position: #{event.position};")
+                footer.w3-container.w3-padding-32
+                  .row
+                    .col-xs-2.w3-card-4.w3-black.event-date
+                      span.event-number #{event.day}
+                    .col-xs-8.text-left.small-margin-left
+                      span.event-image-title #{event.title}
+                      br
+                      span.event-image-caption #{event.month}, #{event.year}
+    // Album
+    #album.w3-card-4.large-height
+      .medium-top-padding
+        h1.text-center.title= pageInfo.albumTitle
+      br
+      br
+      .w3-card-4.slideanim.album-container
+        .row.large-width
+          - for(var i = 0 ; i < 3 ; i++)
+            .col-xs-3.w3-card-4.photo-container
+              img(src='#{album[i]}')
+
+        br
+        .row.large-width
+          - for(var i = 3 ; i < 6 ; i++)
+            .col-xs-3.w3-card-4.photo-container
+              img(src='#{album[i]}')
+    // Social media
+    #socialmedia.container-fluid.bg-grey.w3-card-4.socialmedia-container
+      br
+      h1.btn-style= pageInfo.mediaTitle
+      br
+      br
+      .slideanim
+        a(href='http://www.facebook.com')
+          i.fa.fa-facebook-official.fa-5x.medium-right-margin(aria-hidden='true', style='margin-left: 100px;')
+        a(href='http://www.twitter.com')
+          i.fa.fa-twitter.fa-5x.medium-right-margin(aria-hidden='true')
+        a(href='http://www.github.com')
+          i.fa.fa-github.fa-5x.medium-right-margin(aria-hidden='true')
+        a(href='http://www.reddit.com')
+          i.fa.fa-reddit-alien.fa-5x.medium-right-margin(aria-hidden='true')
+        a(href='http://www.instagram.com')
+          i.fa.fa-instagram.fa-5x.medium-right-margin(aria-hidden='true')
+    // Register
+    #register.container-fluid.bg-grey.w3-card-4.register-container
+      h1.btn-style REGISTER
+      span.btn-style= pageInfo.registerTitle
+      br
+      br
+      .container.slideanim.medium-width
+        form.w3-container(action='../Home/homePage.html', target='_blank')
+          .w3-section
+            input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', name='name', placeholder='Name', required='')
+          .w3-section
+            input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', name='email', placeholder='Email', required='')
+          .w3-section
+            input.w3-input.w3-border.w3-hover-border-black.full-width(type='password', name='password', placeholder='Password', required='')
+          br
+          br
+          button.w3-button.w3-block.w3-black.btn-style Become a member
+    // Footer
+    footer.container-fluid.text-center
+      a(href='#myPage', title='To Top')
+        span.glyphicon.glyphicon-chevron-up
+      p.btn-style
+        | Created By 
+        a(href='https://www.twitter.com/Dania801') Dania
+        |  with  
+        i.fa.fa-heart(aria-hidden='true')
