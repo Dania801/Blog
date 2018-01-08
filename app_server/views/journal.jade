@@ -32,7 +32,7 @@ html
     link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
     link(rel='stylesheet', href='/stylesheets/Home/homePage_style.css')
     link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
-    link(rel='stylesheet', href='journal_style.css')
+    link(rel='stylesheet', href='/stylesheets/Journal/journal_style.css')
     script(type='text/javascript', src='/javascripts/js-functions.js')
     style.
       .w3-quarter img{margin-bottom: -6px; cursor: pointer}
@@ -125,57 +125,25 @@ html
             | rticles
           h5(style='color: white')
             b _________
-        // Article
-        #first-article.col-xs-4.w3-margin-bottom.article-outer
-          .w3-card.w3-white
-            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Journal
-            header.article-pic-layout(style='background-image: url("pictures/art1.jpg");')
-            .w3-margin(style='padding-bottom: 20px;')
-              div(style='margin-top: 30px;')
-                p
-                  | 21 October 2016, 07:00 pm
-              // Title container
-              .article-title-layout
-                h2.article-title-style Some Title
-              .article-content(style='padding-right: 20px;')
-                p.article-content-font
-                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn
-                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art1.jpg')", type='submit') Continue Reading
-        // Article
-        #second-article.col-xs-4.w3-margin-bottom.article-outer
-          .w3-card.w3-white
-            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Political
-            header.article-pic-layout(style='background-image: url("pictures/art2.jpg");')
-            .w3-margin(style='padding-bottom: 20px;')
-              div(style='margin-top: 30px;')
-                p
-                  | 21 October 2016, 07:00 pm
-              // Title container
-              .article-title-layout
-                h2.article-title-style Some Title
-              .article-content(style='padding-right: 20px;')
-                p.article-content-font
-                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn
-                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art2.jpg')", type='submit') Continue Reading
-        // Article
-        #third-article.col-xs-4.w3-margin-bottom.article-outer
-          .w3-card.w3-white
-            .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Technology
-            header.article-pic-layout(style='background-image: url("pictures/art3.jpg");')
-            .w3-margin(style='padding-bottom: 20px;')
-              div(style='margin-top: 30px;')
-                p
-                  | 21 October 2016, 07:00 pm
-              // Title container
-              .article-title-layout
-                h2.article-title-style Some Title
-              .article-content(style='padding-right: 20px;')
-                p.article-content-font
-                  | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn
-                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art3.jpg')", type='submit') Continue Reading
+        each article in recentArticles
+          // Article
+          #first-article.col-xs-4.w3-margin-bottom.article-outer
+            .w3-card.w3-white
+              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') #{article.tag}
+              header.article-pic-layout(style='background-image: url("#{article.image}");')
+              .w3-margin(style='padding-bottom: 20px;')
+                div(style='margin-top: 30px;')
+                  p
+                    | #{article.day} #{article.month} #{article.year}, #{article.hour} #{article.period}
+                // Title container
+                .article-title-layout
+                  h2.article-title-style Some Title
+                .article-content(style='padding-right: 20px;')
+                  p.article-content-font
+                    | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                .article-btn
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art1.jpg')", type='submit') Continue Reading
+          
       // All articles container
       .grid.w3-card.w3-content.w3-white.w3-container.all-outer
         .text-center(style='margin-top: 100px;')
@@ -187,74 +155,25 @@ html
           h5(style='color: black')
             b _________
         div(style='margin-left: 55px;')
-          // Article
-          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
-            .w3-card.w3-white
-              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Technology
-              header.all-article-pic-layout(style='background-image: url("pictures/art4.jpg");')
-              .w3-margin
-                div(style='margin-top: 30px;')
-                  p
-                    | 21 October 2016, 07:00 pm
-                // Title container
-                .article-title-layout
-                  h2.article-title-style A Some Title
-                .article-content(style='padding-right: 20px;')
-                  p.article-content-font
-                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn.all-btn-outer
-                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/art4.jpg')", type='submit') Continue ..
-          // Article
-          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
-            .w3-card.w3-white(style='')
-              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
-              header.all-article-pic-layout(style='background-image: url("pictures/album7.jpg");')
-              .w3-margin(style='')
-                div(style='margin-top: 30px;')
-                  p
-                    | 21 October 2016, 07:00 pm
-                // Title containr
-                .article-title-layout
-                  h2.article-title-style B Some Title
-                .article-content(style='padding-right: 20px;')
-                  p.article-content-font
-                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn.all-btn-outer
-                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/album7.jpg')", type='submit') Continue ..
-          // Article
-          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
-            .w3-card.w3-white(style='')
-              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
-              header.all-article-pic-layout(style='background-image: url("pictures/album12.jpg");')
-              .w3-margin(style='')
-                div(style='margin-top: 30px;')
-                  p
-                    | 21 October 2016, 07:00 pm
-                // Title containr
-                .article-title-layout
-                  h2.article-title-style C Some Title
-                .article-content(style='padding-right: 20px;')
-                  p.article-content-font
-                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn.all-btn-outer
-                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/album12.jpg')", type='submit') Continue ..
-          // Article
-          .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
-            .w3-card.w3-white(style='')
-              .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') Social
-              header.all-article-pic-layout(style='background-image: url("pictures/advent8.jpg");')
-              .w3-margin(style='')
-                div(style='margin-top: 30px;')
-                  p
-                    | 21 October 2016, 07:00 pm
-                // Title containr
-                .article-title-layout
-                  h2.article-title-style D Some Title
-                .article-content(style='padding-right: 20px;')
-                  p.article-content-font
-                    | Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
-              .article-btn.all-btn-outer
-                button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('pictures/advent8.jpg')", type='submit') Continue ..
+          each article in articles
+            // Article
+            .grid-item.col-xs-4.w3-margin-bottom.slideanim.all-article-outer
+              .w3-card.w3-white
+                .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') #{article.tag}
+                header.all-article-pic-layout(style='background-image: url("#{article.image}");')
+                .w3-margin
+                  div(style='margin-top: 30px;')
+                    p
+                      | #{article.day} #{article.month} #{article.year}, #{article.hour} #{article.period}
+                  // Title container
+                  .article-title-layout
+                    h2.article-title-style #{article.title}
+                  .article-content(style='padding-right: 20px;')
+                    p.article-content-font
+                      | #{article.lines}
+                .article-btn.all-btn-outer
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}')", type='submit') Continue ..
+            
       // Events
       .new-post.w3-card.w3-opacity-max
       #new.task-container(style='postion: absolute')
@@ -334,11 +253,11 @@ html
               h1.main-title.setting-title Settings
           #info.row.setting-info-outer
             .col-sm-6.setting-info-pic
-              a(href='pictures/album2.jpg', data-lightbox='galleryone')
-                img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+              a(href='#{userInfo.profilePic}', data-lightbox='galleryone')
+                img.img-responsive.w3-card-4.personal-image(src='#{userInfo.profilePic}', alt='Me')
             .col-sm-6.setting-info-personal
-              p.setting-info-name Julia something
-              p.setting-info-email example1@gmail.com
+              p.setting-info-name #{userInfo.firstName} #{userInfo.lastName}
+              p.setting-info-email #{userInfo.email}
           #edit-info
             .form-group.setting-edit-outer
               .input-group
@@ -358,19 +277,7 @@ html
                 button.w3-button.w3-black.btn-style(type='submit') DONE
               .col-sm-6
                 button.w3-button.w3-black.btn-style(type='submit', onclick='backSetting()') BACK
-      // Logout modal
-      #logout.w3-modal
-        .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
-          .w3-container.w3-display-container
-            span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
-              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-            h4.logout-question
-              | Are you sure you want to logout ?
-          .row(style='text-align: center;')
-            .col-sm-6
-              button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
-            .col-sm-6
-              button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+
     // Cancel an event modal
     #logout.w3-modal
       .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
@@ -381,6 +288,6 @@ html
             | Are you sure you want to logout ?
         .row(style='text-align: center;')
           .col-sm-6
-            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../Welcome/welcomePage.html';") YES
+            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../';") YES
           .col-sm-6
             button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
