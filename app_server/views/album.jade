@@ -108,12 +108,12 @@ html
               b _________
           #pic-stand.slideanim
             each picture in images
-              a(href='#{picture.image}', data-lightbox='gallery', data-title='#{picture.caption}')
               .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-                .w3-card-4.pic.photo-album-pic(style='background-image: url("#{picture.image}");')
+                a(href='#{picture.image}', data-lightbox='gallery', data-title='#{picture.caption}')
+                  .w3-card-4.pic.photo-album-pic(style='background-image: url("#{picture.image}");')
                 .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
                   i.fa.fa-star(onclick='addToFavourit(event)')
-              
+                
 
     // Add new pic container
     #add-pic.form-textarea.w3-card-4.slideanim.new-outer

@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title Events
+    title= title
     // Bootstrap and JQuery libraries
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
@@ -16,8 +16,8 @@ html
     // Fontawesome library
     script(src='https://use.fontawesome.com/67c4517658.js')
     // Calendar Library
-    link(rel='stylesheet', href='../../datepickk-master/dist/datepickk.min.css')
-    script(src='../../datepickk-master/dist/datepickk.min.js')
+    link(rel='stylesheet', href='/libraries/datepickk-master/dist/datepickk.min.css')
+    script(src='/libraries/datepickk-master/dist/datepickk.min.js')
     // Javascript and CSS
     link(rel='stylesheet', href='/stylesheets/style5.css')
     link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
@@ -34,104 +34,22 @@ html
   body(style='background-color: #CBCBCB')
     // Sidebar
     .w3-sidebar.w3-bar-block.w3-card.w3-white.side-outer
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom(style='width: 100%; height: 150px;border-left: 10px solid #ef5350;')
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black(style='margin-left: 20px;padding: 15px;')
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
-      // Event
-      #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-        div(style='text-align:right;')
-          span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-        footer.w3-container(style='padding-top: 0px;')
-          .row
-            .col-xs-2.w3-card-4.w3-black.side-event-date
-              span.event-number(style='margin-left: 15px;') 12
-            .col-xs-6.text-left.small-margin-left
-              a(href='#', onclick='showEvent()')
-                span.event-image-title Review mockups
-              br
-              span.event-image-caption Dec - 13 Dec 2017
+      each event in events 
+        // Event
+        #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+          div(style='text-align:right;')
+            span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+          footer.w3-container(style='padding-top: 0px;')
+            .row
+              .col-xs-2.w3-card-4.w3-black.side-event-date
+                span.event-number(style='margin-left: 15px;') #{event.fromDay}
+              .col-xs-6.text-left.small-margin-left
+                a(href='#', onclick='showEvent()')
+                  span.event-image-title #{event.title}
+                br
+                span.event-image-caption(style="font-size: 15px;letter-spacing: 1px;") #{event.fromMonth} #{event.fromYear} - #{event.toDay} #{event.toMonth} #{event.toYear}
+        
     // Page Content
     div(style='margin-right:25%')
       // Sidebar/menu
@@ -142,9 +60,9 @@ html
             span.logo-B B
             | LOGATE
         .w3-bar-block(style='margin-top: 100px;')
-          a.w3-bar-item.w3-button.w3-hover-white(href='../Home/homePage.html') Home
-          a.w3-bar-item.w3-button.w3-hover-white(href='../Journal/journal.html') Journal
-          a.w3-bar-item.w3-button.w3-hover-white(href='../Album/album.html') Album
+          a.w3-bar-item.w3-button.w3-hover-white(href='../') Home
+          a.w3-bar-item.w3-button.w3-hover-white(href='../journal') Journal
+          a.w3-bar-item.w3-button.w3-hover-white(href='../album') Album
         div(style='margin-top: 380px;')
           i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
           i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openLogout()', aria-hidden='true')
@@ -256,11 +174,11 @@ html
               h1.main-title.setting-title Settings
           #info.row.setting-info-outer
             .col-sm-6.setting-info-pic
-              a(href='pictures/album2.jpg', data-lightbox='galleryone')
-                img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+              a(href='#{userInfo.profilePic}', data-lightbox='galleryone')
+                img.img-responsive.w3-card-4.personal-image(src='#{userInfo.profilePic}', alt='Me')
             .col-sm-6.setting-info-personal
-              p.setting-info-name Julia something
-              p.setting-info-email example1@gmail.com
+              p.setting-info-name #{userInfo.firstName} #{userInfo.lastName}
+              p.setting-info-email #{userInfo.email}
           #edit-info
             .form-group.setting-edit-outer
               .input-group
