@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title Photo album
+    title= title
     // Bootstrap and JQuery libraries
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
@@ -16,8 +16,8 @@ html
     // Fontawesome library
     script(src='https://use.fontawesome.com/67c4517658.js')
     // Lightbox Llibrary
-    link(href='../../lightbox2-master/src/css/lightbox.css', rel='stylesheet')
-    script(src='../../lightbox2-master/src/js/lightbox.js')
+    link(href='/libraries/lightbox2-master/src/css/lightbox.css', rel='stylesheet')
+    script(src='/libraries/lightbox2-master/src/js/lightbox.js')
     // Javascript and CSS
     link(rel='stylesheet', href='/stylesheets/style5.css')
     link(rel='stylesheet', href='/stylesheets/Welcome/welcome_style.css')
@@ -25,7 +25,7 @@ html
     link(rel='stylesheet', href='/stylesheets/Journal/journal_style.css')
     link(rel='stylesheet', href='/stylesheets/Event/events_style.css')
     link(rel='stylesheet', href='/stylesheets/Album/album_style.css')
-    script(type='text/javascript', src='/javascripts/js-functions.js')
+    script(src='/javascripts/js-functions.js')
   body(style='background-color: lavender;')
     // Sidebar
     nav#mySidebar.w3-card-4.w3-sidebar.w3-bar-block.w3-animate-right.w3-black.w3-top.w3-text-light-grey.w3-large.sidebar-outer
@@ -33,9 +33,9 @@ html
         a.w3-bar-item.w3-button.w3-center.w3-padding-32.w3-hover-black(href='javascript:void()', onclick='w3_close()')
           i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
       .sidebar-options-outer
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Home/homePage.html') Home
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Journal/journal.html') Journal
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Event/events.html') Events
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../') Home
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../journal') Journal
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../event') Events
       div(style='margin-top: 350px;margin-left: 20px;')
         a(style='margin-right: 10px;')
           i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
@@ -69,20 +69,20 @@ html
         .w3-container(style='width: 80%;')
           // Image 1
           .w3-display-container.mySlides(style='height: 560px;')
-            a(href='pictures/coffee1.jpg', data-lightbox='gallery2', data-title='Beautiful day')
-              img#image-slide(src='pictures/coffee1.jpg', style='width:100%')
+            a(href='#{favouriteImages[0].image}', data-lightbox='gallery2', data-title='#{favouriteImages[0].caption}')
+              img#image-slide(src='#{favouriteImages[0].image}', style='width:100%')
             .w3-display-topleft.w3-container.w3-padding-32
               span.w3-white.w3-padding-large Beautiful day
           // Image 2
           #image-slide.w3-display-container.mySlides
-            a(href='pictures/coffee2.jpg', data-lightbox='gallery2', data-title='Beautiful day')
-              img#image-slide2(src='pictures/coffee2.jpg', style='width:100%')
+            a(href='#{favouriteImages[1].image}', data-lightbox='gallery2', data-title='#{favouriteImages[1].caption}')
+              img#image-slide2(src='#{favouriteImages[1].image}', style='width:100%')
             .w3-display-topleft.w3-container.w3-padding-32
               span.w3-white.w3-padding-large Beautiful day
           // Image 3
           #image-slide.w3-display-container.mySlides
-            a(href='pictures/coffee3.jpg', data-lightbox='gallery2', data-title='Beautiful day')
-              img#image-slide3(src='pictures/coffee3.jpg', style='width:100%')
+            a(href='#{favouriteImages[2].image}', data-lightbox='gallery2', data-title='#{favouriteImages[2].caption}')
+              img#image-slide3(src='#{favouriteImages[2].image}', style='width:100%')
             .w3-display-topleft.w3-container.w3-padding-32
               span.w3-white.w3-padding-large Beautiful day
           // Slideshow next/previous buttons
@@ -107,86 +107,14 @@ html
             h5(style='color: black')
               b _________
           #pic-stand.slideanim
-            a(href='pictures/art1.jpg', data-lightbox='gallery', data-title='Beautiful day')
+            each picture in images
+              a(href='#{picture.image}', data-lightbox='gallery', data-title='#{picture.caption}')
               .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-                .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/art1.jpg");')
-            .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-              i.fa.fa-star(onclick='addToFavourit(event)')
-          a(href='pictures/art4.jpg', data-lightbox='gallery', data-title='Beautiful day')
-            .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-              .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/art4.jpg");')
-          .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-            i.fa.fa-star(onclick='addToFavourit(event)')
-        a(href='pictures/girl5.jpg', data-lightbox='gallery', data-title='Beautiful day')
-          .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-            .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl5.jpg");')
-        .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-          i.fa.fa-star(onclick='addToFavourit(event)')
-      a(href='pictures/girl4.jpg', data-lightbox='gallery', data-title='Beautiful day')
-        .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-          .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl4.jpg");')
-      .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-        i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/girl4.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/girl4.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/food3.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food3.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/p1.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p1.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/p2.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p2.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/album8.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/album8.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/food4.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food4.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/album13.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/album13.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/food2.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/food2.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/p4.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p4.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/coffee1.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/coffee1.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/p7.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/p7.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
-    a(href='pictures/pic13.jpg', data-lightbox='gallery', data-title='Beautiful day')
-      .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-        .w3-card-4.pic.photo-album-pic(style='background-image: url("pictures/pic13.jpg");')
-    .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-      i.fa.fa-star(onclick='addToFavourit(event)')
+                .w3-card-4.pic.photo-album-pic(style='background-image: url("#{picture.image}");')
+                .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+                  i.fa.fa-star(onclick='addToFavourit(event)')
+              
+
     // Add new pic container
     #add-pic.form-textarea.w3-card-4.slideanim.new-outer
       .text-center(style='margin-top: 90px;margin-bottom: 100px;')
@@ -218,10 +146,10 @@ html
         #info.row.setting-info-outer
           .col-sm-6.setting-info-pic
             a(href='pictures/album2.jpg', data-lightbox='galleryone')
-              img.img-responsive.w3-card-4.personal-image(src='pictures/album2.jpg', alt='Me')
+              img.img-responsive.w3-card-4.personal-image(src='#{userInfo.profilePic}', alt='Me')
           .col-sm-6.setting-info-personal
-            p.setting-info-name Julia something
-            p.setting-info-email example1@gmail.com
+            p.setting-info-name #{userInfo.firstName} #{userInfo.lastName}
+            p.setting-info-email #{userInfo.email}
         #edit-info
           .form-group.setting-edit-outer
             .input-group
@@ -251,22 +179,10 @@ html
             | Are you sure you want to logout ?
         .row(style='text-align: center;')
           .col-sm-6
-            button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
+            button.w3-button.w3-black.btn-style(onclick="location.href='../'", type='submit') YES
           .col-sm-6
             button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
-    // Cancel an event modal
-    #logout.w3-modal
-      .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')
-        .w3-container.w3-display-container
-          span.w3-button.w3-large.main-title(onclick='closeLogout()', style='float: right;')
-            i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-          h4(style='font-family: "Spectral SC", Serif;margin-bottom: 50px;margin-top: 30px;color: black;')
-            | Are you sure you want to logout ?
-        .row(style='text-align: center;')
-          .col-sm-6
-            button.w3-button.w3-black.btn-style(type='submit', onclick="location.href='../Welcome/welcomePage.html'") YES
-          .col-sm-6
-            button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
+
     // Cancel an event modal
     #favourite-error.w3-modal
       .w3-modal-content.w3-animate-zoom.login-modal(style='width: 700px;')

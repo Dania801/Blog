@@ -74,9 +74,9 @@ html
         a.w3-bar-item.w3-button.w3-center.w3-padding-32.w3-hover-black(href='javascript:void()', onclick='w3_close()')
           i.fa.fa-times-circle.fa-lg.w3-hover-opacity(aria-hidden='true')
       .sidebar-options-outer
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Home/homePage.html') Home
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Album/album.html') Photo Album
-        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../Event/events.html') Events
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../') Home
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../album') Photo Album
+        a.w3-bar-item.w3-button.w3-center.w3-padding-16(href='../event') Events
       div(style='margin-top: 350px;margin-left: 20px;')
         a(style='margin-right: 10px;')
           i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
@@ -127,7 +127,7 @@ html
             b _________
         each article in recentArticles
           // Article
-          #first-article.col-xs-4.w3-margin-bottom.article-outer
+          #first-article.col-xs-4.w3-margin-bottom.article-outer.w3-animate-zoom
             .w3-card.w3-white
               .w3-display-topleft.w3-black.w3-padding(style='margin-left: 14px;') #{article.tag}
               header.article-pic-layout(style='background-image: url("#{article.image}");')
@@ -142,7 +142,7 @@ html
                   p.article-content-font
                     | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
                 .article-btn
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('pictures/art1.jpg')", type='submit') Continue Reading
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}')", type='submit') Continue Reading
           
       // All articles container
       .grid.w3-card.w3-content.w3-white.w3-container.all-outer

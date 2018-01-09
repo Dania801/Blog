@@ -6,12 +6,6 @@ $(document).ready(() => {
 
   $("#article").hide();
   $("#search-panel").hide();
-  $("#first-article").hide();
-  $("#first-article").show(1500);
-  $("#second-article").hide();
-  $("#second-article").show(1500);
-  $("#third-article").hide();
-  $("#third-article").show(1500);
   $("#menu-panel").hide();
 
   // Add smooth scrolling
