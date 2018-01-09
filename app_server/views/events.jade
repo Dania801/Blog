@@ -60,11 +60,11 @@ html
             span.logo-B B
             | LOGATE
         .w3-bar-block(style='margin-top: 100px;')
-          a.w3-bar-item.w3-button.w3-hover-white(href='../') Home
+          a.w3-bar-item.w3-button.w3-hover-white(href='../home') Home
           a.w3-bar-item.w3-button.w3-hover-white(href='../journal') Journal
           a.w3-bar-item.w3-button.w3-hover-white(href='../album') Album
         div(style='margin-top: 380px;')
-          i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')
+          i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openSetting()', aria-hidden='true')&nbsp;
           i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(onclick='openLogout()', aria-hidden='true')
       div(style='margin-left: 300px;')
         // Calendar container
@@ -208,6 +208,6 @@ html
               | Are you sure you want to logout ?
           .row(style='text-align: center;')
             .col-sm-6
-              button.w3-button.w3-black.btn-style(onclick="location.href='../Welcome/welcomePage.html'", type='submit') YES
+              button.w3-button.w3-black.btn-style(onclick="location.href='../'", type='submit') YES
             .col-sm-6
               button.w3-button.w3-black.btn-style(type='submit', onclick='closeLogout()') NO
