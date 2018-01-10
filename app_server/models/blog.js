@@ -44,4 +44,4 @@ var userSchema = new mongoose.Schema({
   socialMedia: socialSchema
 });
 
-mongoose.model('blog',  userSchema);
+mongoose.model('blog',  userSchema, 'blog');

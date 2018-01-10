@@ -148,3 +148,40 @@ db.blog.save({
 	}
 });
 
+--------------------------------------------------------------------------------------------
+
+REQUEST URLs
+- - - - - - -
+1- read user -> /user/123
+2- delete user -> /user/123
+3- update user -> /user/123
+4- create user -> /user
+
+5- read articles list -> /user/123/articles
+6- delete article -> /user/123/articles/456
+7- update article -> /user/123/articles/456
+8- create article -> /user/123/articles
+9- read specific article -> /user/123/articles/456
+
+10- read album -> /user/123/album
+11- read pic -> /user/123/album/456
+12- update pic -> /user/123/album/456
+13- delete pic -> /user/123/album/456
+14- create pic -> /user/123/album
+
+15- read events -> /user/123/events 
+16- read specific event -> /user/123/events/456
+17- update event -> /user/123/events/456
+18- delete event -> /user/123/events/456
+19- create event -> /user/123/events
+
+
+
+
+
+
+
+
+
+
+
