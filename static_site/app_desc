@@ -74,4 +74,77 @@ EXPRESS APP
 /album -> Album page
 /event -> Event page
 
+-----------------------------------------------------------------------------------------
+
+DATA MODEL
+- - - - - -
+array of users 
+	- object of personal info 
+		- first name
+		- last name
+		- email
+		- password
+		- pic
+	- array of articles
+		- title
+		- date
+		- image
+		- tag
+		- text
+	- array of photos
+		- pic
+		- caption
+	- array of events
+		- title
+		- beginning date
+		- ending date
+
+----------------------------------------------------------------------------------------
+
+db.blog.save({
+	profile: {
+		firstName: "Dania",
+		lastName: "Refaie",
+		email: "ssansnnom07@gmail.com",
+		password: "123",
+		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
+	},
+	articles: [
+		{
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Personal",
+			text: "Some text"
+		},{
+			title: "Another Some Title",
+			createdOn: "9/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent4.png",
+			tag: "Political",
+			text: "Some text"
+		}
+	],
+	album: [
+		{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
+			caption: "Tasty Food!"
+		},{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food2.jpg",
+			caption: "Tasty Food!"
+		}
+	],
+	events: [{
+		title: "Job interview",
+		beginDate: "10/1/2018",
+		endDate: "10/1/2018",
+		notes: "Nothing worth saying"
+	}],
+	socialMedia: {
+		facebook: "www.facebook.com",
+		twitter: "www.twitter.com",
+		instagram: "www.instagram.com",
+		github: "www.github.com",
+		reddit: "www.reddit.com"
+	}
+});
 
