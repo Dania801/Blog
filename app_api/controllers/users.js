@@ -13,6 +13,8 @@ module.exports.getUsersList = function(req, res){
     .find({}, (err, users) =>{
       if(err){
         sendJsonResponse(res, 404, err);
+      }else if(!users){
+        sendJsonResponse(res, 404, {"message": "No users found!"});
       }else{
         sendJsonResponse(res, 200, users);
       }
