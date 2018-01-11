@@ -103,9 +103,9 @@ array of users
 
 db.blog.save({
 	profile: {
-		firstName: "Dania",
+		firstName: "Anas",
 		lastName: "Refaie",
-		email: "ssansnnom07@gmail.com",
+		email: "anas_refaie@gmail.com",
 		password: "123",
 		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
 	},
@@ -116,20 +116,11 @@ db.blog.save({
 			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
 			tag: "Personal",
 			text: "Some text"
-		},{
-			title: "Another Some Title",
-			createdOn: "9/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent4.png",
-			tag: "Political",
-			text: "Some text"
 		}
 	],
 	album: [
 		{
 			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
-			caption: "Tasty Food!"
-		},{
-			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food2.jpg",
 			caption: "Tasty Food!"
 		}
 	],

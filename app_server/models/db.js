@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 var dbURI = 'mongodb://localhost/Blogate';
-require('./blog');
 var gracefulShutdown ;
 mongoose.connect(dbURI);
+
+require('./blog');
 
 // Listen to Mongoose events and output them
 mongoose.connection.on('connected' , function(){

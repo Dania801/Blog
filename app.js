@@ -5,10 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// The db should be placed before the api
+var db = require('./app_server/models/db');
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 var users = require('./app_server/routes/users');
-var db = require('./app_server/models/db');
+
 
 var app = express();
 

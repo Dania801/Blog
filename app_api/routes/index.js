@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router() ;
+var router = express.Router();
 
 var ctrlUsers = require('../controllers/users');
 var ctrlArticles = require('../controllers/articles');
@@ -28,4 +28,6 @@ router.get('/user/:userid/events', ctrlEvents.getEventsList);
 router.get('/user/:userid/events/:eventid', ctrlEvents.getEvent);
 router.post('/user/:userid/events', ctrlEvents.createEvent);
 router.put('/user/:userid/events/:eventid', ctrlEvents.updateEvent);
-router.delete('/user/:userid/event/:eventid', ctrlEvents.deleteEvent)
+router.delete('/user/:userid/event/:eventid', ctrlEvents.deleteEvent);
+
+module.exports = router;
