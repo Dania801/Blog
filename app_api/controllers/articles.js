@@ -7,13 +7,14 @@ var sendJsonResponse = function(res, status, content){
 };
 
 module.exports.getAriclesList = function(req, res){
-  // Getting a list of events for specific user
     if(req.params && req.params.userid){
       Blog
         .find({"_id": req.params.userid}, (err, user) =>{
-          let articles = user[0].events ;
+          let articles = user[0].socialMedia ;
           if(err){
             sendJsonResponse(res, 404, err);
+          }else if(!articles){
+            sendJsonResponse(res, 404, {"message": "No articles found!"});
           }else{
             sendJsonResponse(res, 200, articles);
           }

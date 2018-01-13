@@ -15,12 +15,12 @@ module.exports.getEventsList = function(req, res){
         if(err){
           sendJsonResponse(res, 404, err);
         }else if(!events){
-          sendJsonResponse(res, 404, {"message": "Sorry, No events found!"});
+          sendJsonResponse(res, 404, {"message": "No events found"});
         }else{
           sendJsonResponse(res, 200, events);
         }
       });
-  }
+  };
 };
 
 module.exports.getEvent = function(req, res){
