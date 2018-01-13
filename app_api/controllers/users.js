@@ -39,8 +39,26 @@ module.exports.getUser = function(req, res){
   }
 };
 
+//Creating A new user
 module.exports.createUser = function(req, res){
-
+  Blog
+    .create({
+      profile: {
+    		firstName: req.body.firstName,
+    		lastName: req.body.lastName,
+    		email: req.body.email,
+    		password: req.body.password,
+    		profilePic: req.body.profilePic
+    	}
+    }, {upsert: true}, (err, user)=>{
+      if(err){
+        sendJsonResponse(res, 404, err);
+      }else if(!user){
+        sendJsonResponse(res, 404, {"message": "Couldn't add new user"});
+      }else{
+        sendJsonResponse(res, 201, user);
+      }
+    })
 };
 
 module.exports.updateUser = function(req, res){
