@@ -103,14 +103,23 @@ array of users
 
 db.blog.save({
 	profile: {
-		firstName: "Anas",
-		lastName: "Refaie",
-		email: "anas_refaie@gmail.com",
+		firstName: "Vinent",
+		lastName: "valentine",
+		email: "nasa@gmail.com",
 		password: "123",
 		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
 	},
 	articles: [
 		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b22d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Personal",
+			text: "Some text"
+		},
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
 			title: "Some Title",
 			createdOn: "10/1/2018",
 			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
@@ -124,12 +133,22 @@ db.blog.save({
 			caption: "Tasty Food!"
 		}
 	],
-	events: [{
-		title: "Job interview",
-		beginDate: "10/1/2018",
-		endDate: "10/1/2018",
-		notes: "Nothing worth saying"
-	}],
+	events: [
+		{
+			title: "Job interview",
+			beginDate: "10/1/2018",
+			endDate: "10/1/2018",
+			notes: "Nothing worth saying",
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b25d")
+		},{
+			title: "Family meeting",
+			beginDate: "10/1/2018",
+			endDate: "10/1/2018",
+			notes: "Nothing worth saying",
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b25d")
+		}
+		
+	],
 	socialMedia: {
 		facebook: "www.facebook.com",
 		twitter: "www.twitter.com",
