@@ -66,7 +66,39 @@ module.exports.createPicture = function(req, res){
 };
 
 module.exports.updatePicture = function(req, res){
+  if(req.params && req.params.userid && req.params.picid){
+    Blog
+      .findById(req.params.userid)
+      .select('album')
+      .exec((err, user)=>{
+        if(err){
+          sendJsonResponse(res, 404, err);
+        }else if(!user){
+          sendJsonResponse(res, 404, {"message": "No user found!"});
+        }else{
+          let thePic = user.album.filter(pic => pic._id == req.params.picid);
+          console.log(thePic);
+          thePic[0].image = req.body.image? req.body.image: thePic[0].image;
+          thePic[0].caption = req.body.caption? req.body.caption: thePic[0].caption;
 
+          user.save((err, album)=>{
+            if(err){
+              sendJsonResponse(res, 404, err);
+            }else{
+              sendJsonResponse(res, 200, album);
+            }
+          })
+        }
+      })
+  }else{
+    if(!req.params.userid){
+      sendJsonResponse(res, 404, {"message": "userid ins't givin!"});
+    }else if(!req.params.picid){
+      sendJsonResponse(res, 404, {"message": "picid isn't givin"});
+    }else{
+      sendJsonResponse(res, 404, {"message": "Some parameters are missed!"});
+    }
+  }
 };
 
 module.exports.deletePicture = function(req, res){

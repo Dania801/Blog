@@ -9,7 +9,7 @@ var ctrlEvents = require('../controllers/events');
 router.get('/user', ctrlUsers.getUsersList); //Done
 router.get('/user/:userid', ctrlUsers.getUser); //Done
 router.post('/user', ctrlUsers.createUser); //Done
-router.put('/user/:userid', ctrlUsers.updateUser);
+router.put('/user/:userid', ctrlUsers.updateUser); //Done
 router.delete('/user/:userid', ctrlUsers.deleteUser);
 
 router.get('/user/:userid/articles', ctrlArticles.getArticlesList);
@@ -20,7 +20,7 @@ router.delete('/user/:userid/articles/:articleid', ctrlArticles.deleteArticle);
 
 router.get('/user/:userid/album', ctrlAlbum.getAlbum); //Done
 router.get('/user/:userid/album/:picid', ctrlAlbum.getPicture); //Done
-router.post('/user/:userid/album', ctrlAlbum.createPicture);
+router.post('/user/:userid/album', ctrlAlbum.createPicture); //Done
 router.put('/user/:userid/album/:picid', ctrlAlbum.updatePicture);
 router.delete('/user/:userid/album/:picid', ctrlAlbum.deletePicture);
 
