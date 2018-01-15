@@ -62,7 +62,31 @@ module.exports.createUser = function(req, res){
 };
 
 module.exports.updateUser = function(req, res){
-
+  if(req.params && req.params.userid){
+    Blog
+      .findById(req.params.userid)
+      .select('profile')
+      .exec((err, user)=>{
+        if(err){
+          sendJsonResponse(res, 404, err)
+        }else if(!user){
+          sendJsonResponse(res, 404, {"message": "didn't find a user with the specfied ID!"});
+        }else{
+          user.profile.firstName = req.body.firstName? req.body.firstName: user.profile.firstName;
+          user.profile.lastName = req.body.lastName? req.body.lastName: user.profile.lastName;
+          user.profile.email = req.body.email? req.body.email: user.profile.email;
+          user.profile.password = req.body.password? req.body.password: user.profile.password;
+          user.profile.profilePic = req.body.profilePic? req.body.profilePic: user.profile.profilePic;
+          user.save((err, user)=>{
+            if(err){
+              sendJsonResponse(res, 404, err);
+            }else{
+              sendJsonResponse(res, 200, user);
+            }
+          });
+        };
+      });
+  }
 };
 
 module.exports.deleteUser = function(req, res){
