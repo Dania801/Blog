@@ -103,8 +103,8 @@ array of users
 
 db.blog.save({
 	profile: {
-		firstName: "Vinent",
-		lastName: "valentine",
+		firstName: "Conor",
+		lastName: "Obrest",
 		email: "nasa@gmail.com",
 		password: "123",
 		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
@@ -130,7 +130,12 @@ db.blog.save({
 	album: [
 		{
 			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
-			caption: "Tasty Food!"
+			caption: "Tasty Food!",
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33a")
+		},{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
+			caption: "Tasty Food!",
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
 		}
 	],
 	events: [
@@ -145,7 +150,7 @@ db.blog.save({
 			beginDate: "10/1/2018",
 			endDate: "10/1/2018",
 			notes: "Nothing worth saying",
-			_id: ObjectId("5a5a46eb55d3e41ecdc9b25d")
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b26d")
 		}
 		
 	],
