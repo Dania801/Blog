@@ -90,5 +90,25 @@ module.exports.updateUser = function(req, res){
 };
 
 module.exports.deleteUser = function(req, res){
-
+  if(req.params && req.params.userid){
+    Blog
+      .findById(req.params.userid)
+      .select('profile')
+      .exec((err, user)=>{
+        if(err){
+          sendJsonResponse(res, 404, err)
+        }else if(!user){
+          sendJsonResponse(res, 404, {"message": "didn't find a user with the specfied ID!"});
+        }else{
+          user.remove();
+          user.save((err, user)=>{
+            if(err){
+              sendJsonResponse(res, 404, err);
+            }else{
+              sendJsonResponse(res, 200, user);
+            }
+        });
+      };
+    });
+  }
 };
