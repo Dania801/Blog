@@ -50,7 +50,7 @@ module.exports.getEvent = function(req, res){
 };
 
 module.exports.createEvent = function(req, res){
-  //ISO format for both begin and end date 
+  //ISO format for both begin and end date
   var begin = new Date(req.body.beginDate+"T16:00:00Z");
   var end = new Date(req.body.endDate+"T16:00:00Z");
 
@@ -70,7 +70,43 @@ module.exports.createEvent = function(req, res){
 };
 
 module.exports.updateEvent = function(req, res){
+  if(req.params && req.params.userid && req.params.eventid){
+    Blog
+      .findById(req.params.userid)
+      .select('events')
+      .exec((err, user)=>{
+        if(err){
+          sendJsonResponse(res, 404, err);
+        }else if(!user){
+          sendJsonResponse(res, 404, {"message": "No user found!"});
+        }else{
+          let theEvent = user.events.filter(event => event._id == req.params.eventid);
+          //Check the format 
+          var begin = req.body.beginDate? new Date(req.body.beginDate+"T16:00:00Z"): "";
 
+          theEvent[0].title = req.body.title? req.body.title: theEvent[0].title;
+          theEvent[0].beginDate = begin? begin: theEvent[0].beginDate;
+          theEvent[0].endDate = req.body.endDate? req.body.endDate: theEvent[0].endDate;
+          theEvent[0].notes = req.body.notes? req.body.notes: theEvent[0].notes;
+
+          user.save((err, album)=>{
+            if(err){
+              sendJsonResponse(res, 404, err);
+            }else{
+              sendJsonResponse(res, 200, album);
+            }
+          })
+        }
+      })
+  }else{
+    if(!req.params.userid){
+      sendJsonResponse(res, 404, {"message": "userid ins't givin!"});
+    }else if(!req.params.picid){
+      sendJsonResponse(res, 404, {"message": "eventid isn't givin"});
+    }else{
+      sendJsonResponse(res, 404, {"message": "Some parameters are missed!"});
+    }
+  }
 };
 
 module.exports.deleteEvent = function(req, res){

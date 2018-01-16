@@ -21,13 +21,13 @@ router.delete('/user/:userid/articles/:articleid', ctrlArticles.deleteArticle);
 router.get('/user/:userid/album', ctrlAlbum.getAlbum); //Done
 router.get('/user/:userid/album/:picid', ctrlAlbum.getPicture); //Done
 router.post('/user/:userid/album', ctrlAlbum.createPicture); //Done
-router.put('/user/:userid/album/:picid', ctrlAlbum.updatePicture);
+router.put('/user/:userid/album/:picid', ctrlAlbum.updatePicture); //Done
 router.delete('/user/:userid/album/:picid', ctrlAlbum.deletePicture);
 
 router.get('/user/:userid/events', ctrlEvents.getEventsList); //Done
 router.get('/user/:userid/events/:eventid', ctrlEvents.getEvent); //Done
 router.post('/user/:userid/events', ctrlEvents.createEvent);//Done // Still some work is needed in formating date , and default endDate
-router.put('/user/:userid/events/:eventid', ctrlEvents.updateEvent);
+router.put('/user/:userid/events/:eventid', ctrlEvents.updateEvent); //Done
 router.delete('/user/:userid/event/:eventid', ctrlEvents.deleteEvent);
 
 module.exports = router;

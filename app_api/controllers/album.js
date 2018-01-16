@@ -77,7 +77,6 @@ module.exports.updatePicture = function(req, res){
           sendJsonResponse(res, 404, {"message": "No user found!"});
         }else{
           let thePic = user.album.filter(pic => pic._id == req.params.picid);
-          console.log(thePic);
           thePic[0].image = req.body.image? req.body.image: thePic[0].image;
           thePic[0].caption = req.body.caption? req.body.caption: thePic[0].caption;
 
