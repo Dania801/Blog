@@ -81,7 +81,7 @@ module.exports.updateEvent = function(req, res){
           sendJsonResponse(res, 404, {"message": "No user found!"});
         }else{
           let theEvent = user.events.filter(event => event._id == req.params.eventid);
-          //Check the format 
+          //Check the format
           var begin = req.body.beginDate? new Date(req.body.beginDate+"T16:00:00Z"): "";
 
           theEvent[0].title = req.body.title? req.body.title: theEvent[0].title;
@@ -89,11 +89,11 @@ module.exports.updateEvent = function(req, res){
           theEvent[0].endDate = req.body.endDate? req.body.endDate: theEvent[0].endDate;
           theEvent[0].notes = req.body.notes? req.body.notes: theEvent[0].notes;
 
-          user.save((err, album)=>{
+          user.save((err, events)=>{
             if(err){
               sendJsonResponse(res, 404, err);
             }else{
-              sendJsonResponse(res, 200, album);
+              sendJsonResponse(res, 200, events);
             }
           })
         }
@@ -110,5 +110,35 @@ module.exports.updateEvent = function(req, res){
 };
 
 module.exports.deleteEvent = function(req, res){
-
+  if(req.params && req.params.userid && req.params.eventid){
+    Blog
+      .findById(req.params.userid)
+      .select('events')
+      .exec((err, user)=>{
+        if(err){
+          sendJsonResponse(res, 404, err);
+        }else if(!user){
+          sendJsonResponse(res, 404, {"message": "No user found!"});
+        }else{
+          let theEvent = user.events.filter(event => event._id == req.params.eventid);
+          console.log(theEvent);
+          theEvent[0].remove();
+          user.save((err, events)=>{
+            if(err){
+              sendJsonResponse(res, 404, err);
+            }else{
+              sendJsonResponse(res, 200, events);
+            }
+          })
+        }
+      })
+  }else{
+    if(!req.params.userid){
+      sendJsonResponse(res, 404, {"message": "userid ins't givin!"});
+    }else if(!req.params.picid){
+      sendJsonResponse(res, 404, {"message": "eventid isn't givin"});
+    }else{
+      sendJsonResponse(res, 404, {"message": "Some parameters are missed!"});
+    }
+  }
 };

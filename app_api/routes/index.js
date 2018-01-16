@@ -28,6 +28,6 @@ router.get('/user/:userid/events', ctrlEvents.getEventsList); //Done
 router.get('/user/:userid/events/:eventid', ctrlEvents.getEvent); //Done
 router.post('/user/:userid/events', ctrlEvents.createEvent);//Done // Still some work is needed in formating date , and default endDate
 router.put('/user/:userid/events/:eventid', ctrlEvents.updateEvent); //Done
-router.delete('/user/:userid/event/:eventid', ctrlEvents.deleteEvent);
+router.delete('/user/:userid/events/:eventid', ctrlEvents.deleteEvent);
 
 module.exports = router;
