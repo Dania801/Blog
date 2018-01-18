@@ -61,6 +61,7 @@ module.exports.createUser = function(req, res){
     })
 };
 
+// Updating a user
 module.exports.updateUser = function(req, res){
   if(req.params && req.params.userid){
     Blog
@@ -86,9 +87,12 @@ module.exports.updateUser = function(req, res){
           });
         };
       });
+  }else{
+    sendJsonResponse(res, 404, {"message": "no userid is givin!"});
   }
 };
 
+//Deleting a user
 module.exports.deleteUser = function(req, res){
   if(req.params && req.params.userid){
     Blog
@@ -110,5 +114,7 @@ module.exports.deleteUser = function(req, res){
         });
       };
     });
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin!"});
   }
 };

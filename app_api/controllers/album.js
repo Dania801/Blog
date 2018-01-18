@@ -6,6 +6,7 @@ var sendJsonResponse = function(res, status, content){
   res.json(content);
 };
 
+// Getting photo album
 module.exports.getAlbum = function(req, res){
   if(req.params && req.params.userid){
     Blog
@@ -19,9 +20,12 @@ module.exports.getAlbum = function(req, res){
           sendJsonResponse(res, 200, album);
         }
       });
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin!"});
   }
 };
 
+//Getting a specific picture
 module.exports.getPicture = function(req, res){
   if(req.params && req.params.userid && req.params.picid){
     Blog
@@ -46,6 +50,7 @@ module.exports.getPicture = function(req, res){
   }
 };
 
+//Creating a picture
 module.exports.createPicture = function(req, res){
   if(req.params && req.params.userid){
     Blog
@@ -62,9 +67,9 @@ module.exports.createPicture = function(req, res){
   }else{
     sendJsonResponse(res, 404, {"message": "userid isn't givin!"});
   }
-
 };
 
+//Updating a picture
 module.exports.updatePicture = function(req, res){
   if(req.params && req.params.userid && req.params.picid){
     Blog
@@ -100,6 +105,7 @@ module.exports.updatePicture = function(req, res){
   }
 };
 
+//Deleting a picture
 module.exports.deletePicture = function(req, res){
   if(req.params && req.params.userid && req.params.picid){
     Blog

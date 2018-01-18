@@ -6,6 +6,7 @@ var sendJsonResponse = function(res, status, content){
   res.json(content);
 };
 
+// Getting list of articles
 module.exports.getArticlesList = function(req, res){
   if(req.params && req.params.userid){
     Blog
@@ -19,9 +20,12 @@ module.exports.getArticlesList = function(req, res){
           sendJsonResponse(res, 200, articles);
         }
       });
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin"});
   }
 }
 
+// Getting a specific article
 module.exports.getArticle = function(req, res){
   if(req.params && req.params.userid && req.params.articleid){
     Blog
@@ -46,24 +50,29 @@ module.exports.getArticle = function(req, res){
   }
 }
 
+// Creating an article
 module.exports.createArticle = function(req, res){
-  Blog
-    .update({"_id": req.params.userid}, {$push: {'articles' : {
-      title: req.body.title,
-      image: req.body.image,
-      tag: req.body.tag,
-      text: req.body.text
-    }}},(err, article)=> {
-      if(err){
-        sendJsonResponse(res, 404, err);
-      }else{
-        sendJsonResponse(res, 201, article);
-      }
-    })
+  if(req.params && req.params.userid){
+    Blog
+      .update({"_id": req.params.userid}, {$push: {'articles' : {
+        title: req.body.title,
+        image: req.body.image,
+        tag: req.body.tag,
+        text: req.body.text
+      }}},(err, article)=> {
+        if(err){
+          sendJsonResponse(res, 404, err);
+        }else{
+          sendJsonResponse(res, 201, article);
+        }
+      })
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin"});
+  }
 }
 
+//Updating an article
 module.exports.updateArticle = function(req, res){
-  console.log("inside updateArticle function");
   if(req.params && req.params.userid && req.params.articleid){
     Blog
       .findById(req.params.userid)
@@ -99,6 +108,7 @@ module.exports.updateArticle = function(req, res){
   }
 }
 
+//Deleting an article
 module.exports.deleteArticle = function(req, res){
   if(req.params && req.params.userid && req.params.articleid){
     Blog

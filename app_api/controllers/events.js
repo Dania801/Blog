@@ -21,7 +21,9 @@ module.exports.getEventsList = function(req, res){
           sendJsonResponse(res, 200, events);
         }
       });
-  };
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin"});
+  }
 };
 
 // Getting a specific event
@@ -49,26 +51,33 @@ module.exports.getEvent = function(req, res){
   }
 };
 
+//Creating a new event
 module.exports.createEvent = function(req, res){
   //ISO format for both begin and end date
   var begin = new Date(req.body.beginDate+"T16:00:00Z");
   var end = new Date(req.body.endDate+"T16:00:00Z");
 
-  Blog
-    .update({"_id": req.params.userid}, {$push: {'events' : {
-      title: req.body.title,
-			beginDate: begin,
-			endDate: end,
-			notes: req.body.notes
-    }}},(err, event)=> {
-      if(err){
-        sendJsonResponse(res, 404, err);
-      }else{
-        sendJsonResponse(res, 201, event);
-      }
-    })
+  if(req.params && req.params.userid){
+    Blog
+      .update({"_id": req.params.userid}, {$push: {'events' : {
+        title: req.body.title,
+        beginDate: begin,
+        endDate: end,
+        notes: req.body.notes
+      }}},(err, event)=> {
+        if(err){
+          sendJsonResponse(res, 404, err);
+        }else{
+          sendJsonResponse(res, 201, event);
+        }
+      })
+  }else{
+    sendJsonResponse(res, 404, {"message": "No userid is givin!"});
+  }
+
 };
 
+// Updating an event
 module.exports.updateEvent = function(req, res){
   if(req.params && req.params.userid && req.params.eventid){
     Blog
@@ -109,6 +118,7 @@ module.exports.updateEvent = function(req, res){
   }
 };
 
+// Deleting an event
 module.exports.deleteEvent = function(req, res){
   if(req.params && req.params.userid && req.params.eventid){
     Blog
