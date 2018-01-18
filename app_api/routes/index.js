@@ -13,8 +13,8 @@ router.put('/user/:userid', ctrlUsers.updateUser); //Done
 router.delete('/user/:userid', ctrlUsers.deleteUser);
 
 router.get('/user/:userid/articles', ctrlArticles.getArticlesList);
-//router.get('/user/:userid/articles/:articleid', ctrlArticles.getArticle);
-router.post('/user/:userid/articles', ctrlArticles.createArticle); //Done
+router.get('/user/:userid/articles/:articleid', ctrlArticles.getArticle);
+router.post('/user/:userid/articles', ctrlArticles.createArticle);
 router.put('/user/:userid/articles/:articleid', ctrlArticles.updateArticle);
 router.delete('/user/:userid/articles/:articleid', ctrlArticles.deleteArticle);
 

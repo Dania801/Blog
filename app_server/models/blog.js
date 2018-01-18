@@ -38,7 +38,7 @@ var socialSchema = new mongoose.Schema({
 
 var userSchema = new mongoose.Schema({
   profile: profileSchema,
-  artiles: [articleSchema],
+  articles: [articleSchema],
   album: [albumSchema],
   events: [eventSchema],
   socialMedia: socialSchema
