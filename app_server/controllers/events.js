@@ -1,4 +1,9 @@
-module.exports.index = function(req , res){
+var request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+
+var renderEventsPage = function(req, res){
   res.render('events' , {
     title: 'Events',
     userInfo: {
@@ -67,4 +72,8 @@ module.exports.index = function(req , res){
       }
     ]
   }) ;
+}
+
+module.exports.eventsPage = function(req , res){
+  renderEventsPage(req, res);
 }

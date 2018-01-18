@@ -1,13 +1,12 @@
-module.exports.index = function(req , res){
+var request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+
+var renderHomePage = function(req, res, body){
   res.render('home' , {
     title: 'Home',
-    userInfo: {
-      firstName: 'Dania',
-      lastName: 'Refaie',
-      profilePic: '/images/Home/pictures/album2.jpg',
-      email: 'example1@gmail.com',
-      password: '123'
-    },
+    userInfo: body.profile,
     articles: {
       recentArticle: {
         title: "Exploring Norway's Coast",
@@ -145,4 +144,20 @@ module.exports.index = function(req , res){
       year: "2017"
     }]
   }) ;
+}
+
+module.exports.homePage = function(req , res){
+  console.log(req.params);
+  var requestOptions, path;
+  path = '/api/user/' + req.params.userid;
+  requestOptions = {
+    url: apiOptions.server + path ,
+    method: 'GET',
+    json: {},
+    qs: {}
+  };
+  request(requestOptions, (err, response, body)=>{
+    renderHomePage(req, res, body);
+  });
+
 }

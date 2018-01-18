@@ -23,6 +23,7 @@ module.exports.getUsersList = function(req, res){
 
 // Get a specific user
 module.exports.getUser = function(req, res){
+  console.log("getUser is being called from inside the api");
   if(req.params && req.params.userid){
     Blog
       .findOne({"_id": req.params.userid}, (err, user) =>{

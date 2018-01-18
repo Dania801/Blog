@@ -1,4 +1,9 @@
-module.exports.index = function(req , res){
+var request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+
+var renderJournalPage = function(req, res){
   res.render('journal' , {
     title: 'Journal',
     userInfo: {
@@ -84,5 +89,9 @@ module.exports.index = function(req , res){
         period: "pm"
       }
     ]
-  }) ;
+  });
+}
+
+module.exports.journalPage = function(req , res){
+  renderJournalPage(req, res);
 }

@@ -52,7 +52,7 @@ html(lang='en')
           h1.text-center.main-title Login
         .w3-container
           .container.w3-animate-top.text-center.full-width
-            form.w3-container(action='../home', target='_blank')
+            form.w3-container(action="#{url}", method="post", role="form")
               .w3-section
                 input.w3-input.w3-border.w3-hover-border-black.full-width(type='text', name='email', placeholder='Email', required='')
               .w3-section

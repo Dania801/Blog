@@ -8,10 +8,10 @@ var ctrlEvent = require('../controllers/events.js') ;
 var router = express.Router();
 
 /* GET home page. */
-router.get('/' , ctrlWelcome.index) ;
-router.get('/home' , ctrlHome.index) ;
-router.get('/album' , ctrlAlbum.index) ;
-router.get('/journal' , ctrlJournal.index) ;
-router.get('/events' , ctrlEvent.index) ;
+router.get('/' , ctrlWelcome.welcomePage) ;
+router.get('/home/:userid' , ctrlHome.homePage) ;
+router.get('/album' , ctrlAlbum.albumPage) ;
+router.get('/journal' , ctrlJournal.journalPage) ;
+router.get('/events' , ctrlEvent.eventsPage) ;
 
 module.exports = router;

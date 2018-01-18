@@ -102,14 +102,32 @@ array of users
 ----------------------------------------------------------------------------------------
 
 db.blog.save({
-	"profile": {
-		firstName: "test",
-		lastName: "test",
+	profile: {
+		firstName: "Dania",
+		lastName: "Refaie",
 		email: "nasa@gmail.com",
 		password: "123",
 		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
 	},
-	"articles": [
+	articles: [
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b22d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Personal",
+			text: "Some text"
+		},
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Personal",
+			text: "Some text"
+		}
+	],
+	album: [
 		{
 			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
 			caption: "Tasty Food!",
@@ -120,7 +138,7 @@ db.blog.save({
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
 		}
 	],
-	"events": [
+	events: [
 		{
 			title: "Job interview",
 			beginDate: "10/1/2018",
@@ -136,32 +154,14 @@ db.blog.save({
 		}
 		
 	],
-	"socialMedia": {
+	socialMedia: {
 		facebook: "www.facebook.com",
 		twitter: "www.twitter.com",
 		instagram: "www.instagram.com",
 		github: "www.github.com",
 		reddit: "www.reddit.com"
-	},
-	"album": [
-		{
-			title: "Some Title",
-			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Personal",
-			text: "Some text"
-		},
-		{
-			title: "Some Title",
-			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Personal",
-			text: "Some text"
-		}
-	]
+	}
 });
-
-
 
 
 

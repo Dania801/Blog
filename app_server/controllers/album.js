@@ -1,4 +1,9 @@
-module.exports.index = function(req , res){
+var request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+
+var renderAlbumPage = function(req, res){
   res.render('album' , {
     title: 'Photo Album',
     userInfo: {
@@ -57,4 +62,8 @@ module.exports.index = function(req , res){
       }
     ]
   }) ;
+}
+
+module.exports.albumPage = function(req , res){
+  renderAlbumPage(req, res);
 }
