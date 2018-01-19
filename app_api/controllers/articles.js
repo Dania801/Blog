@@ -87,6 +87,7 @@ module.exports.updateArticle = function(req, res){
           theArticle[0].title = req.body.title? req.body.title: theArticle[0].title;
           theArticle[0].image = req.body.image? req.body.image: theArticle[0].image;
           theArticle[0].tag = req.body.tag? req.body.tag: theArticle[0].tag;
+          theArticle[0].text = req.body.text? req.body.text: theArticle[0].text;
 
           user.save((err, album)=>{
             if(err){

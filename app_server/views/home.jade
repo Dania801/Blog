@@ -1,3 +1,5 @@
+include _includes/HTMLMixins
+
 doctype html
 html
   head
@@ -49,7 +51,7 @@ html
         a.w3-bar-item.w3-button.w3-hover-white(href='#album') Album
         a.w3-bar-item.w3-button.w3-hover-white(href='#socialmedia') Social Media
       div(style='margin-top: 380px;')
-        i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(aria-hidden='true', onclick='openSetting()')&nbsp;
+        i.fa.fa-cog.fa-lg.w3-hover-opacity.sidebar-icon(aria-hidden='true', onclick='openSetting()')
         i.fa.fa-sign-out.fa-lg.w3-hover-opacity.sidebar-icon(aria-hidden='true', onclick='openLogout()')
     // Full page container
     #home
@@ -78,11 +80,7 @@ html
               // Date container
               .article-date
                 p
-                  | #{articles.recentArticle.day} 
-                  | #{articles.recentArticle.month} 
-                  | #{articles.recentArticle.year}, 
-                  | #{articles.recentArticle.hour} 
-                  | #{articles.recentArticle.period}
+                  +fortmatDate(articles.recentArticle.createdOn) 
               // Title containr
               .article-title-layout
                 h2.article-title-style #{articles.recentArticle.title}
@@ -90,8 +88,8 @@ html
               .container.w3-padding-16.article-image(style="background-image: url('#{articles.recentArticle.image}');")
               // Article container
               .article-content
-                p.article-content-font
-                  | #{articles.recentArticle.lines}
+                p.article-content-font 
+                  +cropArticle(articles.recentArticle.text)
               .article-btn
                 button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{articles.recentArticle.image}')", type='submit') Continue Reading
           // Calendar and social media container

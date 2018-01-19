@@ -1,0 +1,19 @@
+mixin fortmatDate(dateString)
+  - var date = new Date(dateString) ; 
+  - var monthNames = ['January','February','March','April','May','June','July','August','September','October','Novermber','December'] ; 
+  - var d = date.getDate() ; 
+  - var m = monthNames[date.getMonth()] ; 
+  - var y = date.getFullYear() ; 
+  - var output = d + ' ' + m + ' ' + y ; 
+  - console.log("hello from formatDate")
+  = output 
+  
+  mixin cropArticle(text)
+    - var croppedText = text.substring(0, 303);
+    - console.log(croppedText);
+    - console.log(croppedText.length -1);
+    - console.log(croppedText[croppedText.length -1]);
+    //- while(croppedText[croppedText.length -1] !== " ")
+    //-   console.log(croppedText[croppedText.length -1]);
+    //-   croppedText += "h "; 
+    = croppedText

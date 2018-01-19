@@ -4,20 +4,13 @@ var apiOptions = {
 };
 
 var renderHomePage = function(req, res, body){
+  var recentArticle = getRecentArticle(body.articles);
+
   res.render('home' , {
     title: 'Home',
     userInfo: body.profile,
     articles: {
-      recentArticle: {
-        title: "Exploring Norway's Coast",
-        image: "/images/Home/pictures/album9.jpg",
-        lines: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 21,
-        month: 'October',
-        year: 2016,
-        hour: "07:00",
-        period: 'pm'
-      },
+      recentArticle: getRecentArticle(body.articles),
       columns:[
         {
           tag: "PERSONAL",
@@ -160,4 +153,27 @@ module.exports.homePage = function(req , res){
     renderHomePage(req, res, body);
   });
 
+}
+
+var getTags = function(articles){
+  let flags = [];
+  for(let i= 0 ; i < article.length ; i++){
+    if(!flags.includes(articles[i].tag))
+      flags.push(articles[i].tag);
+  }
+  return flags;
+}
+
+var getColumns = function(articles, tags){
+  let firstColumn = [];
+  for(var i= 0 ; i < articles.length ; i++){
+    if(tags.includes(articles[i].flag)){
+      
+      flag.splice(i, 1);
+    }
+  }
+}
+
+var getRecentArticle= function(articles){
+  return articles[articles.length -1];
 }
