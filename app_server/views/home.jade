@@ -67,6 +67,7 @@ html
           .row
             .col-xs-4.personal-image-outer.w3-animate-zoom
               a(href='/images/Home/pictures/album2.jpg', data-lightbox='galleryone')
+                - console.log(userInfo.profilePic)
                 img.img-responsive.w3-card-4.personal-image(src='#{userInfo.profilePic}', alt='Me')
             .col-xs-8.personal-name
               h2.personl-name-style
@@ -163,13 +164,13 @@ html
               div(style='margin-left: 10px;')
                 div(style='margin-top: 40px;')
                   p
-                    | #{article.day} #{article.month} #{article.year}, #{article.hour} #{article.period}
+                    +fortmatDate(article.createdOn)
                 h5.col-title #{article.title}
                 .col-pic
                   img.col-pic(src='#{article.image}')
                 .col-article-outer
                   p.col-article
-                    | #{article.lines}
+                    +cropArticleShorter(article.text)
                 .col-article-btn
                   button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('/images/Home/pictures/advent5.jpg')", type='submit') Continue Reading
               .hr-outer
@@ -191,11 +192,13 @@ html
               footer.w3-container(style='padding-top: 50px;')
                 .row
                   .col-xs-2.w3-card-4.w3-black.event-date
-                    span.event-number #{event.day}
+                    span.event-number
+                      +getEventDay(event.beginDate)
                   .col-xs-8.text-left.small-margin-left
                     span.event-image-title #{event.title}
                     br
-                    span.event-image-caption #{event.month},#{event.year}
+                    span.event-image-caption 
+                      +getMonthAndYear(event.beginDate)
 
         .more-article-outer(style='margin-left: 300px;margin-top: 500px;')
           button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../events';", type='submit', style='font-size: 20px;') Check All Events

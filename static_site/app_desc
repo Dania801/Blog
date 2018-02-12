@@ -103,7 +103,7 @@ array of users
 
 db.blog.save({
 	profile: {
-		firstName: "Dania",
+		firstName: "Oways",
 		lastName: "Refaie",
 		email: "nasa@gmail.com",
 		password: "123",
@@ -116,15 +116,39 @@ db.blog.save({
 			createdOn: "10/1/2018",
 			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
 			tag: "Personal",
-			text: "Some text"
+			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		},
 		{
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
 			title: "Some Title",
 			createdOn: "10/1/2018",
 			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Personal",
-			text: "Some text"
+			tag: "Political",
+			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
+		},
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Political",
+			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
+		},
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Technology",
+			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
+		},
+		{
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
+			title: "Some Title",
+			createdOn: "10/1/2018",
+			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			tag: "Technology",
+			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		}
 	],
 	album: [

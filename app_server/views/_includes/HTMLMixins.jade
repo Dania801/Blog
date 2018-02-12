@@ -5,15 +5,28 @@ mixin fortmatDate(dateString)
   - var m = monthNames[date.getMonth()] ; 
   - var y = date.getFullYear() ; 
   - var output = d + ' ' + m + ' ' + y ; 
-  - console.log("hello from formatDate")
   = output 
   
   mixin cropArticle(text)
-    - var croppedText = text.substring(0, 303);
-    - console.log(croppedText);
-    - console.log(croppedText.length -1);
-    - console.log(croppedText[croppedText.length -1]);
-    //- while(croppedText[croppedText.length -1] !== " ")
-    //-   console.log(croppedText[croppedText.length -1]);
-    //-   croppedText += "h "; 
+    - var croppedText = text.substring(0, 350);
+    - croppedText += "...."
     = croppedText
+    
+mixin cropArticleShorter(text)
+  - var croppedText = text.substring(0, 250);
+  - croppedText += "...."
+  = croppedText
+
+mixin getEventDay(dateString)
+  - var date = new Date(dateString) ; 
+  - var day = date.getDate() ; 
+  - console.log(day) ; 
+  = day
+  
+mixin getMonthAndYear(dateString)
+  - var date = new Date(dateString) ; 
+  - var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] ; 
+  - var m = monthNames[date.getMonth()] ; 
+  - var y = date.getFullYear() ; 
+  - var output = m + ', ' + y ; 
+  = output 
