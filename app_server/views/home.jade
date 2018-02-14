@@ -76,22 +76,25 @@ html
         .container.w3-card-4.row.post-cover
           // Recent Article container
           .col-xs-6
+            - console.log('articles length = ')
+            - console.log(articles.recentArticle);
             .container.w3-card.w3-white.article
-              // Date container
-              .article-date
-                p
-                  +fortmatDate(articles.recentArticle.createdOn) 
-              // Title containr
-              .article-title-layout
-                h2.article-title-style #{articles.recentArticle.title}
-              // Article image container
-              .container.w3-padding-16.article-image(style="background-image: url('#{articles.recentArticle.image}');")
-              // Article container
-              .article-content
-                p.article-content-font 
-                  +cropArticle(articles.recentArticle.text)
-              .article-btn
-                button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{articles.recentArticle.image}')", type='submit') Continue Reading
+              - if(articles.recentArticle)
+                // Date container
+                .article-date
+                  p
+                    +fortmatDate(articles.recentArticle.createdOn) 
+                // Title containr
+                .article-title-layout
+                  h2.article-title-style #{articles.recentArticle.title}
+                // Article image container
+                .container.w3-padding-16.article-image(style="background-image: url('#{articles.recentArticle.image}');")
+                // Article container
+                .article-content
+                  p.article-content-font 
+                    +cropArticle(articles.recentArticle.text)
+                .article-btn
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{articles.recentArticle.image}')", type='submit') Continue Reading
           // Calendar and social media container
           .col-xs-5(style='margin-top: 50px;')
             // Calendar container
@@ -163,7 +166,8 @@ html
               div(style='margin-left: 10px;')
                 div(style='margin-top: 40px;')
                   p
-                    +fortmatDate(article.createdOn)
+                    - if(article.createdOn)
+                      +fortmatDate(article.createdOn)
                 h5.col-title #{article.title}
                 .col-pic
                   img.col-pic(src='#{article.image}')
