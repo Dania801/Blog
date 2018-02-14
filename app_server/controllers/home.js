@@ -9,9 +9,11 @@ var renderHomePage = function(req, res, body){
   var firstColumn = getColumn(body.articles, tags[0]);
   var secondColumn = getColumn(body.articles, tags[1]);
   var thirdColumn = getColumn(body.articles, tags[2]);
+  var userid = body._id;
   console.log(getEvents(body.events));
   res.render('home' , {
     title: 'Home',
+    userid: userid,
     userInfo: body.profile,
     articles: {
       recentArticle: getRecentArticle(body.articles),
@@ -36,7 +38,6 @@ var renderHomePage = function(req, res, body){
 }
 
 module.exports.homePage = function(req , res){
-  console.log(req.params);
   var requestOptions, path;
   path = '/api/user/' + req.params.userid;
   requestOptions = {
@@ -45,14 +46,13 @@ module.exports.homePage = function(req , res){
     json: {},
     qs: {}
   };
-
   request(requestOptions, (err, response, body)=>{
     console.log(body)
     renderHomePage(req, res, body);
   });
-
 }
 
+// Picking 6 events (if exist) and returning and array of them
 var getEvents = function(events){
   let eventsArr = [];
   let eventsSize = events.length;
@@ -63,6 +63,7 @@ var getEvents = function(events){
   return eventsArr;
 }
 
+// Get 3 tags of the articles
 var getTags = function(articles){
   let flags = [];
   for(let i= 0 ; i < articles.length ; i++){
@@ -72,6 +73,7 @@ var getTags = function(articles){
   return flags;
 }
 
+// Get two articles from a provided tag
 var getColumn = function(articles, tag){
   let column = [];
   for(var i = 0 ; i < articles.length ; i++){
@@ -82,6 +84,7 @@ var getColumn = function(articles, tag){
   return column;
 }
 
+// Picking 6 photos from the album
 var getAlbumHighlight = function(album){
   var pics = [];
   var albumSize = album.length ;
@@ -92,6 +95,7 @@ var getAlbumHighlight = function(album){
   return pics;
 }
 
+// Getting recent article
 var getRecentArticle= function(articles){
   return articles[articles.length -1];
 }

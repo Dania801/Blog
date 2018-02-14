@@ -1,3 +1,5 @@
+include _includes/HTMLMixins
+
 doctype html
 html
   head
@@ -126,13 +128,13 @@ html
               .w3-margin(style='padding-bottom: 20px;')
                 div(style='margin-top: 30px;')
                   p
-                    | #{article.day} #{article.month} #{article.year}, #{article.hour} #{article.period}
+                    +fortmatDate(article.createdOn)
                 // Title container
                 .article-title-layout
                   h2.article-title-style Some Title
                 .article-content(style='padding-right: 20px;')
                   p.article-content-font
-                    | Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....
+                    +cropArticle(article.text)
                 .article-btn
                   button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}')", type='submit') Continue Reading
           
@@ -156,13 +158,13 @@ html
                 .w3-margin
                   div(style='margin-top: 30px;')
                     p
-                      | #{article.day} #{article.month} #{article.year}, #{article.hour} #{article.period}
+                      +fortmatDate(article.createdOn)
                   // Title container
                   .article-title-layout
                     h2.article-title-style #{article.title}
                   .article-content(style='padding-right: 20px;')
                     p.article-content-font
-                      | #{article.lines}
+                      +cropArticleShorter(article.text)
                 .article-btn.all-btn-outer
                   button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}')", type='submit') Continue ..
             

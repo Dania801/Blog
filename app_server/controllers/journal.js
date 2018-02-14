@@ -3,7 +3,10 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 
-var renderJournalPage = function(req, res){
+var renderJournalPage = function(req, res, body){
+  var recent = getRecentArticle(body);
+  console.log('Articles List !');
+  console.log(body);
   res.render('journal' , {
     title: 'Journal',
     userInfo: {
@@ -13,85 +16,30 @@ var renderJournalPage = function(req, res){
       email: 'example1@gmail.com',
       password: '123'
     },
-    recentArticles: [
-      {
-        tag: "Journal",
-        image: "/images/Journal/pictures/art1.jpg",
-        title: "Some Title",
-        lines: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      },{
-        tag: "Journal",
-        image: "/images/Journal/pictures/art2.jpg",
-        title: "Some Title",
-        lines: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      },{
-        tag: "Journal",
-        image: "/images/Journal/pictures/art3.jpg",
-        title: "Some Title",
-        lines: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      }
-    ],
-    articles: [
-      {
-        tag: "Technology",
-        image: "/images/Journal/pictures/art4.jpg",
-        title: "Some Title",
-        lines: "Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      },{
-        tag: "Social",
-        image: "/images/Journal/pictures/album7.jpg",
-        title: "Some Title",
-        lines: "Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      },{
-        tag: "Social",
-        image: "/images/Journal/pictures/album12.jpg",
-        title: "Some Title",
-        lines: "Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      },{
-        tag: "Personal",
-        image: "/images/Journal/pictures/advent8.jpg",
-        title: "Some Title",
-        lines: "Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor....",
-        day: 12,
-        month: "October",
-        year: "2016",
-        hour: "07:00",
-        period: "pm"
-      }
-    ]
+    recentArticles: recent ,
+    articles: body
   });
 }
 
 module.exports.journalPage = function(req , res){
-  renderJournalPage(req, res);
+  var requestOptions, path;
+  path = '/api/user/'+ req.params.userid + '/articles';
+  requestOptions = {
+    url: apiOptions.server + path,
+    method: 'GET',
+    json: {},
+    qs: {}
+  };
+  request(requestOptions, (err, response, body)=>{
+      console.log(body);
+      renderJournalPage(req, res, body);
+  })
+}
+
+var getRecentArticle = function(articles){
+  var articlesList = [];
+  articlesList.push(articles[articles.length-1]);
+  articlesList.push(articles[articles.length-2]);
+  articlesList.push(articles[articles.length-3]);
+  return articlesList;
 }
