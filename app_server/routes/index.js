@@ -11,7 +11,7 @@ var router = express.Router();
 router.get('/' , ctrlWelcome.welcomePage) ;
 router.get('/home/:userid' , ctrlHome.homePage) ;
 router.get('/album' , ctrlAlbum.albumPage) ;
-router.get('/home/:userid/journal' , ctrlJournal.journalPage) ;
+router.post('/home/:userid/journal' , ctrlJournal.journalPage) ;
 router.get('/events' , ctrlEvent.eventsPage) ;
 
 module.exports = router;

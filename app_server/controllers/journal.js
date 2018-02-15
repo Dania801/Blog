@@ -5,17 +5,9 @@ var apiOptions = {
 
 var renderJournalPage = function(req, res, body){
   var recent = getRecentArticle(body);
-  console.log('Articles List !');
-  console.log(body);
   res.render('journal' , {
     title: 'Journal',
-    userInfo: {
-      firstName: 'Dania',
-      lastName: 'Refaie',
-      profilePic: '/images/Home/pictures/album2.jpg',
-      email: 'example1@gmail.com',
-      password: '123'
-    },
+    userInfo: req.body,
     recentArticles: recent ,
     articles: body
   });

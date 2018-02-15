@@ -159,8 +159,11 @@ function showPic(pic){
   document.getElementById('pic_container').src = pic;
   $("#picture").show() ;
 }
-function showArticle(pic){
+function showArticle(pic, title, date, text){
   document.getElementById('article-pic').src = pic;
+  document.getElementById('title_area').innerHTML = title;
+  document.getElementById('date_area').innerHTML = "Posted On " + formateDate(date);
+  document.getElementById('text_area').innerHTML = text;
   $("#article").show() ;
   $("#article-tag").show() ;
   $("#article-x").show();
@@ -171,6 +174,15 @@ function closeArticle(){
   $("#article").slideUp(500) ;
 }
 
+function formateDate(dateString){
+  var date = new Date(dateString) ;
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','Novermber','December'] ;
+  var d = date.getDate() ;
+  var m = monthNames[date.getMonth()] ;
+  var y = date.getFullYear() ;
+  var output = d + ' , ' + m + ' ' + y ;
+  return output
+}
 
 
 function addToFavourit(e){

@@ -136,7 +136,7 @@ html
                   p.article-content-font
                     +cropArticle(article.text)
                 .article-btn
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}')", type='submit') Continue Reading
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}')", type='submit') Continue Reading
           
       // All articles container
       .grid.w3-card.w3-content.w3-white.w3-container.all-outer
@@ -166,7 +166,7 @@ html
                     p.article-content-font
                       +cropArticleShorter(article.text)
                 .article-btn.all-btn-outer
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}')", type='submit') Continue ..
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}')", type='submit') Continue ..
             
       // Events
       .new-post.w3-card.w3-opacity-max
@@ -225,16 +225,12 @@ html
             .article-modal-pic-outer
               img#article-pic.w3-border.w3-card-4.article-modal-pic(src='')
             div(style='text-align: center')
-              h2.article-modal-title Some Title
+              h2.article-modal-title#title_area
             #article-tag.w3-display-topleft.w3-black.w3-padding.article-modal-tag Social
             .article-modal-date
-              p
-                | Posted on October 12, 2017
+              p#date_area
             .article-modal-text-outer
-              p.article-modal-text
-                | Nulla facilisi. Etiam euismod tristique ipsum, vitae fringilla orci tempor at. Cras dignissim laoreet ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae aliquet dui, sit amet cursus ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales porta lacus, eu facilisis justo. Curabitur sed leo dui.
-                | Nam nisl ex, pellentesque eget lorem eget, dignissim lobortis nisi. Curabitur elit elit, condimentum non lacus sed, elementum pellentesque mi. Fusce eget accumsan elit. Integer euismod libero a tellus tincidunt venenatis. Vivamus sit amet neque id mauris lacinia consequat vel ac orci. Suspendisse posuere velit eu pellentesque vestibulum. Vestibulum sit amet nibh ut nisl luctus facilisis. Vestibulum et posuere massa, ut luctus enim. In id ex dui. Mauris elementum mauris ut mauris luctus gravida. Morbi fermentum mauris sollicitudin scelerisque euismod. Nulla tincidunt suscipit accumsan.
-                | Cras eleifend magna et consequat ultrices. Phasellus sodales placerat ullamcorper. Vivamus sed scelerisque augue, a ultricies erat. Aenean felis nibh, aliquam non turpis et, tincidunt commodo tellus. Quisque tellus nisi, congue vitae mi a, ullamcorper luctus nunc. Nulla vel urna tellus. Aliquam non elementum enim. Maecenas volutpat ex ut nibh rhoncus, quis finibus orci venenatis.
+              p.article-modal-text#text_area
       // Setting Modal
       #setting.w3-modal
         #setting-inner.w3-modal-content.w3-animate-zoom.login-modal(style='width: 600px;')
