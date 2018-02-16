@@ -55,10 +55,12 @@ module.exports.homePage = function(req , res){
 // Picking 6 events (if exist) and returning and array of them
 var getEvents = function(events){
   let eventsArr = [];
-  let eventsSize = events.length;
-  let index = eventsSize < 6 ? eventsSize : 6;
-  for(var i = 0 ; i < index ; i++){
-    eventsArr.push(events[i]);
+  if(events && events.length){
+    let eventsSize = events.length;
+    let index = eventsSize < 6 ? eventsSize : 6;
+    for(var i = 0 ; i < index ; i++){
+      eventsArr.push(events[i]);
+    }
   }
   return eventsArr;
 }
@@ -66,9 +68,11 @@ var getEvents = function(events){
 // Get 3 tags of the articles
 var getTags = function(articles){
   let flags = [];
-  for(let i= 0 ; i < articles.length ; i++){
-    if(!flags.includes(articles[i].tag) && (flags.length < 3))
-      flags.push(articles[i].tag);
+  if(articles && articles.length){
+    for(let i= 0 ; i < articles.length ; i++){
+      if(!flags.includes(articles[i].tag) && (flags.length < 3))
+        flags.push(articles[i].tag);
+    }
   }
   return flags;
 }
@@ -76,9 +80,11 @@ var getTags = function(articles){
 // Get two articles from a provided tag
 var getColumn = function(articles, tag){
   let column = [];
-  for(var i = 0 ; i < articles.length ; i++){
-    if(articles[i].tag === tag && column.length < 2){
-      column.push(articles[i]);
+  if(articles && articles.length){
+    for(var i = 0 ; i < articles.length ; i++){
+      if(articles[i].tag === tag && column.length < 2){
+        column.push(articles[i]);
+      }
     }
   }
   return column;
@@ -87,15 +93,23 @@ var getColumn = function(articles, tag){
 // Picking 6 photos from the album
 var getAlbumHighlight = function(album){
   var pics = [];
-  var albumSize = album.length ;
-  var index = albumSize < 6 ? albumSize : 6 ;
-  for(var i = 0; i < index ; i++){
-    pics[i] = album[i];
+  if(album && album.length){
+    var albumSize = album.length ;
+    var index = albumSize < 6 ? albumSize : 6 ;
+    for(var i = 0; i < index ; i++){
+      pics[i] = album[i];
+    }
   }
   return pics;
 }
 
 // Getting recent article
 var getRecentArticle= function(articles){
-  return articles[articles.length -1];
+  var recent = []
+  if(articles && articles.length){
+    recent = articles[articles.length -1]
+    return recent;
+  }else{
+    return recent;
+  }
 }

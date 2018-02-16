@@ -92,9 +92,10 @@ html
                 // Article container
                 .article-content
                   p.article-content-font 
-                    +cropArticle(articles.recentArticle.text)
+                    - if(articles.recentArticle.text)
+                      +cropArticle(articles.recentArticle.text)
                 .article-btn
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{articles.recentArticle.image}')", type='submit') Continue Reading
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{articles.recentArticle.image}', '#{articles.recentArticle.title}', '#{articles.recentArticle.date}', '#{articles.recentArticle.text}')", type='submit') Continue Reading
           // Calendar and social media container
           .col-xs-5(style='margin-top: 50px;')
             // Calendar container
@@ -136,13 +137,14 @@ html
         h1.album-title Photo Album
         // Photo album inner container
         div(style='margin-left: 150px;margin-top: 50px;padding-bottom: 100px;position: relative;')
-          each photo in album
-            a(href='#{photo.image}', data-lightbox='gallery', data-title='#{photo.caption}')
-              .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-                .w3-card-4.pic.photo-album-pic(style='background-image: url("#{photo.image}");')
-            
-          div(style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;')
-            button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(onclick="location.href='../album';", type='submit', style='width: 400px;') Get More Photos
+          - if(album)
+            each photo in album
+              a(href='#{photo.image}', data-lightbox='gallery', data-title='#{photo.caption}')
+                .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+                  .w3-card-4.pic.photo-album-pic(style='background-image: url("#{photo.image}");')
+              
+            div(style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;')
+              button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(onclick="location.href='../album';", type='submit', style='width: 400px;') Get More Photos
     // Picture modal
     #picture.w3-modal
       .w3-modal-content.w3-animate-top.container.album-modal-outer
@@ -161,23 +163,24 @@ html
             h3.col-tag #{column.tag}
             div(style='margin-left: 153px;')
               hr.hr-short
-            each article in column.articles
-              // article
-              div(style='margin-left: 10px;')
-                div(style='margin-top: 40px;')
-                  p
-                    - if(article.createdOn)
-                      +fortmatDate(article.createdOn)
-                h5.col-title #{article.title}
-                .col-pic
-                  img.col-pic(src='#{article.image}')
-                .col-article-outer
-                  p.col-article
-                    +cropArticleShorter(article.text)
-                .col-article-btn
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('/images/Home/pictures/advent5.jpg')", type='submit') Continue Reading
-              .hr-outer
-                hr.hr-long
+            - if(column.articles)  
+              each article in column.articles
+                // article
+                div(style='margin-left: 10px;')
+                  div(style='margin-top: 40px;')
+                    p
+                      - if(article.createdOn)
+                        +fortmatDate(article.createdOn)
+                  h5.col-title #{article.title}
+                  .col-pic
+                    img.col-pic(src='#{article.image}')
+                  .col-article-outer
+                    p.col-article
+                      +cropArticleShorter(article.text)
+                  .col-article-btn
+                    button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('/images/Home/pictures/advent5.jpg')", type='submit') Continue Reading
+                .hr-outer
+                  hr.hr-long
           
       // View more article
       form.form-horizontal(action="/home/#{userid}/journal", method="post", role="form")
@@ -199,23 +202,25 @@ html
     #events.task-container.event-outer
       .container.large-margin-top.row.slideanim
         h3.events-title Events for this month
-        each event in events
-          // First Event
-          .col-xs-4.w3-margin-bottom
-            .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
-              footer.w3-container(style='padding-top: 50px;')
-                .row
-                  .col-xs-2.w3-card-4.w3-black.event-date
-                    span.event-number
-                      +getEventDay(event.beginDate)
-                  .col-xs-8.text-left.small-margin-left
-                    span.event-image-title #{event.title}
-                    br
-                    span.event-image-caption 
-                      +getMonthAndYear(event.beginDate)
+        - if(events)
+          each event in events
+            // First Event
+            .col-xs-4.w3-margin-bottom
+              .w3-card-4.w3-white(style='height: 160px;border-top: 10px solid black;')
+                footer.w3-container(style='padding-top: 50px;')
+                  .row
+                    .col-xs-2.w3-card-4.w3-black.event-date
+                      span.event-number
+                        +getEventDay(event.beginDate)
+                    .col-xs-8.text-left.small-margin-left
+                      span.event-image-title #{event.title}
+                      br
+                      span.event-image-caption 
+                        +getMonthAndYear(event.beginDate)
 
-        .more-article-outer(style='margin-left: 300px;margin-top: 500px;')
-          button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../events';", type='submit', style='font-size: 20px;') Check All Events
+          .more-article-outer(style='margin-left: 300px;margin-top: 500px;')
+            button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../events';", type='submit', style='font-size: 20px;') Check All Events
+      
     // Footer
     footer.container-fluid.text-center.footer
       a(href='#home', title='To Top')

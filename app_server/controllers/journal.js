@@ -30,8 +30,10 @@ module.exports.journalPage = function(req , res){
 
 var getRecentArticle = function(articles){
   var articlesList = [];
-  articlesList.push(articles[articles.length-1]);
-  articlesList.push(articles[articles.length-2]);
-  articlesList.push(articles[articles.length-3]);
+  if(articles && articles.length){
+    articlesList.push(articles[articles.length-1]);
+    articlesList.push(articles[articles.length-2]);
+    articlesList.push(articles[articles.length-3]);
+  }
   return articlesList;
 }
