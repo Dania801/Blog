@@ -159,11 +159,14 @@ function showPic(pic){
   document.getElementById('pic_container').src = pic;
   $("#picture").show() ;
 }
-function showArticle(pic, title, date, text){
+function showArticle(pic, title, date, text, tag){
+  console.log('showArticle is called!!!');
   document.getElementById('article-pic').src = pic;
   document.getElementById('title_area').innerHTML = title;
   document.getElementById('date_area').innerHTML = "Posted On " + formateDate(date);
   document.getElementById('text_area').innerHTML = text;
+  document.getElementById('article-tag').innerHTML = tag;
+
   $("#article").show() ;
   $("#article-tag").show() ;
   $("#article-x").show();
