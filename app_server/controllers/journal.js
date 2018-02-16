@@ -4,12 +4,12 @@ var apiOptions = {
 };
 
 var renderJournalPage = function(req, res, body){
-  var recent = getRecentArticle(body);
+  var recent = getRecentArticle(body.articles);
   res.render('journal' , {
     title: 'Journal',
-    userInfo: req.body,
+    userInfo: body.profile,
     recentArticles: recent ,
-    articles: body
+    articles: body.articles
   });
 }
 

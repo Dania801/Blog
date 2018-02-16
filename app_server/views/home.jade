@@ -183,19 +183,8 @@ html
                   hr.hr-long
           
       // View more article
-      form.form-horizontal(action="/home/#{userid}/journal", method="post", role="form")
-        .form-group
-          input.form-control(type='hidden', name='firstName', value="#{userInfo.firstName}")
-        .form-group
-          input.form-control(type='hidden', name='lastName', value="#{userInfo.lastName}")
-        .form-group
-          input.form-control(type='hidden', name='email', value="#{userInfo.email}")
-        .form-group
-          input.form-control(type='hidden', name='password', value="#{userInfo.password}")
-        .form-group
-          input.form-control(type='hidden', name='profilePic', value="#{userInfo.profilePic}")
-        .more-article-outer
-          button.w3-button.w3-block.w3-white.w3-border.btn-style(type='submit', style='font-size: 20px;') Read more posts
+      .more-article-outer
+        button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='/home/#{userid}/journal';" type='submit', style='font-size: 20px;') Read more posts
       
     // Events
     .w3-card.w3-opacity-max.event-background

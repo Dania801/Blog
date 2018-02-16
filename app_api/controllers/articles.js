@@ -12,12 +12,14 @@ module.exports.getArticlesList = function(req, res){
     Blog
       .find({"_id": req.params.userid}, (err, user) =>{
         let articles = user[0].articles ;
+        let profile = user[0].profile ;
+        let info = {profile, articles} ;
         if(err){
           sendJsonResponse(res, 404, err);
         }else if(!articles){
           sendJsonResponse(res, 404, {"message": "Sorry, No articles found!"});
         }else{
-          sendJsonResponse(res, 200, articles);
+          sendJsonResponse(res, 200, info);
         }
       });
   }else{
