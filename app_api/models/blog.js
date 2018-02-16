@@ -18,7 +18,8 @@ var articleSchema = new mongoose.Schema({
 
 var albumSchema = new mongoose.Schema({
   image: {type: String, required: true},
-  caption: {type: String}
+  caption: {type: String},
+  favourite: {type: Boolean, required: true, default: false}
 });
 
 var eventSchema = new mongoose.Schema({

@@ -67,24 +67,25 @@ html
             b _________
         // Slideshow
         .w3-container(style='width: 80%;')
-          // Image 1
-          .w3-display-container.mySlides(style='height: 560px;')
-            a(href='#{favouriteImages[0].image}', data-lightbox='gallery2', data-title='#{favouriteImages[0].caption}')
-              img#image-slide(src='#{favouriteImages[0].image}', style='width:100%')
-            .w3-display-topleft.w3-container.w3-padding-32
-              span.w3-white.w3-padding-large Beautiful day
-          // Image 2
-          #image-slide.w3-display-container.mySlides
-            a(href='#{favouriteImages[1].image}', data-lightbox='gallery2', data-title='#{favouriteImages[1].caption}')
-              img#image-slide2(src='#{favouriteImages[1].image}', style='width:100%')
-            .w3-display-topleft.w3-container.w3-padding-32
-              span.w3-white.w3-padding-large Beautiful day
-          // Image 3
-          #image-slide.w3-display-container.mySlides
-            a(href='#{favouriteImages[2].image}', data-lightbox='gallery2', data-title='#{favouriteImages[2].caption}')
-              img#image-slide3(src='#{favouriteImages[2].image}', style='width:100%')
-            .w3-display-topleft.w3-container.w3-padding-32
-              span.w3-white.w3-padding-large Beautiful day
+          - if(favouriteImages)
+            // Image 1
+            .w3-display-container.mySlides(style='height: 560px;')
+              a(href='#{favouriteImages[0].image}', data-lightbox='gallery2', data-title='#{favouriteImages[0].caption}')
+                img#image-slide(src='#{favouriteImages[0].image}', style='width:100%')
+              .w3-display-topleft.w3-container.w3-padding-32
+                span.w3-white.w3-padding-large Beautiful day
+            // Image 2
+            #image-slide.w3-display-container.mySlides
+              a(href='#{favouriteImages[1].image}', data-lightbox='gallery2', data-title='#{favouriteImages[1].caption}')
+                img#image-slide2(src='#{favouriteImages[1].image}', style='width:100%')
+              .w3-display-topleft.w3-container.w3-padding-32
+                span.w3-white.w3-padding-large Beautiful day
+            // Image 3
+            #image-slide.w3-display-container.mySlides
+              a(href='#{favouriteImages[2].image}', data-lightbox='gallery2', data-title='#{favouriteImages[2].caption}')
+                img#image-slide3(src='#{favouriteImages[2].image}', style='width:100%')
+              .w3-display-topleft.w3-container.w3-padding-32
+                span.w3-white.w3-padding-large Beautiful day
           // Slideshow next/previous buttons
           .w3-container.w3-padding.w3-xlarge.w3-card-4(style='background-color: #ef5350')
             .w3-left(onclick='plusDivs(-1)')
@@ -107,12 +108,13 @@ html
             h5(style='color: black')
               b _________
           #pic-stand.slideanim
-            each picture in images
-              .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
-                a(href='#{picture.image}', data-lightbox='gallery', data-title='#{picture.caption}')
-                  .w3-card-4.pic.photo-album-pic(style='background-image: url("#{picture.image}");')
-                .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
-                  i.fa.fa-star(onclick='addToFavourit(event)')
+            - if(images)
+              each picture in images
+                .col-xs-3.w3-card-4.photo-container.photo-album-pic-outer
+                  a(href='#{picture.image}', data-lightbox='gallery', data-title='#{picture.caption}')
+                    .w3-card-4.pic.photo-album-pic(style='background-image: url("#{picture.image}");')
+                  .w3-display-topleft.w3-padding.w3-light-gray.w3-card-4
+                    i.fa.fa-star(onclick='addToFavourit(event)')
                 
 
     // Add new pic container

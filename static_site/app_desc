@@ -103,51 +103,43 @@ array of users
 
 db.blog.save({
 	profile: {
-		firstName: "Oways",
-		lastName: "Refaie",
-		email: "nasa@gmail.com",
+		firstName: "Vincent",
+		lastName: "Valentine",
+		email: "vin@gmail.com",
 		password: "123",
-		profilePic: "/home/dania/Desktop/Blog/public/images/default.png"
+		profilePic: "/home/dania/Desktop/Blog/public/images/Home/pictures/album1.jpg"
 	},
 	articles: [
 		{
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b22d"),
-			title: "Some Title",
+			title: "Exploring Norway's Coast",
 			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			image: "/home/dania/Desktop/Blog/public/images/Home/pictures/advent12.jpg",
 			tag: "Personal",
 			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		},
 		{
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
-			title: "Some Title",
+			title: "Exploring Norway's Coast",
 			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
+			image: "/home/dania/Desktop/Blog/public/images/Home/pictures/album9.jpg",
 			tag: "Political",
 			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		},
 		{
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
-			title: "Some Title",
+			title: "Exploring Norway's Coast",
 			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Political",
+			image: "/home/dania/Desktop/Blog/public/images/Home/pictures/art2.jpg",
+			tag: "Art",
 			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		},
 		{
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
-			title: "Some Title",
+			title: "Exploring Norway's Coast",
 			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Technology",
-			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
-		},
-		{
-			_id: ObjectId("5a5a46eb55d3e41ecdc9b33d"),
-			title: "Some Title",
-			createdOn: "10/1/2018",
-			image: "/home/dania/Desktop/Blog/public/images/Journal/pictures/advent3.png",
-			tag: "Technology",
+			image: "/home/dania/Desktop/Blog/public/images/Home/pictures/coffee1.jpg",
+			tag: "Personal",
 			text: "Integer vel gravida neque. Nulla gravida tortor sit amet ultricies iaculis. Proin viserra libero Ina magna condimentum iaculis. Donec eu estadio libero. Pellentesque sed erat eu justo consequat tincidunt nec in purus. Aenean veniis leonardo et magna piacerat sodales. Quisque fermentum imperdiet odio vel feugia taecenas laoreet mauris tempor dolor porta ullamcorper. Aenean maximus tortor non turpis placerat auctor"
 		}
 	],
@@ -155,10 +147,27 @@ db.blog.save({
 		{
 			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
 			caption: "Tasty Food!",
+			favourite: true,
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b33a")
 		},{
-			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food1.jpg",
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food2.jpg",
 			caption: "Tasty Food!",
+			favourite: true,
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
+		},{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food3.jpg",
+			caption: "Tasty Food!",
+			favourite: false, 
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
+		},{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/food4.jpg",
+			caption: "Tasty Food!",
+			favourite: true,
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
+		},{
+			image: "/home/dania/Desktop/Blog/public/images/Album/pictures/girl1.jpg",
+			caption: "On the boat",
+			favourite: false, 
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b23a")
 		}
 	],
@@ -169,6 +178,12 @@ db.blog.save({
 			endDate: "10/1/2018",
 			notes: "Nothing worth saying",
 			_id: ObjectId("5a5a46eb55d3e41ecdc9b25d")
+		},{
+			title: "Family meeting",
+			beginDate: "10/1/2018",
+			endDate: "10/1/2018",
+			notes: "Nothing worth saying",
+			_id: ObjectId("5a5a46eb55d3e41ecdc9b26d")
 		},{
 			title: "Family meeting",
 			beginDate: "10/1/2018",

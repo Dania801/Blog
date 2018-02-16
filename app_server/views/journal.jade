@@ -136,7 +136,7 @@ html
                   p.article-content-font
                     +cropArticle(article.text)
                 .article-btn
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}')", type='submit') Continue Reading
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}', '#{article.tag}')", type='submit') Continue Reading
           
       // All articles container
       .grid.w3-card.w3-content.w3-white.w3-container.all-outer
@@ -166,7 +166,7 @@ html
                     p.article-content-font
                       +cropArticleShorter(article.text)
                 .article-btn.all-btn-outer
-                  button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}')", type='submit') Continue ..
+                  button.w3-button.w3-block.w3-white.w3-border.btn-style.all-btn(onclick="showArticle('#{article.image}', '#{article.title}', '#{article.createdOn}', '#{article.text}', '#{article.tag}')", type='submit') Continue ..
             
       // Events
       .new-post.w3-card.w3-opacity-max
@@ -226,7 +226,7 @@ html
               img#article-pic.w3-border.w3-card-4.article-modal-pic(src='')
             div(style='text-align: center')
               h2.article-modal-title#title_area
-            #article-tag.w3-display-topleft.w3-black.w3-padding.article-modal-tag Social
+            #article-tag.w3-display-topleft.w3-black.w3-padding.article-modal-tag
             .article-modal-date
               p#date_area
             .article-modal-text-outer

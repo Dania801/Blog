@@ -10,7 +10,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/' , ctrlWelcome.welcomePage) ;
 router.get('/home/:userid' , ctrlHome.homePage) ;
-router.get('/album' , ctrlAlbum.albumPage) ;
+router.get('/home/:userid/album' , ctrlAlbum.albumPage) ;
 router.get('/home/:userid/journal' , ctrlJournal.journalPage) ;
 router.get('/events' , ctrlEvent.eventsPage) ;
 

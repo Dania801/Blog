@@ -47,8 +47,10 @@ module.exports.homePage = function(req , res){
     qs: {}
   };
   request(requestOptions, (err, response, body)=>{
-    console.log(body)
-    renderHomePage(req, res, body);
+    console.log(body);
+    if(response.statusCode === 200){
+      renderHomePage(req, res, body);
+    }
   });
 }
 
