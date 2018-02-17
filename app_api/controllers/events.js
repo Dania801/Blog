@@ -13,12 +13,14 @@ module.exports.getEventsList = function(req, res){
     Blog
       .find({"_id": req.params.userid}, (err, user) =>{
         let events = user[0].events ;
+        let profile = user[0].profile ;
+        let info = {profile, events};
         if(err){
           sendJsonResponse(res, 404, err);
         }else if(!events){
           sendJsonResponse(res, 404, {"message": "No events found"});
         }else{
-          sendJsonResponse(res, 200, events);
+          sendJsonResponse(res, 200, info);
         }
       });
   }else{

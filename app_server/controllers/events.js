@@ -3,77 +3,27 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 
-var renderEventsPage = function(req, res){
+var renderEventsPage = function(req, res, body){
+  console.log(body);
   res.render('events' , {
     title: 'Events',
-    userInfo: {
-      firstName: 'Dania',
-      lastName: 'Refaie',
-      profilePic: '/images/Home/pictures/album2.jpg',
-      email: 'example1@gmail.com',
-      password: '123'
-    },events: [
-      {
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      },{
-        title: 'Review mockups',
-        fromDay: 12,
-        fromMonth: 'Dec',
-        fromYear: '2017',
-        toDay: 15,
-        toMonth: 'Jan',
-        toYear: '2018'
-      }
-    ]
+    userInfo: body.profile,
+    events: body.events
   }) ;
 }
 
 module.exports.eventsPage = function(req , res){
-  renderEventsPage(req, res);
+  var requestOptions, path ;
+  path = '/api/user/'+ req.params.userid + '/events';
+  requestOptions = {
+    url: apiOptions.server + path,
+    method: 'GET',
+    json: {},
+    qs: {}
+  }
+  request(requestOptions, (err, response, body) =>{
+    if(response.statusCode === 200){
+      renderEventsPage(req, res, body);
+    }
+  });
 }

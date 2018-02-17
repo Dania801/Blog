@@ -1,6 +1,6 @@
 mixin fortmatDate(dateString)
   - var date = new Date(dateString) ; 
-  - var monthNames = ['January','February','March','April','May','June','July','August','September','October','Novermber','December'] ; 
+  - var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] ; 
   - var d = date.getDate() ; 
   - var m = monthNames[date.getMonth()] ; 
   - var y = date.getFullYear() ; 
@@ -28,5 +28,5 @@ mixin getMonthAndYear(dateString)
   - var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] ; 
   - var m = monthNames[date.getMonth()] ; 
   - var y = date.getFullYear() ; 
-  - var output = m + ', ' + y ; 
+  - var output = m + ' ' + y ; 
   = output 

@@ -1,3 +1,5 @@
+include _includes/HTMLMixins
+
 doctype html
 html
   head
@@ -34,22 +36,27 @@ html
   body(style='background-color: #CBCBCB')
     // Sidebar
     .w3-sidebar.w3-bar-block.w3-card.w3-white.side-outer
-      each event in events 
-        // Event
-        #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
-          div(style='text-align:right;')
-            span.w3-button.w3-large.main-title(onclick='ensureDelete()')
-              i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
-          footer.w3-container(style='padding-top: 0px;')
-            .row
-              .col-xs-2.w3-card-4.w3-black.side-event-date
-                span.event-number(style='margin-left: 15px;') #{event.fromDay}
-              .col-xs-6.text-left.small-margin-left
-                a(href='#', onclick='showEvent()')
-                  span.event-image-title #{event.title}
-                br
-                span.event-image-caption(style="font-size: 15px;letter-spacing: 1px;") #{event.fromMonth} #{event.fromYear} - #{event.toDay} #{event.toMonth} #{event.toYear}
-        
+      - if(events)
+        each event in events 
+          // Event
+          #event-card.w3-card-4.w3-light-gray.w3-animate-zoom.side-event-outer
+            div(style='text-align:right;')
+              span.w3-button.w3-large.main-title(onclick='ensureDelete()')
+                i.fa.fa-times.w3-hover-opacity(aria-hidden='true')
+            footer.w3-container(style='padding-top: 0px;')
+              .row
+                .col-xs-2.w3-card-4.w3-black.side-event-date.text-center
+                  span.event-number
+                    +getEventDay(event.beginDate)
+                .col-xs-6.text-left.small-margin-left
+                  a(href='#', onclick='showEvent()')
+                    span.event-image-title #{event.title}
+                  br
+                  span.event-image-caption(style="font-size: 15px;letter-spacing: 1px;") 
+                    +getMonthAndYear(event.beginDate) 
+                    |  - 
+                    +fortmatDate(event.endDate)
+          
     // Page Content
     div(style='margin-right:25%')
       // Sidebar/menu

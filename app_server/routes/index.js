@@ -12,6 +12,6 @@ router.get('/' , ctrlWelcome.welcomePage) ;
 router.get('/home/:userid' , ctrlHome.homePage) ;
 router.get('/home/:userid/album' , ctrlAlbum.albumPage) ;
 router.get('/home/:userid/journal' , ctrlJournal.journalPage) ;
-router.get('/events' , ctrlEvent.eventsPage) ;
+router.get('/home/:userid/events' , ctrlEvent.eventsPage) ;
 
 module.exports = router;
