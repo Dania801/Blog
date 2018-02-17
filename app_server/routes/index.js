@@ -14,4 +14,9 @@ router.get('/home/:userid/album' , ctrlAlbum.albumPage) ;
 router.get('/home/:userid/journal' , ctrlJournal.journalPage) ;
 router.get('/home/:userid/events' , ctrlEvent.eventsPage) ;
 
+//router.post('/', ctrlWelcome.addUser);
+//router.post('/home/:userid/album', ctrlAlbum.addPhoto);
+router.post('/home/:userid/journal', ctrlJournal.addArticle);
+//router.post('/home/:userid/events', ctrlEvent.addEvent);
+
 module.exports = router;

@@ -183,34 +183,35 @@ html
           br
           br
           br
-          .slideanim
-            .form-title
-              input.form-control(onkeyup='myFunction()', placeholder='Title')
-            .form-datalist
-              input.form-control(list='tag', placeholder='Tag')
-              datalist#tag
-                option(value='Personal')
-                option(value='Political')
-                option(value='Technology')
-                option(value='Science')
-                option(value='Music')
-            br
-            br
-            br
-            .form-textarea
-              .form-group
-                .input-group
-                  span.input-group-btn
-                    span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
-                    input(placeholder='Upload song cover', name='cover', onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\|/]/).pop());", style='display: none', type='file')
-                  span.form-control
-            br
-            br
-            br
-            div
-              textarea
-            .form-btn-outer
-              button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(type='submit') Finished!
+          form(action="/home/#{userid}/journal", method="post", role="form")
+            .slideanim
+              .form-title
+                input.form-control(onkeyup='myFunction()', placeholder='Title', name='title')
+              .form-datalist
+                input.form-control(list='tag', placeholder='Tag', name='tag')
+                datalist#tag
+                  option(value='Personal')
+                  option(value='Political')
+                  option(value='Technology')
+                  option(value='Science')
+                  option(value='Music')
+              br
+              br
+              br
+              .form-textarea
+                .form-group
+                  .input-group
+                    span.input-group-btn
+                      span.btn.w3-btn.w3-black(onclick="$(this).parent().find('input[type=file]').click();") Picture
+                      input(name='image', onchange="$(this).parent().parent().find('.form-control').html($(this).val());", style='display: none', type='file')
+                    span.form-control
+              br
+              br
+              br
+              div
+                textarea(name="text")
+              .form-btn-outer
+                button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(type='submit') Finished!
       // Footer
       footer.container-fluid.text-center
         a#footer(href='#top', title='To Top')
