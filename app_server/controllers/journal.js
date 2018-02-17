@@ -7,6 +7,7 @@ var renderJournalPage = function(req, res, body){
   var recent = getRecentArticle(body.articles);
   res.render('journal' , {
     title: 'Journal',
+    userid: req.params.userid,
     userInfo: body.profile,
     recentArticles: recent ,
     articles: body.articles

@@ -6,6 +6,7 @@ var apiOptions = {
 var renderAlbumPage = function(req, res, body){
   let favourite = getFavourite(body.album);
   res.render('album' , {
+    userid: req.params.userid,
     title: 'Photo Album',
     userInfo: body.profile,
     favouriteImages: favourite,

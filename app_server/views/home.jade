@@ -144,7 +144,7 @@ html
                   .w3-card-4.pic.photo-album-pic(style='background-image: url("#{photo.image}");')
               
             div(style='margin-left: 450px;margin-top: 700px; padding-top: 100px;position: absolute;width: 500px;')
-              button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(onclick="location.href='../album';", type='submit', style='width: 400px;') Get More Photos
+              button.w3-button.w3-block.w3-white.w3-border.btn-style.form-btn(onclick="location.href='/home/#{userid}/album';", type='submit', style='width: 400px;') Get More Photos
     // Picture modal
     #picture.w3-modal
       .w3-modal-content.w3-animate-top.container.album-modal-outer
@@ -208,7 +208,7 @@ html
                         +getMonthAndYear(event.beginDate)
 
           .more-article-outer(style='margin-left: 300px;margin-top: 500px;')
-            button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='../events';", type='submit', style='font-size: 20px;') Check All Events
+            button.w3-button.w3-block.w3-white.w3-border.btn-style(onclick="location.href='/home/#{userid}/events';", type='submit', style='font-size: 20px;') Check All Events
       
     // Footer
     footer.container-fluid.text-center.footer

@@ -7,6 +7,7 @@ var renderEventsPage = function(req, res, body){
   console.log(body);
   res.render('events' , {
     title: 'Events',
+    userid: req.params.userid,
     userInfo: body.profile,
     events: body.events
   }) ;
