@@ -67,23 +67,24 @@ html
             b _________
         // Slideshow
         .w3-container(style='width: 80%;')
+          - console.log("FAVOURITE IMAGES = " + favouriteImages)
           - if(favouriteImages)
             // Image 1
-            .w3-display-container.mySlides(style='height: 560px;')
+            .w3-display-container.mySlides.text-center(style='height: 560px;')
               a(href='#{favouriteImages[0].image}', data-lightbox='gallery2', data-title='#{favouriteImages[0].caption}')
-                img#image-slide(src='#{favouriteImages[0].image}', style='width:100%')
+                img#image-slide(src='#{favouriteImages[0].image}', style='max-height: 100%;')
               .w3-display-topleft.w3-container.w3-padding-32
                 span.w3-white.w3-padding-large Beautiful day
             // Image 2
-            #image-slide.w3-display-container.mySlides
+            #image-slide.w3-display-container.mySlides.text-center
               a(href='#{favouriteImages[1].image}', data-lightbox='gallery2', data-title='#{favouriteImages[1].caption}')
-                img#image-slide2(src='#{favouriteImages[1].image}', style='width:100%')
+                img#image-slide2(src='#{favouriteImages[1].image}', style='max-height: 100%;')
               .w3-display-topleft.w3-container.w3-padding-32
                 span.w3-white.w3-padding-large Beautiful day
             // Image 3
-            #image-slide.w3-display-container.mySlides
+            #image-slide.w3-display-container.mySlides.text-center
               a(href='#{favouriteImages[2].image}', data-lightbox='gallery2', data-title='#{favouriteImages[2].caption}')
-                img#image-slide3(src='#{favouriteImages[2].image}', style='width:100%')
+                img#image-slide3(src='#{favouriteImages[2].image}', style='max-height: 100%;')
               .w3-display-topleft.w3-container.w3-padding-32
                 span.w3-white.w3-padding-large Beautiful day
           // Slideshow next/previous buttons

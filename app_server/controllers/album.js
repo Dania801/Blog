@@ -4,8 +4,6 @@ var apiOptions = {
 };
 
 var renderAlbumPage = function(req, res, body){
-  console.log(body);
-  console.log(getFavourite(body.album));
   let favourite = getFavourite(body.album);
   res.render('album' , {
     title: 'Photo Album',
@@ -33,10 +31,10 @@ module.exports.albumPage = function(req , res){
 
 var getFavourite = function(album){
   var favourite = [];
-  if(album & album.length){
+  if(album && album.length){
     var counter = 0 ;
     for(var i =0 ; i < album.length ; i++){
-      if(album.favourite && counter < 3){
+      if(album[i].favourite && counter < 3){
         favourite.push(album[i]);
         counter++ ;
       }
@@ -44,6 +42,8 @@ var getFavourite = function(album){
         break;
       }
     }
+  }else{
+    favourite = undefined;
   }
   return favourite;
 }
